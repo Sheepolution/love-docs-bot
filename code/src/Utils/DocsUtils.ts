@@ -1,6 +1,6 @@
 import DocsConstants from '../Constants/DocsConstants';
 
-export default class LoveUtils {
+export default class DocsUtils {
 
     public static GetLoveUrl(name: string) {
         return DocsConstants.BASE_LOVE_DOCS_URL + name.replace('()', '');

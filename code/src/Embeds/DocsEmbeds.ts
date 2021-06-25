@@ -2,13 +2,13 @@ import { MessageEmbed } from 'discord.js';
 import DocsConstants from '../Constants/DocsConstants';
 import EmojiConstants from '../Constants/EmojiConstants';
 import SettingsConstants from '../Constants/SettingsConstants';
-import ILoveApi from '../Interfaces/ILoveApi';
+import IDocsApi from '../Interfaces/IDocsApi';
 import IMessageInfo from '../Interfaces/IMessageInfo';
-import DocsUtils from '../Utils/LoveUtils';
+import DocsUtils from '../Utils/DocsUtils';
 
 export default class DocsEmbeds {
 
-    public static GetDocsEmbed(messageInfo: IMessageInfo, query: string, apiList: Array<ILoveApi>) {
+    public static GetDocsEmbed(messageInfo: IMessageInfo, query: string, apiList: Array<IDocsApi>) {
 
         const embed = new MessageEmbed()
             .setColor(SettingsConstants.COLORS.DEFAULT)

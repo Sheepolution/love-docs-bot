@@ -4,7 +4,7 @@ import RedisConstants from '../Constants/RedisConstants';
 import DocsEmbeds from '../Embeds/DocsEmbeds';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import Guild from '../Objects/Guild';
-import Love from '../Providers/Love';
+import Love from '../Providers/Docs';
 import { Redis } from '../Providers/Redis';
 import ChannelService from '../Services/ChannelService';
 import MessageService from '../Services/MessageService';
