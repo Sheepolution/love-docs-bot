@@ -9,7 +9,7 @@ import CommandManager from '../Managers/CommandManager';
 import { Utils } from '../Utils/Utils';
 import CommandUtils from '../Utils/CommandUtils';
 import GeneralHandler from './GeneralHandler';
-import LoveHandler from './LoveHandler';
+import DocsHandler from './DocsHandler';
 
 export default class CommandHandler {
 
@@ -53,7 +53,7 @@ export default class CommandHandler {
                 }
             }
 
-            if (LoveHandler.OnCommand(messageInfo, guild)) {
+            if (DocsHandler.OnCommand(messageInfo, guild)) {
                 return;
             } else if (GeneralHandler.OnCommand(messageInfo, guild)) {
                 return;

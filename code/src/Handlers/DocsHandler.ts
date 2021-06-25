@@ -10,7 +10,7 @@ import ChannelService from '../Services/ChannelService';
 import MessageService from '../Services/MessageService';
 import { Utils } from '../Utils/Utils';
 
-export default class LoveHandler {
+export default class DocsHandler {
 
     private static readonly messageKey = RedisConstants.REDIS_KEY + RedisConstants.MESSAGE_KEY;
 
