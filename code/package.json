@@ -1,0 +1,41 @@
+{
+  "name": "love-docs-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot for querying documentation for the LÖVE API.",
+  "main": "lib/Index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn src/Index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sheepolution/love-docs-bot.git"
+  },
+  "author": "Sheepolution",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sheepolution/love-docs-bot/issues"
+  },
+  "homepage": "https://github.com/Sheepolution/love-docs-bot#readme",
+  "dependencies": {
+    "@types/pg": "^7.14.9",
+    "@types/ws": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "async-redis": "^1.1.7",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "knex": "^0.19.5",
+    "object-sizeof": "^1.6.1",
+    "objection": "^1.6.11",
+    "pg": "^8.3.0",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.1.1",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.20.0",
+    "typescript": "^4.1.5"
+  }
+}
