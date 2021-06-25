@@ -12,7 +12,7 @@ export default class DocsEmbeds {
 
         const embed = new MessageEmbed()
             .setColor(SettingsConstants.COLORS.DEFAULT)
-            .setFooter('You can edit your message to update the list.', messageInfo.user.displayAvatarURL());
+            .setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
 
         if (apiList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
