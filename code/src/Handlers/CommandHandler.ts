@@ -20,8 +20,10 @@ export default class CommandHandler {
         var command = this.GetCommand(commandInfo.command);
 
         if (command == null) {
-            command = CommandConstants.COMMANDS.WIKI;
-            commandInfo.content = content.slice(guild.GetPrefix().length);
+            return;
+            // Make the wiki command the default command
+            // command = CommandConstants.COMMANDS.WIKI;
+            // commandInfo.content = content.slice(guild.GetPrefix().length);
         }
 
         commandInfo.command = command[0];
