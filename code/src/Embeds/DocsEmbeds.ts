@@ -11,8 +11,7 @@ export default class DocsEmbeds {
     public static GetDocsEmbed(messageInfo: IMessageInfo, query: string, apiList: Array<IDocsApi>) {
 
         const embed = new MessageEmbed()
-            .setColor(SettingsConstants.COLORS.DEFAULT)
-            .setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            .setColor(SettingsConstants.COLORS.DEFAULT);
 
         if (apiList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
@@ -41,6 +40,8 @@ export default class DocsEmbeds {
                 }
                 embed.setDescription(description);
             }
+
+            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
         }
 
         return embed;
