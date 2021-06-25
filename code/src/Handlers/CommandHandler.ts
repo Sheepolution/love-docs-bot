@@ -14,13 +14,14 @@ import DocsHandler from './DocsHandler';
 export default class CommandHandler {
 
     public static async OnCommand(messageInfo: IMessageInfo, content: string, guild: Guild) {
-        const commandInfo = CommandUtils.ParseContentToCommand(content, guild?.GetPrefix());
+        const commandInfo = CommandUtils.ParseContentToCommand(content, guild.GetPrefix());
         messageInfo.commandInfo = commandInfo;
 
-        const command = this.GetCommand(commandInfo.command);
+        var command = this.GetCommand(commandInfo.command);
 
         if (command == null) {
-            return;
+            command = CommandConstants.COMMANDS.WIKI;
+            commandInfo.content = content.slice(guild.GetPrefix().length);
         }
 
         commandInfo.command = command[0];
