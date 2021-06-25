@@ -14,7 +14,7 @@ Change the prefix.
 
 `love>channel add/remove`
 
-Add or remove the channel where this command is used to the list of channels where the bot is active.
+Add or remove the channel where this command is used to the list of channels where the bot is active. If no channels have been added the bot can be used in all channels.
 
 `love>role [role]`
 
