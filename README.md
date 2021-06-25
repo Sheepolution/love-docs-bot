@@ -5,7 +5,7 @@ A Discord bot for querying documentation for the LÖVE API.
 [Invite the bot](https://discord.com/api/oauth2/authorize?client_id=855477819848392734&permissions=18432&scope=bot)
 
 ### How to use
-Use `love>docs [query]` to search for APIs. You can edit your message to update the bot's message.
+Use `love>api [query]` to search through the LOVE and Lua API. You can edit your message to update the bot's message.
 
 ### Mod Commands
 `love>prefix [prefix]` 
