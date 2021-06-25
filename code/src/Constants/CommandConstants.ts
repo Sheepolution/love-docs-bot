@@ -6,7 +6,7 @@ export default class CommandConstants {
         CHANNEL: ['channel'],
 
         // Docs
-        WIKI: ['wiki', 'w', 'query', 'q', 'docs', 'd'],
+        WIKI: ['api', 'a', 'wiki', 'w', 'query', 'q', 'docs', 'd'],
 
         // Generic
         HELP: ['help', 'about'],
