@@ -4,7 +4,7 @@ import RedisConstants from '../Constants/RedisConstants';
 import DocsEmbeds from '../Embeds/DocsEmbeds';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import Guild from '../Objects/Guild';
-import Love from '../Providers/Docs';
+import Docs from '../Providers/Docs';
 import { Redis } from '../Providers/Redis';
 import ChannelService from '../Services/ChannelService';
 import MessageService from '../Services/MessageService';
@@ -49,7 +49,7 @@ export default class DocsHandler {
             return;
         }
 
-        const docs = Love.QueryApi(query);
+        const docs = Docs.QueryApi(query);
 
         if (messageInfo.edit) {
             const oldMessageId = await Redis.get(this.messageKey + messageInfo.message.id);

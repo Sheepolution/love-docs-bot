@@ -1,7 +1,7 @@
 import DocsApi from '../Data/DocsApi.json';
 import IDocsApi from '../Interfaces/IDocsApi';
 
-export default class Love {
+export default class Docs {
 
     public static QueryApi(query: string): Array<IDocsApi> {
         const exact = DocsApi.filter(a => a.name.toLowerCase() == query.toLowerCase());
