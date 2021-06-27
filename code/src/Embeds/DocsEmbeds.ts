@@ -43,8 +43,9 @@ export default class DocsEmbeds {
                 } else {
                     description += `\n${EmojiConstants.BULLET.LUA} **[${api.name}](${DocsUtils.GetLuaUrl(api.name)})**`;
                 }
-                embed.setDescription(description);
             }
+
+            embed.setDescription(description);
 
             embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
         }
