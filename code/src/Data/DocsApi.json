@@ -1,6 +1,11 @@
 [
     {
         "api": "love",
+        "name": "love",
+        "description": "When beginning to write games using LÖVE, the most important parts of the API are the callbacks: love.load to do one-time setup of your game, love.update which is used to manage your game's state frame-to-frame, and love.draw which is used to render the game state onto the screen.\n\nMore interactive games will override additional callbacks in order to handle input from the user, and other aspects of a full-featured game.\n\nLÖVE provides default placeholders for these callbacks, which you can override inside your own code by creating your own function with the same name as the callback."
+    },
+    {
+        "api": "love",
         "name": "love.audio",
         "description": "Provides an interface to create noise with the user's speakers."
     },
