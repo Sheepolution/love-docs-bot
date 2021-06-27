@@ -31,7 +31,7 @@ export default class DocsEmbeds {
             var description = '';
             for (var i = 0; i < apiList.length; i++) {
                 if (i >= 10) {
-                    if (description.length > 12) {
+                    if (apiList.length > 12) {
                         description += `\nAnd ${apiList.length - i} more...`;
                         break;
                     }
