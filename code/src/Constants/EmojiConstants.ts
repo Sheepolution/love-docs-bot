@@ -11,4 +11,6 @@ export default class EmojiConstants {
         LOVE: '🔸',
         LUA: '🔹',
     };
+
+    public static readonly O_FACE = '<:O_:689653818735984666>';
 }

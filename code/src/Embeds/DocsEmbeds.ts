@@ -15,7 +15,7 @@ export default class DocsEmbeds {
 
         if (apiList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
-            embed.setDescription('\n No results found.');
+            embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
             embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
         } else if (apiList.length == 1) {
             const api = apiList[0];
