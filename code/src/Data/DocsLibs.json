@@ -1,0 +1,33 @@
+[
+    {
+        "name": "lume",
+        "author": "rxi",
+        "description": "A collection of functions for Lua, geared towards game development.",
+        "url": "https://github.com/rxi/lume",
+        "callType": ".",
+        "api": [
+            {
+                "name": "clamp",
+                "arguments": "x, min, max",
+                "description": "Returns the number `x` clamped between the numbers `min` and `max`",
+                "callable": false
+            },
+            {
+                "name": "test.round",
+                "description": "Rounds `x` to the nearest integer; rounds away from zero if we're midway between two integers. If `increment` is set then the number is rounded to the nearest increment.",
+                "example": "lume.round(2.3) -- Returns 2\nlume.round(123.4567, .1) -- Returns 123.5"
+            },
+            {
+                "name": "kaas:sign",
+                "arguments": "x",
+                "description": "Returns 1 if x is 0 or above, returns -1 when x is negative."
+            },
+            {
+                "name": "lerp",
+                "arguments": "a, b, amount",
+                "description": "Returns the linearly interpolated number between a and b, amount should be in the range of 0 - 1; if amount is outside of this range it is clamped.",
+                "example": "lume.lerp(100, 200, .5) -- Returns 150"
+            }
+        ]
+    }
+]

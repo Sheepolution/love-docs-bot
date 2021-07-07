@@ -2,6 +2,8 @@ import { Message, TextChannel } from 'discord.js';
 import CommandConstants from '../Constants/CommandConstants';
 import RedisConstants from '../Constants/RedisConstants';
 import DocsEmbeds from '../Embeds/DocsEmbeds';
+import IDocsLib from '../Interfaces/IDocsLib';
+import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import Guild from '../Objects/Guild';
 import Docs from '../Providers/Docs';
@@ -20,6 +22,9 @@ export default class DocsHandler {
         switch (messageInfo.commandInfo.commands) {
             case commands.WIKI:
                 this.OnDocs(messageInfo, guild, messageInfo.commandInfo.content);
+                break;
+            case commands.LIB:
+                this.OnLib(messageInfo, guild, messageInfo.commandInfo.content);
                 break;
             default: return false;
         }
@@ -60,6 +65,71 @@ export default class DocsHandler {
         }
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetDocsEmbed(messageInfo, query, docs), '', oldMessage);
+        if (botMessage != null) {
+            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+        }
+    }
+
+    private static async OnLib(messageInfo: IMessageInfo, guild: Guild, query: string) {
+        if (!await ChannelService.CheckChannel(messageInfo)) {
+            return;
+        }
+
+        const roleId = guild.GetRoleId();
+        if (roleId != null) {
+            if (!messageInfo.member.roles.cache.some(role => role.id == roleId)) {
+                return;
+            }
+        }
+
+        if (!query?.isFilled()) {
+            const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query documentation for Lua libraries.');
+
+            if (botMessage != null) {
+                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+            }
+
+            return;
+        }
+
+        var separator: string;
+        var libraries: Array<IDocsLib>;
+        var functions: Array<IDocsLibFunction>;
+
+        if (query.includes(':')) {
+            separator = ':';
+        } else if (query.includes('.')) {
+            separator = '.';
+        } else if (query.includes(' ')) {
+            separator = ' ';
+        }
+
+        if (separator?.isFilled()) {
+            const libraryAndFunction = query.split(separator);
+            libraries = Docs.QueryLib(libraryAndFunction[0]);
+            if (libraries.length > 1) {
+                const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${query}'.`);
+
+                if (botMessage != null) {
+                    Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+                }
+            }
+
+            functions = Docs.QueryLibFunction(libraries[0], libraryAndFunction[1]);
+
+        } else {
+            libraries = Docs.QueryLib(query);
+        }
+
+        if (messageInfo.edit) {
+            const oldMessageId = await Redis.get(this.messageKey + messageInfo.message.id);
+            var oldMessage: Message;
+            if (oldMessageId != null) {
+                oldMessage = (<TextChannel>messageInfo.channel).messages.cache.get(oldMessageId);
+            }
+        }
+
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, separator?.isFilled() ? DocsEmbeds.GetLibFunctionEmbed(messageInfo, query, libraries[0], functions) : DocsEmbeds.GetLibEmbed(messageInfo, query, libraries), '', oldMessage);
         if (botMessage != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
         }
