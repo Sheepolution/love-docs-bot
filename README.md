@@ -36,7 +36,9 @@ Use `love>lib [library] [query]` to search through a library's documentation.
 
 ### Supported libraries
 
-So far no libraries are supported. You can make a pull request to add documentation for your or someone else's library.
+[step](https://github.com/sheepolution/step)
+
+You can make a pull request to add documentation for your or someone else's library.
 
 ### Adding a library
 
