@@ -36,6 +36,7 @@ Use `love>lib [library] [query]` to search through a library's documentation.
 
 ### Supported libraries
 
+[lume](https://github.com/rxi/lume)
 [step](https://github.com/sheepolution/step)
 
 You can make a pull request to add documentation for your or someone else's library.
@@ -48,8 +49,8 @@ You can add a library by extending [DocsLibs.json](code/src/Data/DocsLibs.json).
 {
     "name": "step",
     "author": "Sheepolution",
-    "description": "A small immediate mode timer module that makes it easier to have an action execute with a certain interval or after a delay.",
     "url": "https://github.com/sheepolution/step",
+    "description": "A small immediate mode timer module that makes it easier to have an action execute with a certain interval or after a delay.",
 
     // Optional. "." by default. Should be either "." or ":".
     "callType": ".", 
