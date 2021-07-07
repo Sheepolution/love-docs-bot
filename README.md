@@ -42,7 +42,7 @@ So far no libraries are supported. You can make a pull request to add documentat
 
 You can add a library by extending [DocsLibs.json](code/src/Data/DocsApi.json). The JSON is structured as followed:
 
-```json
+```js
 {
     "name": "step",
     "author": "Sheepolution",
