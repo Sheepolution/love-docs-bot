@@ -8,7 +8,7 @@
         "api": [
             {
                 "name": "every",
-                "arguments": "duration, [max_duration]",
+                "arguments": "duration [, max_duration]",
                 "description": "Creates a timer which returns true every `duration` seconds. If `max_duration` is set the duration will be a random float between `duration` and `max_duration` every loop.",
                 "example": "timer = step.every(3)\nif timer:update(dt) then\n  print(\"This will be printed every 3 seconds\")\nend"
             },
@@ -20,19 +20,19 @@
             },
             {
                 "name": "after",
-                "arguments": "duration, [max_duration]",
+                "arguments": "duration [, max_duration]",
                 "description": "Creates a timer which continuously returns true after `duration` seconds. If `max_duration` is set the duration will be a random float between `duration` and `max_duration` every reset.",
                 "example": "timer = step.after(3)\nif timer:update(dt) then\n  print(\"After 3 seconds this will be printed every frame.\")\nend"
             },
             {
                 "name": "once",
-                "arguments": "duration, [max_duration]",
+                "arguments": "duration [, max_duration]",
                 "description": "Creates a timer which returns true once after `duration` seconds. If `max_duration` is set the duration will be a random float between `duration` and `max_duration` every reset.",
                 "example": "timer = step.once(3)\nif timer:update(dt) then\n  print(\"After 3 seconds this will be printed once.\")\nend"
             },
             {
                 "name": "during",
-                "arguments": "duration, [max_duration]",
+                "arguments": "duration [, max_duration]",
                 "description": "Creates a timer which returns true until after `duration` seconds. If `max_duration` is set the duration will be a random float between `duration` and `max_duration` every reset.",
                 "example": "timer = step.once(3)\nif timer:update(dt) then\n  print(\"This will be printed every frame until 3 seconds have passed.\")\nend"
             },
@@ -43,7 +43,7 @@
             },
             {
                 "name": "set",
-                "arguments": "t, [noreset]",
+                "arguments": "t [, noreset]",
                 "description": "Change the time for this timer. Will also reset the timer unless `noreset` is `true`.",
                 "example": "timer = step.every(5)\ntimer:set(3) --Now it will loop every 3 seconds instead."
             },
