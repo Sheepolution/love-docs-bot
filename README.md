@@ -30,11 +30,11 @@ Besides the LÖVE API, LÖVE Docs also supports querying through libraries.
 
 ### How to use
 
-Use `.lib [query]` to search for a library.
+Use `love>lib [query]` to search for a library.
 
-Use `.lib [library] [query]` to search through a library's documentation.
+Use `love>lib [library] [query]` to search through a library's documentation.
 
-### Support libraries
+### Supported libraries
 
 So far no libraries are supported. You can make a pull request to add documentation for your or someone else's library.
 
@@ -46,7 +46,7 @@ You can add a library by extending [DocsLibs.json](code/src/Data/DocsLibs.json).
 {
     "name": "step",
     "author": "Sheepolution",
-    "description": "A collection of functions for Lua, geared towards game development.",
+    "description": "A small immediate mode timer module that makes it easier to have an action execute with a certain interval or after a delay.",
     "url": "https://github.com/sheepolution/step",
 
     // Optional. "." by default. Should be either "." or ":".
