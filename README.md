@@ -40,7 +40,7 @@ So far no libraries are supported. You can make a pull request to add documentat
 
 ### Adding a library
 
-You can add a library by extending [DocsLibs.json](code/src/Data/DocsApi.json). The JSON is structured as followed:
+You can add a library by extending [DocsLibs.json](code/src/Data/DocsLibs.json). The JSON is structured as followed:
 
 ```js
 {
