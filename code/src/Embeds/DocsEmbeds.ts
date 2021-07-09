@@ -82,7 +82,7 @@ export default class DocsEmbeds {
                 }
 
                 const lib = libList[i];
-                description += `\n${EmojiConstants.BULLET.LOVE} **[${lib.name}](${lib.url}})**`;
+                description += `\n${EmojiConstants.BULLET.LOVE} **[${lib.name}](${lib.url})**`;
             }
 
             embed.setDescription(description);
