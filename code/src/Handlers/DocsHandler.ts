@@ -105,8 +105,9 @@ export default class DocsHandler {
         }
 
         if (separator?.isFilled()) {
-            const libraryAndFunction = query.split(separator);
-            libraries = Docs.QueryLib(libraryAndFunction[0]);
+            const func = query.substring(query.indexOf(separator) + 1);
+            const library = query.slice(0, func.length - 1);
+            libraries = Docs.QueryLib(library);
             if (libraries.length > 1) {
                 const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${query}'.`);
 
@@ -115,7 +116,7 @@ export default class DocsHandler {
                 }
             }
 
-            functions = Docs.QueryLibFunction(libraries[0], libraryAndFunction[1]);
+            functions = Docs.QueryLibFunction(libraries[0], func);
 
         } else {
             libraries = Docs.QueryLib(query);
