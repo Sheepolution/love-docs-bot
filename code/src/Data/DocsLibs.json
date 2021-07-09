@@ -542,5 +542,1163 @@
                 "example": "timer = step.new(4.7)\ntimer:finish()\nif timer(dt) then\n  print(\"On the first frame this will be printed and then again after 4.7 seconds.\")\nend"
             }
         ]
+    },
+    {
+        "name": "3DreamEngine",
+        "author": "3dreamengine",
+        "url": "https://github.com/3dreamengine/3DreamEngine",
+        "description": "An awesome 3D engine for LÖVE."
+    },
+    {
+        "name": "anim9",
+        "author": "excessive",
+        "url": "https://github.com/excessive/anim9",
+        "description": "3D skeletal animation library (design to be used with IQM and IQE)"
+    },
+    {
+        "name": "Brinevector3D",
+        "author": "flamendless",
+        "url": "https://github.com/flamendless/brinevector3D",
+        "description": "FFI-enabled vector library for 3D (x,y,z)"
+    },
+    {
+        "name": "bump-3dpd",
+        "author": "oniietzschan",
+        "url": "https://github.com/oniietzschan/bump-3dpd",
+        "description": "A 3D collision detection library for Lua."
+    },
+    {
+        "name": "IQE",
+        "author": "excessive",
+        "url": "https://github.com/excessive/iqe",
+        "description": "Inter-Quake Export loader (text)"
+    },
+    {
+        "name": "IQM",
+        "author": "excessive",
+        "url": "https://github.com/excessive/iqm-exm",
+        "description": "Inter-Quake Model loader (binary)"
+    },
+    {
+        "name": "love-gltf",
+        "author": "Alloyed",
+        "url": "https://gitlab.com/Alloyed/love-gltf",
+        "description": "gltf asset loader and test renderer; Supports skeletal animations and morph targets"
+    },
+    {
+        "name": "Lovox",
+        "author": "tjakka5",
+        "url": "https://github.com/tjakka5/Lovox",
+        "description": "Pseudo-3D library for working with voxels"
+    },
+    {
+        "name": "g3d",
+        "author": "groverburger",
+        "url": "https://github.com/groverburger/g3d",
+        "description": "Simple and easy 3D engine for LÖVE."
+    },
+    {
+        "name": "model_renderer",
+        "author": "xiejiangzhi",
+        "url": "https://github.com/xiejiangzhi/model_renderer",
+        "description": "a simple 3d model renderer for love2d"
+    },
+    {
+        "name": "Jumper",
+        "author": "Yonaba",
+        "url": "https://github.com/Yonaba/Jumper",
+        "description": "Grid-based pathfinding library"
+    },
+    {
+        "name": "Lua-star",
+        "author": "wesleywerner",
+        "url": "https://github.com/wesleywerner/lua-star",
+        "description": "Easy and pure Lua A* path finding"
+    },
+    {
+        "name": "astar",
+        "author": "xiejiangzhi",
+        "url": "https://github.com/xiejiangzhi/astar",
+        "description": "An other A* library. Any map(gird, point, mesh or infinite map) and support path cost."
+    },
+    {
+        "name": "andross",
+        "author": "pfirsich",
+        "url": "https://github.com/pfirsich/andross",
+        "description": "a Lua library for 2D skeletal/bone animations with a Löve backend"
+    },
+    {
+        "name": "anim8",
+        "author": "kikito",
+        "url": "https://github.com/kikito/anim8",
+        "description": "Animation library"
+    },
+    {
+        "name": "animx",
+        "author": "YoungNeer",
+        "url": "https://github.com/YoungNeer/animx",
+        "description": "A featureful Animation library for loading animations from XML files!"
+    },
+    {
+        "name": "chiro",
+        "author": "bjornbytes",
+        "url": "https://github.com/bjornbytes/chiro",
+        "description": "Convenience wrapper around [Spine](http://esotericsoftware.com)"
+    },
+    {
+        "name": "Peachy",
+        "author": "josh-perry",
+        "url": "https://github.com/josh-perry/peachy",
+        "description": "A parser/renderer for Aseprite animations in LÖVE"
+    },
+    {
+        "name": "skeletor",
+        "author": "pelevesque",
+        "url": "https://github.com/pelevesque/skeletor",
+        "description": "2D skeletal animation system"
+    },
+    {
+        "name": "Walt",
+        "author": "davisdude",
+        "url": "https://github.com/davisdude/Walt",
+        "description": "Animation library"
+    },
+    {
+        "name": "Lump",
+        "author": "sixFingers",
+        "url": "https://github.com/sixFingers/lump",
+        "description": "Adobe Flash animation runtime"
+    },
+    {
+        "name": "lovanim",
+        "author": "patrixr",
+        "url": "https://github.com/patrixr/love-animation",
+        "description": "A minimal stateful animation library"
+    },
+    {
+        "name": "SYSL-Text",
+        "author": "SystemLogoff",
+        "url": "https://github.com/SystemLogoff/SYSL-Text",
+        "description": "Text animation and automatic wrapping library based on tags"
+    },
+    {
+        "name": "Brady",
+        "author": "davisdude",
+        "url": "https://github.com/davisdude/Brady",
+        "description": "Camera library with parallax scrolling"
+    },
+    {
+        "name": "Editgrid",
+        "author": "bakpakin",
+        "url": "https://github.com/bakpakin/Editgrid",
+        "description": "Gamera and HUMP compatible scaling grid"
+    },
+    {
+        "name": "gamera",
+        "author": "kikito",
+        "url": "https://github.com/kikito/gamera",
+        "description": "Camera system"
+    },
+    {
+        "name": "hump.camera",
+        "author": "en",
+        "url": "https://hump.readthedocs.io/en/latest/camera.html",
+        "description": "Camera library with window locking and smooth camera movement interpolation"
+    },
+    {
+        "name": "STALKER-X",
+        "author": "adnzzzzZ",
+        "url": "https://github.com/adnzzzzZ/STALKER-X",
+        "description": "STALKER-X is a camera module for LÖVE"
+    },
+    {
+        "name": "FPSGraph",
+        "author": "icrawler",
+        "url": "https://github.com/icrawler/FPSGraph",
+        "description": "Small FPS graphing utility"
+    },
+    {
+        "name": "debugGraph",
+        "author": "Mechazawa",
+        "url": "https://github.com/Mechazawa/Love-Debug-Graph",
+        "description": "Small OO FPS graphing utillity based on FPSGraph"
+    },
+    {
+        "name": "Lovebird",
+        "author": "rxi",
+        "url": "https://github.com/rxi/lovebird",
+        "description": "Browser-based debug console"
+    },
+    {
+        "name": "LoveDebug",
+        "author": "Ranguna",
+        "url": "https://github.com/Ranguna/LOVEDEBUG",
+        "description": "Inline console-like debugger utility"
+    },
+    {
+        "name": "lurker",
+        "author": "rxi",
+        "url": "https://github.com/rxi/lurker",
+        "description": "Auto-swaps changed Lua files in a running game"
+    },
+    {
+        "name": "LÖVE API",
+        "author": "love2d-community",
+        "url": "https://github.com/love2d-community/love-api",
+        "description": "The complete API documentation of LÖVE in a Lua table"
+    },
+    {
+        "name": "LÖVE Build",
+        "author": "nhartland",
+        "url": "https://github.com/nhartland/love-build",
+        "description": "GitHub Action for automated cross-platform builds"
+    },
+    {
+        "name": "LÖVE TypeScript Definitions",
+        "author": "hazzard993",
+        "url": "https://github.com/hazzard993/love-typescript-definitions",
+        "description": "Write LÖVE games with TypeScript"
+    },
+    {
+        "name": "lovelier",
+        "author": "patrixr",
+        "url": "https://github.com/patrixr/lovelier",
+        "description": "A Love2D live reloader with Moonscript support"
+    },
+    {
+        "name": "Artal",
+        "author": "unXedDani",
+        "url": "https://github.com/unXedDani/Artal",
+        "description": "A .PSD parsing library for LÖVE"
+    },
+    {
+        "name": "Autobatch",
+        "author": "rxi",
+        "url": "https://github.com/rxi/autobatch",
+        "description": "Small LÖVE module to automate the use of SpriteBatches"
+    },
+    {
+        "name": "center",
+        "author": "S-Walrus",
+        "url": "https://github.com/S-Walrus/center",
+        "description": "A simple module to dynamically align and fit content to screens of any size"
+    },
+    {
+        "name": "cindy",
+        "author": "megagrump",
+        "url": "https://github.com/megagrump/cindy",
+        "description": "Use byte color values in LÖVE 11+"
+    },
+    {
+        "name": "deep",
+        "author": "Nikaoto",
+        "url": "https://github.com/Nikaoto/deep",
+        "description": "Adds Z axis; allows you to queue actions and draw calls"
+    },
+    {
+        "name": "draft",
+        "author": "pelevesque",
+        "url": "https://github.com/pelevesque/draft",
+        "description": "A module for drawing complex shapes"
+    },
+    {
+        "name": "HSLUV",
+        "author": "hsluv",
+        "url": "https://github.com/hsluv/hsluv-lua",
+        "description": "Lua implementation of HSLuv (a human-friendly alternative to HSL)"
+    },
+    {
+        "name": "Maid64",
+        "author": "adekto",
+        "url": "https://github.com/adekto/maid64",
+        "description": "Low resolution scaler for LÖVE"
+    },
+    {
+        "name": "Push",
+        "author": "Ulydev",
+        "url": "https://github.com/Ulydev/push",
+        "description": "A simple resolution-handling library for LÖVE"
+    },
+    {
+        "name": "renderplanet",
+        "author": "meric",
+        "url": "https://github.com/meric/renderplanet/",
+        "description": "realistic orthographic planet rendering"
+    },
+    {
+        "name": "svglover",
+        "author": "globalcitizen",
+        "url": "https://github.com/globalcitizen/svglover",
+        "description": "Library to import and display simple SVGs in LÖVE"
+    },
+    {
+        "name": "SYSL-Pixel",
+        "author": "SystemLogoff",
+        "url": "https://github.com/SystemLogoff/Sysl-Pixel",
+        "description": "Pixel art focused scaler for graphics, position, screen-captures and shaders"
+    },
+    {
+        "name": "Sölar",
+        "author": "JanWerder",
+        "url": "https://github.com/JanWerder/soelar",
+        "description": "a fairly simple solar system simulator"
+    },
+    {
+        "name": "Tove2d",
+        "author": "poke1024",
+        "url": "https://github.com/poke1024/tove2d",
+        "description": "Animated vector graphics for LÖVE"
+    },
+    {
+        "name": "turtle.lua",
+        "author": "arthurealike",
+        "url": "https://github.com/arthurealike/turtle.lua",
+        "description": "Turtle graphics library for LÖVE"
+    },
+    {
+        "name": "adorbs",
+        "author": "JosephShering",
+        "url": "https://github.com/JosephShering/adorbs",
+        "description": "Minimal, Functional Entity Component System"
+    },
+    {
+        "name": "Concord",
+        "author": "Tjakka5",
+        "url": "https://github.com/Tjakka5/Concord",
+        "description": "A feature-complete ECS library"
+    },
+    {
+        "name": "knife.system",
+        "author": "airstruck",
+        "url": "https://github.com/airstruck/knife/blob/master/readme/system.md",
+        "description": "Minimalist functional ECS"
+    },
+    {
+        "name": "nata",
+        "author": "tesselode",
+        "url": "https://github.com/tesselode/nata",
+        "description": "Hybrid OOP/ECS entity management"
+    },
+    {
+        "name": "tiny-ecs",
+        "author": "bakpakin",
+        "url": "https://github.com/bakpakin/tiny-ecs",
+        "description": "Entity Component System for Lua that's simple, flexible, and useful"
+    },
+    {
+        "name": "astray",
+        "author": "SiENcE",
+        "url": "https://github.com/SiENcE/astray",
+        "description": "Astray is a lua based maze, room and dungeon generation library for dungeon crawlers and roguelike video games"
+    },
+    {
+        "name": "cartographer",
+        "author": "tesselode",
+        "url": "https://github.com/tesselode/cartographer",
+        "description": "Small Tiled map loader and drawer."
+    },
+    {
+        "name": "clove",
+        "author": "YoungNeer",
+        "url": "https://github.com/YoungNeer/clove",
+        "description": "A helper library which allows you to quickly loads huge amount of assets"
+    },
+    {
+        "name": "hump",
+        "author": "vrld",
+        "url": "https://github.com/vrld/hump",
+        "description": "Collection of tools for developing games with LÖVE (Gamestates, Timers/Tweens, Vectors, Classes, Signals, Cameras). Repo is inactive but improvements are in the works at [this fork](https://github.com/HDictus/hump/tree/temp-master) (branch temp-master)"
+    },
+    {
+        "name": "iffy",
+        "author": "YoungNeer",
+        "url": "https://github.com/YoungNeer/iffy",
+        "description": "A SpriteSheet and Tileset helper library for LÖVE"
+    },
+    {
+        "name": "knife",
+        "author": "airstruck",
+        "url": "https://github.com/airstruck/knife",
+        "description": "Collection of useful micro-modules for Lua (Class, State Machines, Bind, Chain, Coroutines, Event, Memoize, Entity, Tests, Timer)"
+    },
+    {
+        "name": "shard",
+        "author": "MineGame159",
+        "url": "https://github.com/MineGame159/shard",
+        "description": "Collection of useful mini modules"
+    },
+    {
+        "name": "lovely-windows",
+        "author": "flamendless",
+        "url": "https://github.com/flamendless/lovely-windows",
+        "description": "A Window/Screen Manager Module for virtual windows."
+    },
+    {
+        "name": "love-state-switcher",
+        "author": "nekromoff",
+        "url": "https://github.com/nekromoff/love-state-switcher",
+        "description": "State switcher class for Lua LÖVE Engine"
+    },
+    {
+        "name": "lue",
+        "author": "Ulydev",
+        "url": "https://github.com/Ulydev/lue",
+        "description": "lue is a LÖVE library that allows you to display hue color effects in your game"
+    },
+    {
+        "name": "narrator",
+        "author": "astrochili",
+        "url": "https://github.com/astrochili/narrator",
+        "description": "An Ink narrative scripting language parser and runtime implementation"
+    },
+    {
+        "name": "reflowprint",
+        "author": "josefnpat",
+        "url": "https://github.com/josefnpat/reflowprint",
+        "description": "A library designed for alignment of text that is shown one character at a time"
+    },
+    {
+        "name": "roomy",
+        "author": "tesselode",
+        "url": "https://github.com/tesselode/roomy",
+        "description": "screen management library for LÖVE"
+    },
+    {
+        "name": "rotLove",
+        "author": "paulofmandown",
+        "url": "https://github.com/paulofmandown/rotLove",
+        "description": "Roguelike Toolkit in Love. A Love2D/lua port of rot.js"
+    },
+    {
+        "name": "ScreenManager",
+        "author": "rm-code",
+        "url": "https://github.com/rm-code/screenmanager",
+        "description": "Screen/State Management for the LÖVE framework"
+    },
+    {
+        "name": "shack",
+        "author": "Ulydev",
+        "url": "https://github.com/Ulydev/shack",
+        "description": "shack is a LÖVE library that lets you easily add screen effects such as shake and rotation"
+    },
+    {
+        "name": "Simple Tiled Implementation",
+        "author": "karai17",
+        "url": "https://github.com/karai17/Simple-Tiled-Implementation",
+        "description": "Tiled map loader and renderer"
+    },
+    {
+        "name": "Vivid",
+        "author": "WetDesertRock",
+        "url": "https://github.com/WetDesertRock/vivid",
+        "description": "Color math, manipulation and conversion library"
+    },
+    {
+        "name": "Yonder",
+        "author": "thenerdie",
+        "url": "https://github.com/thenerdie/Yonder",
+        "description": "A ridiculously easy to use game state management library for LOVE2D"
+    },
+    {
+        "name": "baton",
+        "author": "tesselode",
+        "url": "https://github.com/tesselode/baton",
+        "description": " Input library for LÖVE that bridges the gap between keyboard and gamepad controls"
+    },
+    {
+        "name": "boipushy",
+        "author": "adnzzzzZ",
+        "url": "https://github.com/adnzzzzZ/boipushy",
+        "description": "A simple and easy to use input handler"
+    },
+    {
+        "name": "input",
+        "author": "xiejiangzhi",
+        "url": "https://github.com/xiejiangzhi/input",
+        "description": " Simple and powerful input library. support check operation time, sequence."
+    },
+    {
+        "name": "love-microphone",
+        "author": "LPGhatguy",
+        "url": "https://github.com/LPGhatguy/love-microphone",
+        "description": "Simple microphone support for LÖVE"
+    },
+    {
+        "name": "LoveKeys",
+        "author": "SpaceCat-Chan",
+        "url": "https://github.com/SpaceCat-Chan/LoveKeys",
+        "description": "A simple input handeling library that keeps track of things for you"
+    },
+    {
+        "name": "tactile",
+        "author": "tesselode",
+        "url": "https://github.com/tesselode/tactile",
+        "description": "A straightforward and flexible input library"
+    },
+    {
+        "name": "lighter",
+        "author": "speakk",
+        "url": "https://github.com/speakk/lighter",
+        "description": "A performant dynamic light implementation with a simple API"
+    },
+    {
+        "name": "Shädows",
+        "author": "matiasah",
+        "url": "https://github.com/matiasah/shadows",
+        "description": "A Shadows & Lights engine for löve"
+    },
+    {
+        "name": "Light World",
+        "author": "tanema",
+        "url": "https://github.com/tanema/light_world.lua",
+        "description": "A lighting model"
+    },
+    {
+        "name": "Simple Love Lights",
+        "author": "dylhunn",
+        "url": "https://github.com/dylhunn/simple-love-lights",
+        "description": "A very simple raycasting light implementation"
+    },
+    {
+        "name": "Light",
+        "author": "xiejiangzhi",
+        "url": "https://github.com/xiejiangzhi/light",
+        "description": "A simple dynamic light implementation"
+    },
+    {
+        "name": "Bresenham",
+        "author": "rm-code",
+        "url": "https://github.com/rm-code/Bresenham",
+        "description": "Bresenham's line algorithm written in Lua"
+    },
+    {
+        "name": "brinevector",
+        "author": "novemberisms",
+        "url": "https://github.com/novemberisms/brinevector",
+        "description": "Standalone lightweight luajit ffi-accelerated 2D vector library for great performance"
+    },
+    {
+        "name": "Cirno's Perfect Math Library",
+        "author": "excessive",
+        "url": "https://github.com/excessive/cpml",
+        "description": "Math/intersection library designed for games"
+    },
+    {
+        "name": "delaunay",
+        "author": "Yonaba",
+        "url": "https://github.com/Yonaba/delaunay",
+        "description": "Delaunay triangulation for convex polygons"
+    },
+    {
+        "name": "hump.vector",
+        "author": "en",
+        "url": "https://hump.readthedocs.io/en/latest/vector.html",
+        "description": "Powerful 2D vector class"
+    },
+    {
+        "name": "MLib",
+        "author": "davisdude",
+        "url": "https://github.com/davisdude/mlib",
+        "description": "Math and shape-intersection detection library written in Lua. It's aim is to be robust and easy to use"
+    },
+    {
+        "name": "nvec",
+        "author": "MikuAuahDark",
+        "url": "https://github.com/MikuAuahDark/NPad93/blob/master/nvec.lua",
+        "description": "hump.vector-compatible LuaJIT FFI-accelerated 2D vector library"
+    },
+    {
+        "name": "shash",
+        "author": "rxi",
+        "url": "https://github.com/rxi/shash",
+        "description": "A simple, lightweight spatial hash for Lua"
+    },
+    {
+        "name": "vector.lua",
+        "author": "themousery",
+        "url": "https://github.com/themousery/vector.lua",
+        "description": "a simple vector library based on the PVector class from processing"
+    },
+    {
+        "name": "denver",
+        "author": "superzazu",
+        "url": "https://github.com/superzazu/denver.lua",
+        "description": "A Löve custom waveform generation library"
+    },
+    {
+        "name": "lovebpm",
+        "author": "rxi",
+        "url": "https://github.com/rxi/lovebpm",
+        "description": "A LÖVE library for syncing events to the BPM of an audio track"
+    },
+    {
+        "name": "ripple",
+        "author": "tesselode",
+        "url": "https://github.com/tesselode/ripple",
+        "description": "An audio manager with tagging support"
+    },
+    {
+        "name": "wave",
+        "author": "Ulydev",
+        "url": "https://github.com/Ulydev/wave",
+        "description": "A sound manager with audio parsing and rhythm functionalities"
+    },
+    {
+        "name": "Grease",
+        "author": "bartbes",
+        "url": "https://github.com/bartbes/love-misc-libs/tree/master/grease",
+        "description": "Networking library intended to make networking easy for lovers (TCP, UDP, Enet)  [IPv6]"
+    },
+    {
+        "name": "LoverNet",
+        "author": "josefnpat",
+        "url": "https://github.com/josefnpat/LoverNet",
+        "description": "A networking library that leverages bitser and enet [IPv4]"
+    },
+    {
+        "name": "NoobHub",
+        "author": "Overtorment",
+        "url": "https://github.com/Overtorment/NoobHub",
+        "description": "OpenSource multiplayer and network messaging [IPv6]"
+    },
+    {
+        "name": "Sock.lua",
+        "author": "camchenry",
+        "url": "https://github.com/camchenry/sock.lua",
+        "description": "A Lua networking library for LÖVE games [IPv4]"
+    },
+    {
+        "name": "löve-ws",
+        "author": "holywyvern",
+        "url": "https://github.com/holywyvern/love-ws",
+        "description": "A websocket client and server library"
+    },
+    {
+        "name": "love2d-lua-websocket",
+        "author": "flaribbit",
+        "url": "https://github.com/flaribbit/love2d-lua-websocket",
+        "description": "A simple event-driven websocket client library [IPv4]"
+    },
+    {
+        "name": "30log",
+        "author": "Yonaba",
+        "url": "https://github.com/Yonaba/30log",
+        "description": "Minified framework for object-orientation in Lua. It features named (and unnamed) classes, single inheritance and a basic support for mixins"
+    },
+    {
+        "name": "classic",
+        "author": "rxi",
+        "url": "https://github.com/rxi/classic/",
+        "description": "Tiny class module for Lua. Attempts to stay simple and provide decent performance by avoiding unnecessary over-abstraction"
+    },
+    {
+        "name": "hump.class",
+        "author": "en",
+        "url": "https://hump.readthedocs.io/en/latest/class.html",
+        "description": "Small, fast class/prototype implementation with multiple inheritance (class-commons)"
+    },
+    {
+        "name": "knife.base",
+        "author": "airstruck",
+        "url": "https://github.com/airstruck/knife/blob/master/readme/base.md",
+        "description": "Extremely minimal base class providing single inheritance and constructors."
+    },
+    {
+        "name": "middleclass",
+        "author": "kikito",
+        "url": "https://github.com/kikito/middleclass",
+        "description": "Simple OOP library for Lua; has inheritance, metamethods (operators), class variables and weak mixin support (class-commons)"
+    },
+    {
+        "name": "muun",
+        "author": "megagrump",
+        "url": "https://github.com/megagrump/muun",
+        "description": "Moonscript compatible class implementation"
+    },
+    {
+        "name": "selene",
+        "author": "novafacing",
+        "url": "https://github.com/novafacing/selene",
+        "description": "Project template for writing games in Moonscript instead of Lua without precompiling"
+    },
+    {
+        "name": "jprof",
+        "author": "pfirsich",
+        "url": "https://github.com/pfirsich/jprof",
+        "description": "Profiling library/tool for LÖVE"
+    },
+    {
+        "name": "Piefiller",
+        "author": "Polynominal",
+        "url": "https://github.com/Polynominal/Piefiller",
+        "description": "Graphical profiler for LÖVE"
+    },
+    {
+        "name": "profile.lua",
+        "author": "itraykov",
+        "url": "https://bitbucket.org/itraykov/profile.lua/src/",
+        "description": "Profile.lua is a small, non-intrusive module for finding bottlenecks in your Lua code"
+    },
+    {
+        "name": "ProFi",
+        "author": "rm-code",
+        "url": "https://gist.github.com/rm-code/383c98a6af04652ed9f39b7ae536bcc5",
+        "description": "A simple lua profiler that works with LuaJIT and prints a pretty report file in columns"
+    },
+    {
+        "name": "breezefield",
+        "author": "HDictus",
+        "url": "https://github.com/HDictus/breezefield",
+        "description": "A lightweight and easy love.physics wrapper"
+    },
+    {
+        "name": "Bump",
+        "author": "kikito",
+        "url": "https://github.com/kikito/bump.lua",
+        "description": "Collision detection library for Lua"
+    },
+    {
+        "name": "HC",
+        "author": "en",
+        "url": "https://hc.readthedocs.io/en/latest/",
+        "description": "Collision detection with arbitrary polygons; allows rotation of objects"
+    },
+    {
+        "name": "loveblobs",
+        "author": "exezin",
+        "url": "https://github.com/exezin/loveblobs",
+        "description": "A softbody library with support for both dynamic and static arbitrary softbodies."
+    },
+    {
+        "name": "Windfield",
+        "author": "adnzzzzZ",
+        "url": "https://github.com/adnzzzzZ/windfield",
+        "description": "Physics module wrapper for LÖVE"
+    },
+    {
+        "name": "LoveDos",
+        "author": "rxi",
+        "url": "https://github.com/rxi/lovedos",
+        "description": "A Lua framework for 2D DOS games, implementing a subset of the LÖVE API"
+    },
+    {
+        "name": "LoveFTW",
+        "author": "T-BoneISS",
+        "url": "https://bitbucket.org/T-BoneISS/l-veftw",
+        "description": "Work-in-progress port to Windows phone 8.1"
+    },
+    {
+        "name": "LovePotion",
+        "author": "TurtleP",
+        "url": "https://github.com/TurtleP/LovePotion",
+        "description": "Unofficial work-in-progress implementation of the LÖVE API for Nintendo 3DS and Nintendo Switch Homebrew"
+    },
+    {
+        "name": "LOVE-WrapLua",
+        "author": "LukeZGD",
+        "url": "https://github.com/LukeZGD/LOVE-WrapLua",
+        "description": "A small and simple wrapper for OneLua, lpp-vita, and Lua Player PS3"
+    },
+    {
+        "name": "Love.js",
+        "author": "Davidobot",
+        "url": "https://github.com/Davidobot/love.js",
+        "description": "LÖVE ported to the web using Emscripten"
+    },
+    {
+        "name": "LÖVR",
+        "author": "bjornbytes",
+        "url": "https://github.com/bjornbytes/lovr",
+        "description": "LÖVE for virtual reality devices"
+    },
+    {
+        "name": "Love-Snap-Template",
+        "author": "popey",
+        "url": "https://github.com/popey/love-snap-template",
+        "description": "A template for packaging LÖVE games for distribution in the Snappy Store"
+    },
+    {
+        "name": "AppImageKit",
+        "author": "AppImage",
+        "url": "https://github.com/AppImage/AppImageKit",
+        "description": "Using AppImageKit you can package LÖVE games as AppImages that run on common Linux-based operating systems, such as RHEL, CentOS, Ubuntu, Fedora, debian and derivatives; one game = one file"
+    },
+    {
+        "name": "binser",
+        "author": "bakpakin",
+        "url": "https://github.com/bakpakin/binser",
+        "description": "Customizable Lua Serializer"
+    },
+    {
+        "name": "bitser",
+        "author": "gvx",
+        "url": "https://github.com/gvx/bitser",
+        "description": "Serializes and deserializes Lua values with LuaJIT"
+    },
+    {
+        "name": "cdata",
+        "author": "excessive",
+        "url": "https://github.com/excessive/cdata",
+        "description": "Serialize between Lua data and C data using LuaJIT's FFI"
+    },
+    {
+        "name": "knife.serialize",
+        "author": "airstruck",
+        "url": "https://github.com/airstruck/knife/blob/master/readme/serialize.md",
+        "description": "Serialize data as a Lua script"
+    },
+    {
+        "name": "Lady",
+        "author": "gvx",
+        "url": "https://github.com/gvx/Lady",
+        "description": "Saving and loading savegames; based on Ser"
+    },
+    {
+        "name": "moonblob",
+        "author": "megagrump",
+        "url": "https://github.com/megagrump/moonblob",
+        "description": "Binary serialization and data parsing library"
+    },
+    {
+        "name": "Ser",
+        "author": "gvx",
+        "url": "https://github.com/gvx/Ser",
+        "description": "Fast, robust, richly-featured table serialization library for Lua"
+    },
+    {
+        "name": "Smallfolk",
+        "author": "gvx",
+        "url": "https://github.com/gvx/Smallfolk",
+        "description": "A fast, robust, secure, richly-featured table serialization library for Lua"
+    },
+    {
+        "name": "trickle",
+        "author": "bjornbytes",
+        "url": "https://github.com/bjornbytes/trickle",
+        "description": "A bitstream library focused on high compression for use in networking"
+    },
+    {
+        "name": "LoveShaderConverter",
+        "author": "tsteinholz",
+        "url": "https://github.com/tsteinholz/LoveShaderConverter",
+        "description": "Convert Shadertoy Shader files to LÖVE GLSL Files with handy utilities for infinite purposes"
+    },
+    {
+        "name": "Moonshine",
+        "author": "vrld",
+        "url": "https://github.com/vrld/moonshine",
+        "description": "Repository of common post-processing effects like blur, vignette, color-grading, etc."
+    },
+    {
+        "name": "busted",
+        "author": "Olivine-Labs",
+        "url": "https://github.com/Olivine-Labs/busted",
+        "description": "Simple unit-testing framework with customizable assertions"
+    },
+    {
+        "name": "knife.test",
+        "author": "airstruck",
+        "url": "https://github.com/airstruck/knife/blob/master/readme/test.md",
+        "description": "Fixture-free test framework"
+    },
+    {
+        "name": "Luassert",
+        "author": "Olivine-Labs",
+        "url": "https://github.com/Olivine-Labs/luassert",
+        "description": "Extends `assert()` with additional, customizable tests"
+    },
+    {
+        "name": "Lunatest",
+        "author": "silentbicycle",
+        "url": "https://github.com/silentbicycle/lunatest",
+        "description": "xUnit-style randomized unit testing framework"
+    },
+    {
+        "name": "lust",
+        "author": "bjornbytes",
+        "url": "https://github.com/bjornbytes/lust",
+        "description": "Minimal test framework"
+    },
+    {
+        "name": "Specl",
+        "author": "gvvaughan",
+        "url": "http://gvvaughan.github.io/specl/",
+        "description": "Behavior Driven Development (BDD) tool"
+    },
+    {
+        "name": "Telescope",
+        "author": "telescope",
+        "url": "http://norman.github.io/telescope/",
+        "description": "Highly-customizable BDD-style testing library"
+    },
+    {
+        "name": "Flux",
+        "author": "rxi",
+        "url": "https://github.com/rxi/flux",
+        "description": "A fast, lightweight tweening library for Lua"
+    },
+    {
+        "name": "hump.timer",
+        "author": "en",
+        "url": "https://hump.readthedocs.io/en/latest/timer.html",
+        "description": "Timer and tweening library with flexible tweening methods"
+    },
+    {
+        "name": "knife.timer",
+        "author": "airstruck",
+        "url": "https://github.com/airstruck/knife/blob/master/readme/timer.md",
+        "description": "Create timers and tweens with ease."
+    },
+    {
+        "name": "tick",
+        "author": "rxi",
+        "url": "https://github.com/rxi/tick",
+        "description": "Lua module for delaying function calls"
+    },
+    {
+        "name": "tween.lua",
+        "author": "kikito",
+        "url": "https://github.com/kikito/tween.lua",
+        "description": "Tweening/Easing/Interpolating functions for Lua inspired on jQuery's animate method"
+    },
+    {
+        "name": "CatUI",
+        "author": "wilhantian",
+        "url": "https://github.com/wilhantian/catui",
+        "description": "A very light-weight GUI library for LÖVE"
+    },
+    {
+        "name": "GOOi",
+        "author": "tavuntu",
+        "url": "https://github.com/tavuntu/gooi",
+        "description": "Android-oriented GUI library"
+    },
+    {
+        "name": "Gspöt",
+        "author": "pgimeno",
+        "url": "https://notabug.org/pgimeno/Gspot",
+        "description": "A stateful GUI lib for LÖVE"
+    },
+    {
+        "name": "Hanker",
+        "author": "Alloyed",
+        "url": "https://gitlab.com/Alloyed/hanker",
+        "description": "Maximalist immediate mode-ish UI elements; gamepad-friendly"
+    },
+    {
+        "name": "LoveFrames Fork",
+        "author": "linux-man",
+        "url": "https://github.com/linux-man/LoveFrames",
+        "description": "11.2 Fork of a GUI library"
+    },
+    {
+        "name": "Love Imgui",
+        "author": "slages",
+        "url": "https://github.com/slages/love-imgui",
+        "description": "imgui module for the LÖVE game engine"
+    },
+    {
+        "name": "Löve-Nuklear",
+        "author": "keharriso",
+        "url": "https://github.com/keharriso/love-nuklear",
+        "description": "Lightweight immediate mode GUI for LÖVE games"
+    },
+    {
+        "name": "Patchy",
+        "author": "excessive",
+        "url": "https://github.com/excessive/patchy",
+        "description": "9patch library"
+    },
+    {
+        "name": "Polywell",
+        "author": "technomancy",
+        "url": "https://gitlab.com/technomancy/polywell",
+        "description": "A highly-configurable text editor / coding tool written in Lua that runs on the LÖVE game engine."
+    },
+    {
+        "name": "SafeWord",
+        "author": "josefnpat",
+        "url": "https://github.com/josefnpat/safeword",
+        "description": "An overscan detection library for LÖVE"
+    },
+    {
+        "name": "Slab",
+        "author": "coding-jackalope",
+        "url": "https://github.com/coding-jackalope/Slab",
+        "description": "Slab is an immediate mode GUI toolkit for the LÖVE framework."
+    },
+    {
+        "name": "SUIT",
+        "author": "vrld",
+        "url": "https://github.com/vrld/SUIT",
+        "description": "small immediate mode GUI library"
+    },
+    {
+        "name": "ListBox",
+        "author": "darkmetalic",
+        "url": "https://github.com/darkmetalic/ListBox",
+        "description": "A dynamic ListBox for LÖVE that supports touch, mouse, and keyboard inputs"
+    },
+    {
+        "name": "Lynx",
+        "author": "TSnake41",
+        "url": "https://gitlab.com/TSnake41/lynx",
+        "description": "Very-lightweight list-based UI library."
+    },
+    {
+        "name": "YALG",
+        "author": "sasszem",
+        "url": "https://github.com/sasszem/yalg",
+        "description": "A very simple, cross-platform, reactive UI for last minute UIs."
+    },
+    {
+        "name": "Helium",
+        "author": "qeffects",
+        "url": "https://github.com/qeffects/helium",
+        "description": "A modern, customizable, high performance retained UI framework."
+    },
+    {
+        "name": "ArrayRotation",
+        "author": "rm-code",
+        "url": "https://gist.github.com/rm-code/4118d4a97d8cde16952199d94b84ead0",
+        "description": "Rotation of two dimensional arrays (square and non-square)"
+    },
+    {
+        "name": "cargo",
+        "author": "bjornbytes",
+        "url": "https://github.com/bjornbytes/cargo",
+        "description": "Asset manager"
+    },
+    {
+        "name": "chance.lua",
+        "author": "ejmr",
+        "url": "http://ejmr.github.io/chance.lua/",
+        "description": "Library for generating random data"
+    },
+    {
+        "name": "colorchanger",
+        "author": "santoslove",
+        "url": "https://github.com/santoslove/colorchanger",
+        "description": "Change the colors in your LÖVE game"
+    },
+    {
+        "name": "Flirt",
+        "author": "Alloyed",
+        "url": "https://github.com/Alloyed/flirt",
+        "description": "LÖVE version manager; allows to switch between multiple versions of engine on same machine"
+    },
+    {
+        "name": "GifCat",
+        "author": "WetDesertRock",
+        "url": "https://github.com/WetDesertRock/GifCat",
+        "description": "A simple module for saving gifs from LÖVE"
+    },
+    {
+        "name": "hex2color",
+        "author": "S-Walrus",
+        "url": "https://github.com/S-Walrus/hex2color/",
+        "description": "A single function to use HEX color values"
+    },
+    {
+        "name": "i18n",
+        "author": "excessive",
+        "url": "https://github.com/excessive/i18n",
+        "description": "Internationalization library designed to help localize your game"
+    },
+    {
+        "name": "Ini Parser",
+        "author": "FivosM",
+        "url": "https://github.com/FivosM/ini_parser",
+        "description": "General purpose ini configuration parser"
+    },
+    {
+        "name": "log.lua",
+        "author": "rxi",
+        "url": "https://github.com/rxi/log.lua",
+        "description": "Library for configurable log output"
+    },
+    {
+        "name": "love-loader",
+        "author": "kikito",
+        "url": "https://github.com/kikito/love-loader",
+        "description": "Threaded resource loading"
+    },
+    {
+        "name": "love2d-assets-loader",
+        "author": "Yonaba",
+        "url": "https://github.com/Yonaba/love2d-assets-loader",
+        "description": "Assets Loader"
+    },
+    {
+        "name": "love-pe",
+        "author": "RamiLego4Game",
+        "url": "https://github.com/RamiLego4Game/love-pe",
+        "description": "A tool made in LÖVE for changing LÖVE icon itself"
+    },
+    {
+        "name": "lovely-engine",
+        "author": "vinnyhorgan",
+        "url": "https://github.com/vinnyhorgan/lovely-engine",
+        "description": "A tool that makes setting up and using Love2d easier and with Moonscript support"
+    },
+    {
+        "name": "Lily",
+        "author": "MikuAuahDark",
+        "url": "https://github.com/MikuAuahDark/lily",
+        "description": "Async Asset Loader"
+    },
+    {
+        "name": "luasteam",
+        "author": "uspgamedev",
+        "url": "https://github.com/uspgamedev/luasteam",
+        "description": "Lua bindings for the Steamworks API"
+    },
+    {
+        "name": "Luvent",
+        "author": "ejmr",
+        "url": "https://github.com/ejmr/Luvent",
+        "description": "Simple event-driven programming"
+    },
+    {
+        "name": "nativefiledialog",
+        "author": "Alloyed",
+        "url": "https://github.com/Alloyed/nativefiledialog/tree/master/lua",
+        "description": "Open a file picker on Windows/Mac/Linux"
+    },
+    {
+        "name": "nativefs",
+        "author": "megagrump",
+        "url": "https://github.com/megagrump/nativefs",
+        "description": "Read and write files outside of LÖVE's allowed paths"
+    },
+    {
+        "name": "ParticleEditor",
+        "author": "MusouCrow",
+        "url": "https://github.com/MusouCrow/ParticleEditor",
+        "description": "An editor of particle for LÖVE"
+    },
+    {
+        "name": "particle-system-playground",
+        "author": "santoslove",
+        "url": "https://github.com/santoslove/particle-system-playground",
+        "description": "A basic LÖVE particle system editor"
+    },
+    {
+        "name": "splashy",
+        "author": "videah",
+        "url": "https://github.com/videah/splashy",
+        "description": "Splash Screen Library"
+    },
+    {
+        "name": "ShakeDetectorLua",
+        "author": "azoyan",
+        "url": "https://github.com/azoyan/ShakeDetectorLua",
+        "description": "uses accelerometer data for shake device detection written in Lua"
+    },
+    {
+        "name": "tick",
+        "author": "bjornbytes",
+        "url": "https://github.com/bjornbytes/tick",
+        "description": "Useful timing tweaks for LÖVE's run loop"
     }
 ]
