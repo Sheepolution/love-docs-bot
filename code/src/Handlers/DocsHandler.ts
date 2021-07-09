@@ -106,8 +106,8 @@ export default class DocsHandler {
             const func = query.substring(query.indexOf(separator) + 1);
             const library = query.slice(0, -func.length - 1);
             libraries = Docs.QueryLib(library);
-            if (libraries.length > 1) {
-                const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${query}'.`, false);
+            if (libraries.length == 0 || libraries.length > 1) {
+                const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${library}'.`, false);
 
                 if (botMessage != null) {
                     Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
