@@ -453,7 +453,7 @@
             },
             {
                 "name": "mathx.normalize_angle",
-                "callable": false,
+                "arguments": "a",
                 "description": "Normalize angle onto the interval [-math.pi, math.pi)\nSo each angle only has a single value representing it"
             },
             {
