@@ -54,6 +54,8 @@ You can add a library by extending [DocsLibs.json](code/src/Data/DocsLibs.json).
 
     // Optional. "." by default. Should be either "." or ":".
     "callType": ".", 
+
+    // Optional.
     "api": [
         {
             "name": "every",
