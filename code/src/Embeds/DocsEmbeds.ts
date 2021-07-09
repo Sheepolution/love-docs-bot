@@ -66,7 +66,7 @@ export default class DocsEmbeds {
             embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
         } else if (libList.length == 1) {
             const lib = libList[0];
-            embed.setAuthor(lib.author);
+            embed.setAuthor(`Made by ${lib.author}`);
             embed.setURL(lib.url);
             embed.setTitle(lib.name);
             embed.setDescription(lib.description);
