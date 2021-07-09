@@ -6,5 +6,5 @@ export default interface IDocsError {
     description: string;
     url: string;
     callType?: string;
-    api: Array<IDocsLibFunction>
+    api?: Array<IDocsLibFunction>
 }

@@ -25,6 +25,10 @@ export default class Docs {
     }
 
     public static QueryLibFunction(lib: IDocsLib, query: string): Array<IDocsLibFunction> {
+        if (lib.api == null) {
+            return [];
+        }
+
         const exactFunction = lib.api.filter(a => a.name.toLowerCase() == query.toLowerCase());
         if (exactFunction.length == 1) {
             return exactFunction;
