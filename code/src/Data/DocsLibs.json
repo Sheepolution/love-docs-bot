@@ -356,6 +356,139 @@
         ]
     },
     {
+        "name": "batteries",
+        "author": "1bardesign",
+        "url": "https://github.com/1bardesign/batteries",
+        "description": "batteries fills out lua's sparse standard library a little, and provides implementations of common algorithms and data structures useful for games.",
+        "api": [
+            {
+                "name": "mathx.wrap",
+                "arguments": "v, lo, hi",
+                "description": "Wrap v around range [lo, hi)"
+            },
+            {
+                "name": "mathx.wrap_index",
+                "arguments": "i, t",
+                "description": "Wrap i around the indices of t"
+            },
+            {
+                "name": "mathx.clamp",
+                "arguments": "v, lo, hi",
+                "description": "Clamp v to range [lo, hi]"
+            },
+            {
+                "name": "mathx.clamp01",
+                "arguments": "v",
+                "description": "Clamp v to range [0, 1]"
+            },
+            {
+                "name": "mathx.round",
+                "arguments": "v",
+                "description": "Round v to nearest whole, away from zero"
+            },
+            {
+                "name": "mathx.to_one_in",
+                "arguments": "v, x",
+                "description": "Round v to one-in x"
+            },
+            {
+                "name": "mathx.to_precision",
+                "arguments": "v, decimal_points",
+                "description": "Round v to a given decimal precision"
+            },
+            {
+                "name": "mathx.sign",
+                "arguments": "v",
+                "description": "0, 1, -1 sign of a scalar"
+            },
+            {
+                "name": "mathx.lerp",
+                "arguments": "a, b, t",
+                "description": "Linear interpolation between a and b"
+            },
+            {
+                "name": "mathx.lerp_eps",
+                "arguments": "a, b, t, eps",
+                "description": "Linear interpolation with a minimum \"final step\" distance\nUseful for making sure dynamic lerps do actually reach their final destination"
+            },
+            {
+                "name": "mathx.bilerp",
+                "arguments": "a, b, c, d, u, v",
+                "description": "Bilinear interpolation between 4 samples"
+            },
+            {
+                "name": "mathx.smoothstep",
+                "arguments": "v",
+                "description": "Classic smoothstep\n(Only \"safe\" for 0-1 range)"
+            },
+            {
+                "name": "mathx.smootherstep",
+                "arguments": "v",
+                "description": "Classic smootherstep; zero 2nd order derivatives at 0 and 1\n(Only safe for 0-1 range)"
+            },
+            {
+                "name": "mathx.random_sign",
+                "arguments": "_r",
+                "description": "Return a random sign"
+            },
+            {
+                "name": "mathx.random_lerp",
+                "arguments": "min, max, _r",
+                "description": "Return a random value between two numbers (continuous)"
+            },
+            {
+                "name": "mathx.isnan",
+                "arguments": "v",
+                "description": "Nan checking"
+            },
+            {
+                "name": "mathx.tau",
+                "callable": false,
+                "description": "Superior constant handy for expressing things in turns"
+            },
+            {
+                "name": "mathx.normalise_angle",
+                "arguments": "a",
+                "description": "Normalise angle onto the interval [-math.pi, math.pi)\nSo each angle only has a single value representing it"
+            },
+            {
+                "name": "mathx.normalize_angle",
+                "callable": false,
+                "description": "Normalize angle onto the interval [-math.pi, math.pi)\nSo each angle only has a single value representing it"
+            },
+            {
+                "name": "mathx.angle_difference",
+                "arguments": "a, b",
+                "description": "Get the normalised difference between two angles"
+            },
+            {
+                "name": "mathx.lerp_angle",
+                "arguments": "a, b, t",
+                "description": "Mathx.lerp equivalent for angles"
+            },
+            {
+                "name": "mathx.lerp_angle_eps",
+                "arguments": "a, b, t, eps",
+                "description": "Mathx.lerp_eps equivalent for angles"
+            },
+            {
+                "name": "mathx.rotate",
+                "arguments": "x, y, r",
+                "description": "Rotate a point around the origin by an angle"
+            },
+            {
+                "name": "mathx.length",
+                "arguments": "x, y",
+                "description": "Get the length of a vector from the origin"
+            },
+            {
+                "name": "mathx.distance",
+                "arguments": "x1, y1, x2, y2",
+                "description": "Get the distance between two points"
+            }
+        ]
+    },
+    {
         "name": "step",
         "author": "Sheepolution",
         "url": "https://github.com/sheepolution/step",
