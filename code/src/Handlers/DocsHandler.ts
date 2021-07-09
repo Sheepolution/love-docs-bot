@@ -100,8 +100,6 @@ export default class DocsHandler {
             separator = ':';
         } else if (query.includes('.')) {
             separator = '.';
-        } else if (query.includes(' ')) {
-            separator = ' ';
         }
 
         if (separator?.isFilled()) {
