@@ -1672,6 +1672,34 @@
         "description": "Read and write files outside of LÖVE's allowed paths"
     },
     {
+        "name": "ngrading",
+        "author": "MikuAuahDark",
+        "url": "https://github.com/MikuAuahDark/NPad93/tree/master/ngrading",
+        "description": "NPad Color Grading, provides easy color grading for your post-processing needs.",
+        "api": [
+            {
+                "name": "load",
+                "arguments": "image, pixelsPerCell",
+                "description": "Create new `ColorGrading` object from specified RGB lookup-table."
+            },
+            {
+                "name": "getShader",
+                "arguments": "",
+                "description": "Get the internal shader string used for the color grading effect."
+            },
+            {
+                "name": "ColorGrading:apply",
+                "arguments": "",
+                "description": "Set the shader to color grading shader. Any subsequent drawing will use the color grading shader."
+            },
+            {
+                "name": "ColorGrading:setupShaderData",
+                "arguments": "[shader]",
+                "description": "Prepares the specified (or active) shader to apply color grading data."
+            }
+        ]
+    },
+    {
         "name": "ParticleEditor",
         "author": "MusouCrow",
         "url": "https://github.com/MusouCrow/ParticleEditor",
