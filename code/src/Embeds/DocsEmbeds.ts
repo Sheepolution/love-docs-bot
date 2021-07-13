@@ -105,7 +105,7 @@ export default class DocsEmbeds {
             embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
         } else if (functionList.length == 1) {
             const func = functionList[0];
-            embed.setTitle(`${DocsUtils.GetLibFunctionName(lib, func)}${func.callable == false ? '' : `${func.arguments == null ? '()' : `( ${func.arguments} )`}`}`);
+            embed.setTitle(`${DocsUtils.GetLibFunctionName(lib, func)}${func.callable == false ? '' : `${!func.arguments?.isFilled() ? '()' : `( ${func.arguments} )`}`}`);
             embed.setDescription(func.description);
             if (func.example) {
                 embed.addField('Example', `\`\`\`lua\n${func.example}\n\`\`\``);
