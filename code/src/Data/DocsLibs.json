@@ -1162,6 +1162,89 @@
         "description": "OpenSource multiplayer and network messaging [IPv6]"
     },
     {
+        "name": "NLay",
+        "author": "MikuAuahDark",
+        "url": "https://github.com/MikuAuahDark/NPad93/blob/master/nlay.lua",
+        "description": "NLay is layouting library inspired by the flexibility of Android's ConstraintLayout.",
+        "api": [
+            {
+                "name": "inside",
+                "arguments": "constraint [, padding]",
+                "description": "Create new `Inside` object (constraint with padding information), used to construct `Constraint` object later.",
+                "example": "local inRoot = NLay.inside(NLay)"
+            },
+            {
+                "name": "update",
+                "arguments": "x, y, w, h",
+                "description": "Update the root constraint dimensions.",
+                "example": "NLay.update(love.window.getSafeArea())"
+            },
+            {
+                "name": "max",
+                "arguments": "...",
+                "description": "Create new constraint whose the size and the position is based on bounding box of the other constraints.",
+                "example": "local maxConstraint = NLay.max(con1, con2, con3, con4)"
+            },
+            {
+                "name": "line",
+                "arguments": "constraint, direction, measurement, value",
+                "description": "Create new guideline constraint.",
+                "example": "local guideline = NLay.line(NLay, \"horizontal\", \"percent\", 0.25)"
+            },
+            {
+                "name": "Inside:constraint",
+                "arguments": "top, left, bottom, right",
+                "description": "Create new `Constraint` object. At least contain 1 horizontal and 1 vertical constraints is required.",
+                "example": "local topRightAlignConstraint = inRoot:constraint(NLay, nil, nil, NLay)"
+            },
+            {
+                "name": "BaseConstraint:get",
+                "arguments": "[offx [, offy]]",
+                "description": "Retrieve the positions and the dimensions of constraint.",
+                "example": "love.graphics.rectangle(\"fill\", constraint:get())"
+            },
+            {
+                "name": "Constraint:into",
+                "arguments": "top, left, bottom, right",
+                "description": "This function tells to NOT use the opposite sides of the constraint for constraint at top, left, bottom, and/or right.",
+                "example": "local constraint = inRoot:constraint(base, base):into(false, true)"
+            },
+            {
+                "name": "Constraint:margin",
+                "arguments": "margin",
+                "description": "Sets the constraint margin.",
+                "example": "constraint:margin(10) -- sets margin for all sides\nconstraint:margin({10, 0, 0, 10}) -- sets margin for top right sides"
+            },
+            {
+                "name": "Constraint:size",
+                "arguments": "width, height",
+                "description": "Sets the constraint width and height.",
+                "example": "constraint:size(48, 48) -- fixed size\nconstraint:size(0, 48) -- width is calculated from left and right constraint"
+            },
+            {
+                "name": "Constraint:bias",
+                "arguments": "horizontal, vertical",
+                "description": "Set the constraint bias.",
+                "example": "constraint:bias(0.5, 0.75) -- places the constraint at horizontal center and 3/4 vertical"
+            },
+            {
+                "name": "Constraint:forceIn",
+                "arguments": "force",
+                "description": "**Niche-case function!** Force the \"into\" flags to be determined by user even if it may result as invalid constraint."
+            },
+            {
+                "name": "Constraint:tag",
+                "arguments": "data",
+                "description": "Tag this constraint with user-specific data."
+            },
+            {
+                "name": "Constraint:getTag",
+                "arguments": "",
+                "description": "Retrieve tag data previously set from constraint."
+            }
+        ]
+    },
+    {
         "name": "Sock.lua",
         "author": "camchenry",
         "url": "https://github.com/camchenry/sock.lua",
@@ -1670,6 +1753,34 @@
         "author": "megagrump",
         "url": "https://github.com/megagrump/nativefs",
         "description": "Read and write files outside of LÖVE's allowed paths"
+    },
+    {
+        "name": "ngrading",
+        "author": "MikuAuahDark",
+        "url": "https://github.com/MikuAuahDark/NPad93/tree/master/ngrading",
+        "description": "NPad Color Grading, provides easy color grading for your post-processing needs.",
+        "api": [
+            {
+                "name": "load",
+                "arguments": "image, pixelsPerCell",
+                "description": "Create new `ColorGrading` object from specified RGB lookup-table."
+            },
+            {
+                "name": "getShader",
+                "arguments": "",
+                "description": "Get the internal shader string used for the color grading effect."
+            },
+            {
+                "name": "ColorGrading:apply",
+                "arguments": "",
+                "description": "Set the shader to color grading shader. Any subsequent drawing will use the color grading shader."
+            },
+            {
+                "name": "ColorGrading:setupShaderData",
+                "arguments": "[shader]",
+                "description": "Prepares the specified (or active) shader to apply color grading data."
+            }
+        ]
     },
     {
         "name": "ParticleEditor",
