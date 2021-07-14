@@ -1829,5 +1829,5 @@
         "author": "FlamingArr",
         "url": "https://github.com/FlamingArr/TVec",
         "description": "Pooled, FFI-ed Vector library for Lua"
-    },
+    }
 ]
