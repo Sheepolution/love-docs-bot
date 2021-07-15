@@ -362,9 +362,36 @@
         "description": "batteries fills out lua's sparse standard library a little, and provides implementations of common algorithms and data structures useful for games.",
         "api": [
             {
+                "name": "assert:some",
+                "arguments": "v, msg, stack_level",
+                "description": "assert a value is not nil, returns the value"
+            },
+            {
+                "name": "assert:equal",
+                "arguments": "a, b, msg, stack_level",
+                "description": "assert two values are equal"
+            },
+            {
+                "name": "assert:not_equal",
+                "arguments": "a, b, msg, stack_level",
+                "description": "assert two values are not equal"
+            },
+            {
+                "name": "assert:type",
+                "arguments": "a, t, msg, stack_level",
+                "description": "assert a value is of a certain type"
+            },
+            {
+                "name": "assert:nop",
+                "arguments": "",
+                "description": "Replace everything in assert with nop functions that just return their second argument, for near-zero overhead on release"
+            },
+            
+            
+            {
                 "name": "mathx.wrap",
                 "arguments": "v, lo, hi",
-                "description": "Wrap v around range [lo, hi)"
+                "description": "Wrap v around range [lo, hi]"
             },
             {
                 "name": "mathx.wrap_index",
@@ -485,6 +512,200 @@
                 "name": "mathx.distance",
                 "arguments": "x1, y1, x2, y2",
                 "description": "Get the distance between two points"
+            },
+            
+            
+            {
+                "name": "stringx.split",
+                "arguments": "self, delim",
+                "description": "Split a string on a delimiter into an ordered table"
+            },
+            {
+                "name": "stringx.trim",
+                "arguments": "s",
+                "description": "Trim all whitespace off the head and tail of a string\nSpecifically trims space, tab, newline, and carriage return characters\nIgnores form feeds, vertical tabs, and backspaces"
+            },
+            {
+                "name": "stringx.ltrim",
+                "arguments": "s",
+                "description": "Trim the start of a string"
+            },
+            {
+                "name": "stringx.rtrim",
+                "arguments": "s",
+                "description": "Trim the end of a string"
+            },
+            {
+                "name": "stringx.deindent",
+                "arguments": "s, keep_trailing_empty",
+                "description": "Remove identation from a string"
+            },
+            {
+                "name": "stringx.apply_template",
+                "arguments": "s, sub",
+                "description": "Apply a template to a string\nie ('hello $name'):format({name = 'tom'}) == 'hello tom'"
+            },
+            {
+                "name": "stringx.contains",
+                "arguments": "haystack, needle",
+                "description": "Check if a given string contains another (without garbage)"
+            },
+            {
+                "name": "stringx.starts_with",
+                "arguments": "s, prefix",
+                "description": "Check if a given string starts with another (without garbage)"
+            },
+            {
+                "name": "stringx.ends_with",
+                "arguments": "s, suffix",
+                "description": "Check if a given string ends with another (without garbage)"
+            },
+            
+            
+            {
+                "name": "functional.identity",
+                "arguments": "v",
+                "description": "The identity function, returns the value"
+            },
+            {
+                "name": "functional.foreach",
+                "arguments": "t, f",
+                "description": "Simple sequential iteration, f is called for all elements of t\nf can return non-nil to break the loop (and return the value)"
+            },
+            {
+                "name": "functional.reduce",
+                "arguments": "t, seed, f",
+                "description": "Iteratively performs a left to right reduction of t using f, with seed as the initial value"
+            },
+            {
+                "name": "functional.map",
+                "arguments": "t, f",
+                "description": "Maps a sequence {a, b, c} -> {f(a), f(b), f(c)}, automatically drops any nils"
+            },
+            {
+                "name": "functional.map_inplace",
+                "arguments": "t, f",
+                "description": "Maps a sequence inplace, modifying it {a, b, c} -> {f(a), f(b), f(c)}"
+            },
+            {
+                "name": "functional.filter",
+                "arguments": "t, f",
+                "description": "Filters a sequence by returning a table containing items where f(v, i) returns truthy"
+            },
+            {
+                "name": "functional.filter_inplace",
+                "arguments": "t, f",
+                "description": "Filters a sequence in place, modifying it"
+            },
+            {
+                "name": "functional.remove_if",
+                "arguments": "t, f",
+                "description": "Complement of filter, returns a table containing items where f(v) returns falsey"
+            },
+            {
+                "name": "functional.partition",
+                "arguments": "t, f",
+                "description": "Partitions a sequence into two, based on filter criteria, simultaneous filter and remove_if"
+            },
+            {
+                "name": "functional.group_by",
+                "arguments": "t, f",
+                "description": "Returns a table where the elements in t are grouped into sequential tables by the result of f on each element"
+            },
+            {
+                "name": "functional.zip",
+                "arguments": "t1, t2, f",
+                "description": "Zips two sequences together into a new table, based on another function"
+            },
+            {
+                "name": "functional.stitch",
+                "arguments": "t, f",
+                "description": "Maps a sequence {a, b, c} -> collapse { f(a), f(b), f(c) }"
+            },
+            {
+                "name": "functional.cycle",
+                "arguments": "t, f",
+                "description": "Maps a sequence {a, b, c} -> { f(a, b), f(b, c), f(c, a) }"
+            },
+            {
+                "name": "functional.generate",
+                "arguments": "count, f",
+                "description": "Generate data into a table, basically a map on numeric values from 1 to count"
+            },
+            {
+                "name": "functional.generate_2d",
+                "arguments": "t, f",
+                "description": "2d version of generate() but ends up with a 1d table"
+            },
+            {
+                "name": "functional.any",
+                "arguments": "t, f",
+                "description": "True if any element of the table matches f"
+            },
+            {
+                "name": "functional.none",
+                "arguments": "t, f",
+                "description": "True if no element of the table matches f"
+            },
+            {
+                "name": "functional.all",
+                "arguments": "t, f",
+                "description": "True if all elements of the table match f"
+            },
+            {
+                "name": "functional.count",
+                "arguments": "t, f",
+                "description": "Counts the elements of t that match f"
+            },
+            {
+                "name": "functional.contains",
+                "arguments": "t, e",
+                "description": "True if the table contains element e"
+            },
+            {
+                "name": "functional.sum",
+                "arguments": "t",
+                "description": "Return the numeric sum of all elements of t"
+            },
+            {
+                "name": "functional.mean",
+                "arguments": "t",
+                "description": "Return the numeric mean of all elements of t"
+            },
+            {
+                "name": "functional.minmax",
+                "arguments": "t",
+                "description": "Return the minimum and maximum of t in one pass or zero for both if t is empty"
+            },
+            {
+                "name": "functional.max",
+                "arguments": "t",
+                "description": "Return the maximum element of t or zero if t is empty"
+            },
+            {
+                "name": "functional.min",
+                "arguments": "t",
+                "description": "Return the minimum element of t or zero if t is empty"
+            },
+            {
+                "name": "functional.find_min",
+                "arguments": "t, f",
+                "description": "Return the element of the table that results in the lowest numeric value"
+            },
+            {
+                "name": "functional.find_max",
+                "arguments": "t, f",
+                "description": "Return the element of the table that results in the greatest numeric value"
+            },
+            {
+                "name": "functional.find_nearest",
+                "arguments": "t, f, target",
+                "description": "Return the element of the table that results in the value nearest to the passed value"
+            },
+            {
+                "name": "functional.find_match",
+                "arguments": "t, f",
+                "description": "Return the first element of the table that results in a true filter"
             }
         ]
     },
