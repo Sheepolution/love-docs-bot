@@ -1811,5 +1811,23 @@
         "author": "bjornbytes",
         "url": "https://github.com/bjornbytes/tick",
         "description": "Useful timing tweaks for LÖVE's run loop"
+    },
+    {
+        "name": "plan",
+        "author": "zombrodo",
+        "url": "https://github.com/zombrodo/plan",
+        "description": "A super simple layout helper, designed for use with Love2d"
+    },
+    {
+        "name": "urutora",
+        "author": "tavuntu",
+        "url": "https://github.com/tavuntu/urutora",
+        "description": "GUI Library for LÖVE"
+    },
+    {
+        "name": "TVec",
+        "author": "FlamingArr",
+        "url": "https://github.com/FlamingArr/TVec",
+        "description": "Pooled, FFI-ed Vector library for Lua"
     }
 ]
