@@ -362,9 +362,36 @@
         "description": "batteries fills out lua's sparse standard library a little, and provides implementations of common algorithms and data structures useful for games.",
         "api": [
             {
+                "name": "assert:some",
+                "arguments": "v, msg, stack_level",
+                "description": "assert a value is not nil, returns the value"
+            },
+            {
+                "name": "assert:equal",
+                "arguments": "a, b, msg, stack_level",
+                "description": "assert two values are equal"
+            },
+            {
+                "name": "assert:not_equal",
+                "arguments": "a, b, msg, stack_level",
+                "description": "assert two values are not equal"
+            },
+            {
+                "name": "assert:type",
+                "arguments": "a, t, msg, stack_level",
+                "description": "assert a value is of a certain type"
+            },
+            {
+                "name": "assert:nop",
+                "arguments": "",
+                "description": "Replace everything in assert with nop functions that just return their second argument, for near-zero overhead on release"
+            },
+            
+            
+            {
                 "name": "mathx.wrap",
                 "arguments": "v, lo, hi",
-                "description": "Wrap v around range [lo, hi)"
+                "description": "Wrap v around range [lo, hi]"
             },
             {
                 "name": "mathx.wrap_index",
@@ -485,7 +512,54 @@
                 "name": "mathx.distance",
                 "arguments": "x1, y1, x2, y2",
                 "description": "Get the distance between two points"
-            }
+            },
+            
+            
+            {
+                "name": "stringx.split",
+                "arguments": "self, delim",
+                "description": "Split a string on a delimiter into an ordered table"
+            },
+            {
+                "name": "stringx.trim",
+                "arguments": "s",
+                "description": "Trim all whitespace off the head and tail of a string\nSpecifically trims space, tab, newline, and carriage return characters\nIgnores form feeds, vertical tabs, and backspaces"
+            },
+            {
+                "name": "stringx.ltrim",
+                "arguments": "s",
+                "description": "Trim the start of a string"
+            },
+            {
+                "name": "stringx.rtrim",
+                "arguments": "s",
+                "description": "Trim the end of a string"
+            },
+            {
+                "name": "stringx.deindent",
+                "arguments": "s, keep_trailing_empty",
+                "description": "Remove identation from a string"
+            },
+            {
+                "name": "stringx.apply_template",
+                "arguments": "s, sub",
+                "description": "Apply a template to a string\nie ('hello $name'):format({name = 'tom'}) == 'hello tom'"
+            },
+            {
+                "name": "stringx.contains",
+                "arguments": "haystack, needle",
+                "description": "Check if a given string contains another (without garbage)"
+            },
+            {
+                "name": "stringx.starts_with",
+                "arguments": "s, prefix",
+                "description": "Check if a given string starts with another (without garbage)"
+            },
+            {
+                "name": "stringx.ends_with",
+                "arguments": "s, suffix",
+                "description": "Check if a given string ends with another (without garbage)"
+            },
         ]
     },
     {
