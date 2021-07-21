@@ -103,21 +103,26 @@ export default class DocsHandler {
         }
 
         if (separator?.isFilled()) {
-            const func = query.substring(query.indexOf(separator) + 1);
-            const library = query.slice(0, -func.length - 1);
-            libraries = Docs.QueryLib(library);
-            if (libraries.length == 0 || libraries.length > 1) {
-                const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${library}'.`, false);
+            libraries = Docs.QueryLib(query);
 
-                if (botMessage != null) {
-                    Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+            if (libraries.length > 0) {
+                separator = '';
+            } else {
+                const func = query.substring(query.indexOf(separator) + 1);
+                const library = query.slice(0, -func.length - 1);
+                libraries = Docs.QueryLib(library);
+                if (libraries.length == 0 || libraries.length > 1) {
+                    const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${library}'.`, false);
+
+                    if (botMessage != null) {
+                        Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+                    }
+
+                    return;
                 }
 
-                return;
+                functions = Docs.QueryLibFunction(libraries[0], func);
             }
-
-            functions = Docs.QueryLibFunction(libraries[0], func);
-
         } else {
             libraries = Docs.QueryLib(query);
         }
