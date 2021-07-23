@@ -3,7 +3,6 @@ import SettingsConstants from '../Constants/SettingsConstants';
 import AdminEmbeds from '../Embeds/AdminEmbeds';
 import { LogType } from '../Enums/LogType';
 import IMessageInfo from '../Interfaces/IMessageInfo';
-import BotManager from '../Managers/BotManager';
 import CommandManager from '../Managers/CommandManager';
 import Guild from '../Objects/Guild';
 import ChannelRepository from '../Repositories/ChannelRepository';
@@ -64,7 +63,6 @@ export default class AdminHandler {
 
         guild.SetPrefix(prefix);
 
-        BotManager.ClearPrefixCache(messageInfo);
         MessageService.ReplyMessage(messageInfo, `The prefix is now set to ${prefix}`, true, true);
         CommandManager.SetCooldown(messageInfo, 10);
     }

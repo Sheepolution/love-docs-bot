@@ -88,8 +88,8 @@ export default class BotManager {
         LogService.Log(LogType.GuildLeft, guild);
     }
 
-    public static async ClearPrefixCache(messageInfo: IMessageInfo) {
-        var prefixKey = this.prefixKey + messageInfo.message.guild.id;
+    public static async ClearPrefixCache(guildDiscordId: string) {
+        var prefixKey = this.prefixKey + guildDiscordId;
         await Redis.del(prefixKey);
     }
 }
