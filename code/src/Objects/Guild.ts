@@ -75,6 +75,7 @@ export default class Guild {
         await this.model.Update({
             leave_date: leaveDateString,
             state: GuildState.Kicked,
+            prefix: null,
         });
     }
 }
