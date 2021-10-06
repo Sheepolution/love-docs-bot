@@ -1242,7 +1242,7 @@
     {
         "api": "love",
         "name": "love.graphics.newCubeImage()",
-        "description": "Creates a new cubemap Image.\n\nCubemap images have 6 faces (sides) which represent a cube. They can't be rendered directly, they can only be used in Shader code (and sent to the shader via Shader:send).\n\nTo use a cubemap image in a Shader, it must be declared as a CubeImage or samplerCube type (instead of Image or sampler2D). The Texel(CubeImage image, vec3 direction) shader function must be used to get pixel colors from the cubemap. The vec3 argument is a normalized direction from the center of the cube, rather than explicit texture coordinates.\n\nEach face in a cubemap image must have square dimensions.\n\nFor variants of this function which accept a single image containing multiple cubemap faces, they must be laid out in one of the following forms in the image:\n\n   +y\n\n+z +x -z\n\n   -y\n\n   -x\n\nor:\n\n   +y\n\n-x +z +x -z\n\n   -y\n\nor:\n\n+x\n\n-x\n\n+y\n\n-y\n\n+z\n\n-z\n\nor:\n\n+x -x +y -y +z -z"
+        "description": "Creates a new cubemap Image.\n\nCubemap images have 6 faces (sides) which represent a cube. They can't be rendered directly, they can only be used in Shader code (and sent to the shader via Shader:send).\n\nTo use a cubemap image in a Shader, it must be declared as a CubeImage or samplerCube type (instead of Image or sampler2D). The Texel(CubeImage image, vec3 direction) shader function must be used to get pixel colors from the cubemap. The vec3 argument is a normalized direction from the center of the cube, rather than explicit texture coordinates.\n\nEach face in a cubemap image must have square dimensions."
     },
     {
         "api": "love",
