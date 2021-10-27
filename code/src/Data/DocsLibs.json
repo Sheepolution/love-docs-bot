@@ -386,8 +386,6 @@
                 "arguments": "",
                 "description": "Replace everything in assert with nop functions that just return their second argument, for near-zero overhead on release"
             },
-            
-            
             {
                 "name": "mathx.wrap",
                 "arguments": "v, lo, hi",
@@ -513,8 +511,6 @@
                 "arguments": "x1, y1, x2, y2",
                 "description": "Get the distance between two points"
             },
-            
-            
             {
                 "name": "stringx.split",
                 "arguments": "self, delim",
@@ -560,8 +556,6 @@
                 "arguments": "s, suffix",
                 "description": "Check if a given string ends with another (without garbage)"
             },
-            
-            
             {
                 "name": "functional.identity",
                 "arguments": "v",
@@ -2049,6 +2043,12 @@
         "name": "TVec",
         "author": "FlamingArr",
         "url": "https://github.com/FlamingArr/TVec",
+        "description": "Pooled, FFI-ed Vector library for Lua"
+    },
+    {
+        "name": "makelove",
+        "author": "pfirsch",
+        "url": "https://github.com/pfirsich/makelove",
         "description": "Pooled, FFI-ed Vector library for Lua"
     }
 ]
