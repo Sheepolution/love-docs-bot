@@ -2049,6 +2049,6 @@
         "name": "makelove",
         "author": "pfirsch",
         "url": "https://github.com/pfirsich/makelove",
-        "description": "Pooled, FFI-ed Vector library for Lua"
+        "description": "A build tool for löve games"
     }
 ]
