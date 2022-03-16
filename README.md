@@ -34,10 +34,7 @@ Use `love>lib [query]` to search for a library.
 
 Use `love>lib [library] [query]` to search through a library's documentation.
 
-### Supported libraries
-
-[lume](https://github.com/rxi/lume)
-[step](https://github.com/sheepolution/step)
+Most of the libraries that are on [awesome-love2d](https://github.com/love2d-community/awesome-love2d) are included.
 
 You can make a pull request to add documentation for your or someone else's library.
 
