@@ -2056,5 +2056,109 @@
         "author": "1bardesign",
         "url": "https://github.com/1bardesign/ferris/",
         "description": "A love2d sort-of-ecs system and some other gamey utilities to get."
+    },
+    {
+        "name": "Runtime Texture Atlas (RTA)",
+        "author": "EngineerSmith",
+        "url": "https://github.com/EngineerSmith/Runtime-TextureAtlas",
+        "description": "Texture atlas packer and renderer at runtime; no external tools.",
+        "api": [
+            {
+                "name": "RTA.newFixedSize",
+                "arguments": "width, [height = width], [padding = 1], [extrude = 0], [spacing = 0]",
+                "description": "Create a fixed sized texture atlas; for a specific sized image",
+                "example": "atlas = RTA.newFixedSize(32, 32, 0, 1, 0)\natlas = RTA.newFixedSize(32, 64)"
+            },
+            {
+                "name": "RTA.newDynamicSize",
+                "arguments": "[padding = 1], [extrude = 0], [spacing = 0]",
+                "description": "Create a dynamic sized texture atlas; for any sized image",
+                "example": "atlas = RTA.newDynamicSize(0, 1, 0)\natlas = RTA.newDynamicSize()"
+            },
+            {
+                "name": "atlas:useImageData",
+                "arguments": "[boolean = false]",
+                "description": "Change mode for the atlas to use imageData instead of love.graphics; useful for headless versions of love.\nYou cannot change this setting after adding images to the texture atlas!",
+                "example": "atlas:useImageData(true)"
+            },
+            {
+                "name": "atlas:setFilter",
+                "arguments": "min, [max = min]",
+                "description": "Change filter used for the atlas; this will always override the default filter even if not changed",
+                "example": "atlas:setFilter(\"nearest\")\natlas:setFilter(\"nearest\", \"nearest\")"
+            },
+            {
+                "name": "atlas:setBakeAsPow2",
+                "arguments": "[boolean = false]",
+                "description": "Will round the width and height to the nearest power of 2 value. Warning, packing algorithms are not optimized for spacing towards the closest power of 2 and will just pad.",
+                "example": "atlas:setBakeAsPow2(true)"
+            },
+            {
+                "name": "atlas:setPadding",
+                "arguments": "padding",
+                "description": "Set the padding around each image; this will push the image away from the edge of the atlas.",
+                "example": "atlas:setPadding(4)\natlas:setPadding(1)"
+            },
+            {
+                "name": "atlas:setExtrude",
+                "arguments": "extrude",
+                "description": "Set the amount the image is extruded by; this will use the warp mode set for the image. Unless the atlas is in imageData mode then it will use clamp.",
+                "example": "atlas:setExtrude(6)\natlas:setExtrude(1)"
+            },
+            {
+                "name": "atlas:setSpacing",
+                "arguments": "spacing",
+                "description": "Set spacing between each image; does not add spacing between images and the edge of the atlas",
+                "example": "atlas:setSpacing(3)\natlas:setSpacing(1)"
+            },
+            {
+                "name": "atlas:setMaxSize",
+                "arguments": "[width = systemMax], [height = systemMax]",
+                "description": "Sets the maximum size for the texture atlas. Default is the current system limits unless in imageData mode then it is 16,384",
+                "example": "atlas:setMaxSize(1000, 1000)\natlas:setMaxSize(100) -- height becomes system limit\natlas:setMaxSize(nil, 100) -- width becomes system limit"
+            },
+            {
+                "name": "atlas:add",
+                "arguments": "image, id, [bake = false], [...]",
+                "description": "Add or replace an image to the atlas. Image can be either image or imageData depending on the mode set for the atlas (default image). ID can be any table index, not just numbers or strings. Use 3rd argument to bake change; recommended only bake when all changes have been made. 4th argument is passed into atlas:bake, useful for specifying sorting algorithm for dynamic atlases",
+                "example": "atlas:add(love.graphics.newImage(\"duck.png\", \"duck\"))\natlas:add(love.image.newImageData(\"duck.png\"), \"duck\")"
+            },
+            {
+                "name": "atlas:remove",
+                "arguments": "id, [bake = false], [...]",
+                "description": "Remove image added to atlas. Use 2rd argument to bake change; recommended only bake when all changes have been made. 3rd argument is passed into atlas:bake, useful for specifying sorting algorithm for dynamic atlases",
+                "example": "atlas:remove(\"duck\")"
+            },
+            {
+                "name": "atlas:getViewport",
+                "arguments": "id",
+                "description": "Get viewport for given id; returns position, width and height for it's location on the texture atlas. Useful for getting the location for a mesh's uvs.",
+                "example": "x, y, w, h = atlas:getViewport(\"duck\")"
+            },
+            {
+                "name": "atlas:bake",
+                "arguments": "[sortby = \"area\"]",
+                "description": "Bake the texture atlas; sortby is only used by dynamic atlases. Options: area, height, width, none\nNote, it's recommended to use atlas:hardBake once all changes have been made.",
+                "example": "atlas:bake()\natlas:bake(\"height\")\natlas:bake(\"area\")"
+            },
+            {
+                "name": "atlas:hardBake",
+                "arguments": "[sortby = \"area\"]",
+                "description": "Hard bake the atlas; this will bake and remove all internal references to the added images. You won't be able to change the settings of the atlas after this point.",
+                "example": "atlas:hardBake()\natlas:hardBake(\"width\")"
+            },
+            {
+                "name": "atlas:draw",
+                "arguments": "id, [...]",
+                "description": "Draw the given id; arguments passed after id is given to love.graphics.draw",
+                "example": "atlas:draw(\"duck\", 50, 50, 0, 2, 2)\natlas:draw(\"duck\")"
+            },
+            {
+                "name": "atlas:getDrawFuncForID",
+                "arguments": "id",
+                "description": "Get a drawing function for a given id to avoid padding around the atlas and the id around, and just pass a function instead.",
+                "example": "local duckDrawFunc = atlas:getDrawFuncForID(\"duck\")\nduckDrawFunc(50, 50, 0, 2, 2)"
+            }
+        ]
     }
 ]
