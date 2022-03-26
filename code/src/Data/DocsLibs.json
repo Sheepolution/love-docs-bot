@@ -1478,6 +1478,20 @@
         "description": "A simple event-driven websocket client library [IPv4]"
     },
     {
+        "name": "lua-https",
+        "author": "LÖVE Development Team",
+        "url": "https://github.com/love2d/lua-https",
+        "description": "A simple Lua HTTPS module using native platform backends where applicable.",
+        "api": [
+            {
+                "name": "https.request",
+                "arguments": "url [, options]",
+                "description": "Perform HTTP/HTTPS request on specified URL.",
+                "example": "local code, body, headers = https.request(\"https://httpbin.org/get\", {method = \"get\"})"
+            }
+        ]
+    },
+    {
         "name": "30log",
         "author": "Yonaba",
         "url": "https://github.com/Yonaba/30log",
