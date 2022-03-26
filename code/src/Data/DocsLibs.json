@@ -2160,5 +2160,127 @@
                 "example": "local duckDrawFunc = atlas:getDrawFuncForID(\"duck\")\nduckDrawFunc(50, 50, 0, 2, 2)"
             }
         ]
+    },
+    {
+        "name": "AppleCake",
+        "author": "EngineerSmith",
+        "url": "https://github.com/EngineerSmith/AppleCake",
+        "description": "Profiling tool with detailed tools and thread support.",
+        "api": [
+            {
+                "name": "beginSession",
+                "arguments": "[filepath = \"profile.json\"], [name = love.filesystem.getIdentity()]",
+                "description": "Starts the profiling session by opening the mentioned file, and names the process with the 2nd argument",
+                "example": "AppleCake.beginSession() -- Creates profile.json in save directory, using the filesystem identity as the processes name\nAppleCake.beginSession(\"profile-server.json\", \"game-server\")"
+            },
+            {
+                "name": "endSession",
+                "arguments": "",
+                "description": "Close the current session and wait for write thread to rejoin this thread.",
+                "example": "AppleCake.endSession()"
+            },
+            {
+                "name": "enable",
+                "arguments": "[levels = \"all\"]",
+                "description": "Enable or disable profiling tools in certain parts of the code.\nSee AppleCake own docs for more details and examples.",
+                "example": "AppleCake.enable(\"all\")\nAppleCake.enable(\"none\")\nappleCake.enable(\"profile\") -- only enable profiles\nappleCake.enable(\"mark\") -- only enable marks\nappleCake.enable(\"counter\") -- only enable counters"
+            },
+            {
+                "name": "profile",
+                "arguments": "name, [args], [profile]",
+                "description": "Profile a section of code over time.",
+                "example": "local profile\nfunction love.update(dt)\n  profile = AppleCake.profile(\"update\", {deltaTime=dt}, profile)\n  -- code\n  profile:stop()\nend"
+            },
+            {
+                "name": "profileFunc",
+                "arguments": "[args], [profile]",
+                "description": "Profile a function, this is similar to AppleCake.profile but generates the profile name for you.",
+                "example": "local profile\nfunction love.update(dt)\n  profile = AppleCake.profileFunc({deltaTime=dt}, profile)\n  -- code\n  profile:stop()\nend"
+            },
+            {
+                "name": "profile:stop",
+                "arguments": "",
+                "description": "Stop the mentioned profile.",
+                "example": "profile:stop()"
+            },
+            {
+                "name": "stopProfile",
+                "arguments": "profile",
+                "description": "Stop the mentioned profile. It's usually quicker to call profile:stop(), which calls the same function",
+                "example": "AppleCake.stopProfile(profile)"
+            },
+            {
+                "name": "mark",
+                "arguments": "name, [scope = \"p\"], [args]",
+                "description": "Mark a timeless event. Scope changes the notice-able size of the mark on the viewer. \"p\" for process, \"t\" for thread.",
+                "example": "AppleCake.mark(\"keyPressed\", \"p\", {key=key})"
+            },
+            {
+                "name": "counter",
+                "arguments": "name, [args], [counter]",
+                "description": "Track a variables change overtime with a bar graph.",
+                "example": "local counter\nfunction love.update(dt)\n  counter = AppleCake.counter(\"Memory\", {memory=collectgarbage(\"count\")}, counter)\nend"
+            },
+                "name": "countMemory",
+                "arguments": "[memoryScale]",
+                "description": "Record the current memory usage. By default this is in \"kilobyte\"; other options include \"megabyte\" and \"byte\"",
+                "example": "AppleCake.countMemory()\nAppleCake.countMemory(\"byte\")\nAppleCake.countMemory(\"megabyte\")"
+            },
+                "name": "setName",
+                "arguments": "name",
+                "description": "Set the name for the process and the current thread",
+                "example": "AppleCake.setName(\"EpicGame4004\")"
+            },
+                "name": "setThreadName",
+                "arguments": "name",
+                "description": "Set the name for the current thread",
+                "example": "Applecake.setThreadName(\"Server network\")"
+            },
+                "name": "AppleCake.jprof.push",
+                "arguments": "name, [annotation]",
+                "description": "Push a profile to the current stack.",
+                "example": "AppleCake.jprof.push(\"frame\")"
+            },
+                "name": "AppleCake.jprof.pop",
+                "arguments": "[name]",
+                "description": "Pop the current profile from the stack. Use the name argument to ensure it is the correct profile",
+                "example": "AppleCake.jprof.pop()\nAppleCake.jprof.pop(\"frame\")"
+            },
+                "name": "AppleCake.jprof.popAll",
+                "arguments": "",
+                "description": "Pop all on the current stack.",
+                "example": "AppleCake.jprof.popAll()"
+            },
+                "name": "AppleCake.jprof.write",
+                "arguments": "[filename]",
+                "description": "Different to jprof due to AppleCake's workflow. Will close the current file and open a new file with the give filename. Defaults to \"profile.json\"",
+                "example": "AppleCake.jprof.write()\nAppleCake.write(\"profile-server.json\")"
+            },
+                "name": "AppleCake.jprof.enabled",
+                "arguments": "enabled",
+                "description": "Enable or disable profiles after this point.",
+                "example": "AppleCake.jprof.enabled(true)\nAppleCake.jprof.enabled(false)"
+            },
+                "name": "AppleCake.jprof.connect",
+                "arguments": "",
+                "description": "This function isn't supported in AppleCake",
+                "example": "AppleCake.jprof.connect() -- will error"
+            },
+                "name": "AppleCake.jprof.netFlush",
+                "arguments": "",
+                "description": "This function isn't supported in AppleCake",
+                "example": "AppleCake.jprof.netFlush() -- will error"
+            },
+                "name": "AppleCake.jprof.START",
+                "arguments": "[filename = \"profile\"], [name = love.filesystem.getIdentity()]",
+                "description": "Same function as AppleCake.beginSession, but added to the jprof table.",
+                "example": "AppleCake.jprof.START()\nAppleCake.jprof.START(\"profile-server.json\", \"EpicGame4004\")"
+            },
+                "name": "AppleCake.jprof.COUNTMEMORY",
+                "arguments": "[memoryScale]",
+                "description": "Same funtion as AppleCake.countMemory, but added to the jprof table.",
+                "example": "AppleCake.jprof.COUNTMEMORY()\nAppleCake.jprof.COUNTMEMORY(\"megabyte\")"
+            }
+        ]
     }
 ]
