@@ -2235,61 +2235,73 @@
                 "description": "Track a variables change overtime with a bar graph.",
                 "example": "local counter\nfunction love.update(dt)\n  counter = AppleCake.counter(\"Memory\", {memory=collectgarbage(\"count\")}, counter)\nend"
             },
+            {
                 "name": "countMemory",
                 "arguments": "[memoryScale]",
                 "description": "Record the current memory usage. By default this is in \"kilobyte\"; other options include \"megabyte\" and \"byte\"",
                 "example": "AppleCake.countMemory()\nAppleCake.countMemory(\"byte\")\nAppleCake.countMemory(\"megabyte\")"
             },
+            {
                 "name": "setName",
                 "arguments": "name",
                 "description": "Set the name for the process and the current thread",
                 "example": "AppleCake.setName(\"EpicGame4004\")"
             },
+            {
                 "name": "setThreadName",
                 "arguments": "name",
                 "description": "Set the name for the current thread",
                 "example": "Applecake.setThreadName(\"Server network\")"
             },
+            {
                 "name": "AppleCake.jprof.push",
                 "arguments": "name, [annotation]",
                 "description": "Push a profile to the current stack.",
                 "example": "AppleCake.jprof.push(\"frame\")"
             },
+            {
                 "name": "AppleCake.jprof.pop",
                 "arguments": "[name]",
                 "description": "Pop the current profile from the stack. Use the name argument to ensure it is the correct profile",
                 "example": "AppleCake.jprof.pop()\nAppleCake.jprof.pop(\"frame\")"
             },
+            {
                 "name": "AppleCake.jprof.popAll",
                 "arguments": "",
                 "description": "Pop all on the current stack.",
                 "example": "AppleCake.jprof.popAll()"
             },
+            {
                 "name": "AppleCake.jprof.write",
                 "arguments": "[filename]",
                 "description": "Different to jprof due to AppleCake's workflow. Will close the current file and open a new file with the give filename. Defaults to \"profile.json\"",
                 "example": "AppleCake.jprof.write()\nAppleCake.write(\"profile-server.json\")"
             },
+            {
                 "name": "AppleCake.jprof.enabled",
                 "arguments": "enabled",
                 "description": "Enable or disable profiles after this point.",
                 "example": "AppleCake.jprof.enabled(true)\nAppleCake.jprof.enabled(false)"
             },
+            {
                 "name": "AppleCake.jprof.connect",
                 "arguments": "",
                 "description": "This function isn't supported in AppleCake",
                 "example": "AppleCake.jprof.connect() -- will error"
             },
+            {
                 "name": "AppleCake.jprof.netFlush",
                 "arguments": "",
                 "description": "This function isn't supported in AppleCake",
                 "example": "AppleCake.jprof.netFlush() -- will error"
             },
+            {
                 "name": "AppleCake.jprof.START",
                 "arguments": "[filename = \"profile\"], [name = love.filesystem.getIdentity()]",
                 "description": "Same function as AppleCake.beginSession, but added to the jprof table.",
                 "example": "AppleCake.jprof.START()\nAppleCake.jprof.START(\"profile-server.json\", \"EpicGame4004\")"
             },
+            {
                 "name": "AppleCake.jprof.COUNTMEMORY",
                 "arguments": "[memoryScale]",
                 "description": "Same funtion as AppleCake.countMemory, but added to the jprof table.",
