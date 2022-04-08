@@ -2179,18 +2179,17 @@
         "name": "AppleCake",
         "author": "EngineerSmith",
         "url": "https://github.com/EngineerSmith/AppleCake",
-        "description": "Profiling tool with detailed tools and thread support.",
+        "description": "Profiling library with detailed tools and thread support.",
         "api": [
             {
                 "name": "beginSession",
                 "arguments": "[filepath = \"profile.json\"], [name = love.filesystem.getIdentity()]",
-                "description": "Starts the profiling session by opening the mentioned file, and names the process with the 2nd argument",
+                "description": "Starts the profiling session by opening the mentioned file, and names the process and current thread with the 2nd argument",
                 "example": "AppleCake.beginSession() -- Creates profile.json in save directory, using the filesystem identity as the processes name\nAppleCake.beginSession(\"profile-server.json\", \"game-server\")"
             },
             {
                 "name": "endSession",
-                "arguments": "",
-                "description": "Close the current session and wait for write thread to rejoin this thread.",
+                "description": "Close the current session and wait for write thread to rejoin this thread. If buffer is enabled, it will flush before ending the session.",
                 "example": "AppleCake.endSession()"
             },
             {
@@ -2213,7 +2212,6 @@
             },
             {
                 "name": "profile:stop",
-                "arguments": "",
                 "description": "Stop the mentioned profile.",
                 "example": "profile:stop()"
             },
@@ -2237,7 +2235,7 @@
             },
             {
                 "name": "countMemory",
-                "arguments": "[memoryScale]",
+                "arguments": "[memoryScale = \"kilobyte\"]",
                 "description": "Record the current memory usage. By default this is in \"kilobyte\"; other options include \"megabyte\" and \"byte\"",
                 "example": "AppleCake.countMemory()\nAppleCake.countMemory(\"byte\")\nAppleCake.countMemory(\"megabyte\")"
             },
@@ -2267,7 +2265,6 @@
             },
             {
                 "name": "AppleCake.jprof.popAll",
-                "arguments": "",
                 "description": "Pop all on the current stack.",
                 "example": "AppleCake.jprof.popAll()"
             },
@@ -2285,13 +2282,11 @@
             },
             {
                 "name": "AppleCake.jprof.connect",
-                "arguments": "",
                 "description": "This function isn't supported in AppleCake",
                 "example": "AppleCake.jprof.connect() -- will error"
             },
             {
                 "name": "AppleCake.jprof.netFlush",
-                "arguments": "",
                 "description": "This function isn't supported in AppleCake",
                 "example": "AppleCake.jprof.netFlush() -- will error"
             },
@@ -2306,6 +2301,17 @@
                 "arguments": "[memoryScale]",
                 "description": "Same funtion as AppleCake.countMemory, but added to the jprof table.",
                 "example": "AppleCake.jprof.COUNTMEMORY()\nAppleCake.jprof.COUNTMEMORY(\"megabyte\")"
+            },
+            {
+                "name": "setBuffer",
+                "argument": "[enable = false]",
+                "description": "Enables buffering of data on the current thread before it is sent to the saving thread. Can increase performance greatly at a small cost to memory. A flush will occur when called.",
+                "example": "AppleCake.enable(true)\nAppleCake.enable(false)"
+            },
+            {
+                "name": "flush",
+                "description": "Flush all data currently held by the buffer.",
+                "example": "AppleCake.flush()"
             }
         ]
     }
