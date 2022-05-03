@@ -2314,5 +2314,11 @@
                 "example": "AppleCake.flush()"
             }
         ]
+    },
+    {
+        "name": "json.lua",
+        "author": "rxi",
+        "url": "https://github.com/rxi/json.lua",
+        "description": "A lightweight JSON library for Lua"
     }
 ]
