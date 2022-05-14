@@ -6,4 +6,9 @@ export default class SettingsConstants {
         LOVE: 'love',
         LUA: 'lua',
     };
+
+    public static readonly REQUIRES_URL_PARANTHESES = [
+        'Image',
+        'File'
+    ];
 }

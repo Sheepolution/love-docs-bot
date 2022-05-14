@@ -5,6 +5,13 @@ import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
 export default class DocsUtils {
 
     public static GetLoveUrl(name: string) {
+        for (const part of DocsConstants.REQUIRES_URL_PARANTHESES) {
+            if (name.startsWith(`${part}:`)) {
+                name = name.replace(part, `(${part})`);
+                break;
+            }
+        }
+
         return DocsConstants.BASE_LOVE_DOCS_URL + name.replace('()', '');
     }
 
