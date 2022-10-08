@@ -2325,6 +2325,6 @@
         "name": "Mathsies",
         "author": "Tachytaenius",
         "url": "https://github.com/wolfboyft/mathsies",
-        "description": "Lua maths library with support for floating point determinism"
+        "description": "LuaJIT maths library with support for floating point determinism"
     }
 ]
