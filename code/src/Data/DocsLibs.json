@@ -2320,5 +2320,11 @@
         "author": "rxi",
         "url": "https://github.com/rxi/json.lua",
         "description": "A lightweight JSON library for Lua"
+    },
+    {
+        "name": "Mathsies",
+        "author": "Tachytaenius",
+        "url": "https://github.com/wolfboyft/mathsies",
+        "description": "LuaJIT maths library with support for floating point determinism"
     }
 ]
