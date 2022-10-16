@@ -1,6 +1,6 @@
 import IDocsLibFunction from './IDocsLibFunction';
 
-export default interface IDocsError {
+export default interface IDocsLib {
     name: string;
     author: string;
     description: string;

@@ -1,4 +1,4 @@
-export default interface IDocsError {
+export default interface IDocsLibFunction {
     name: string;
     arguments?: string;
     description: string;
