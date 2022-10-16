@@ -21,7 +21,8 @@ export default class Docs {
             return exact;
         }
 
-        return DocsLibs.filter(a => a.name.toLowerCase().includes(query.toLowerCase()));
+        const like = DocsLibs.filter(a => a.name.toLowerCase().includes(query.toLowerCase()));
+        return like.concat(DocsLibs.filter(a => a.description.toLowerCase().includes(query.toLowerCase()) && !like.includes(a)));
     }
 
     public static QueryLibFunction(lib: IDocsLib, query: string): Array<IDocsLibFunction> {
