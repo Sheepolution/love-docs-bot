@@ -1406,6 +1406,18 @@
                 "description": "Create new guideline constraint.",
                 "example": "local guideline = NLay.line(NLay, \"horizontal\", \"percent\", 0.25)"
             },
+			{
+				"name": "batchGet",
+				"argument": "...",
+				"description": "Performs batched retrieval of constraint values, improves performance when resolving different constraints with identical attached constraints.",
+				"example": "local c = NLay.batchGet(constraint1, constraint2, constraint3)\n\nfor i = 1, #c, 4 do\n\tlove.graphics.rectangle(\"fill\", c[i], c[i+1], c[i+2], c[i+3])\nend"
+			},
+			{
+				"name": "grid",
+				"argument": "constraint, nrows, ncols [, settings]",
+				"description": "Create new grid layout (`Grid` object) using the `constraint` constraint as the base.",
+				"example": "local grid = NLay.grid(constraint, 4, 4, {spacing = 4}) -- default dynamic grid cell size\nlocal grid = NLay.grid(constraint, 4, 4, {\n\t-- Activates fixed mode by specifying cell dimensions.\n\tcellWidth = 64,\n\tcellHeight = 64\n})"
+			},
             {
                 "name": "Inside:constraint",
                 "arguments": "top, left, bottom, right",
@@ -1432,13 +1444,13 @@
             },
             {
                 "name": "Constraint:size",
-                "arguments": "width, height",
+                "arguments": "width, height [, modeW [, modeH]]",
                 "description": "Sets the constraint width and height.",
                 "example": "constraint:size(48, 48) -- fixed size\nconstraint:size(0, 48) -- width is calculated from left and right constraint"
             },
             {
                 "name": "Constraint:bias",
-                "arguments": "horizontal, vertical",
+                "arguments": "horizontal, vertical [, unclamped]",
                 "description": "Set the constraint bias.",
                 "example": "constraint:bias(0.5, 0.75) -- places the constraint at horizontal center and 3/4 vertical"
             },
@@ -1456,7 +1468,47 @@
                 "name": "Constraint:getTag",
                 "arguments": "",
                 "description": "Retrieve tag data previously set from constraint."
-            }
+            },
+			{
+				"name": "LineConstraint:offset",
+				"arguments": "off",
+				"description": "(Re)-set the line offset previously set from `NLay.line`"
+			},
+			{
+				"name": "Grid:get",
+				"arguments": "row, column",
+				"description": "Retrieve `GridCellConstraint` at specified row and column. `GridCellConstraint` implements `BaseConstraint`.",
+				"example": "local topleft = grid:get(1, 1)"
+			},
+			{
+				"name": "Grid:spacing",
+				"arguments": "horizontal, vertical [, horizontalFL [, verticalFL]]",
+				"description": "Change the spacing of each cell.",
+				"example": "grid:spacing(4, 4)\ngrid:spacing(4, 4, true, true) -- adds padding to first and last row and column."
+			},
+			{
+				"name": "Grid:cellSize",
+				"arguments": "width, height",
+				"description": "Set the cell size of the grid, excluding spacing. This function only takes effect on fixed mode, otherwise it does nothing."
+			},
+			{
+				"name": "Grid:foreach",
+				"arguments": "func",
+				"description": "Call a function for each `GridCellConstraint` in the grid.",
+				"example": "grid:foreach(function(constraint, row, col)\n\t-- Do something to constraint at specified rows and columns\nend)"
+			},
+			{
+				"name": "Grid:isFixed",
+				"arguments": "",
+				"description": "Is the grid in dynamic mode or fixed mode?",
+				"example": "print(grid:isFixed() and \"fixed mode\" or \"dynamic mode\")"
+			},
+			{
+				"name": "Grid:getCellDimensions",
+				"arguments": "",
+				"description": "Retrieve the dimensions of a single cell.",
+				"example": "local cw, ch = grid:getCellDimensions()"
+			}
         ]
     },
     {
