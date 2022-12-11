@@ -938,6 +938,12 @@
         "url": "https://github.com/Mechazawa/Love-Debug-Graph",
         "description": "Small OO FPS graphing utillity based on FPSGraph"
     },
+	{
+		"name": "Kazari",
+		"author": "Miku AuahDark",
+		"url": "https://github.com/MikuAuahDark/Kazari",
+		"description": "Multitouch gesture and input library."
+	},
     {
         "name": "Lovebird",
         "author": "rxi",
@@ -1370,6 +1376,12 @@
         "url": "https://github.com/josefnpat/LoverNet",
         "description": "A networking library that leverages bitser and enet [IPv4]"
     },
+	{
+		"name": "NAniTe",
+		"author": "Miku AuahDark",
+		"url": "https://github.com/MikuAuahDark/NPad93#nanite",
+		"description": "Timeline-based animation system that supports forward and backward update."
+	},
     {
         "name": "NoobHub",
         "author": "Overtorment",
