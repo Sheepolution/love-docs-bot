@@ -921,12 +921,6 @@
         "description": "Camera library with window locking and smooth camera movement interpolation"
     },
     {
-        "name": "STALKER-X",
-        "author": "adnzzzzZ",
-        "url": "https://github.com/adnzzzzZ/STALKER-X",
-        "description": "STALKER-X is a camera module for LÖVE"
-    },
-    {
         "name": "FPSGraph",
         "author": "icrawler",
         "url": "https://github.com/icrawler/FPSGraph",
@@ -1225,12 +1219,6 @@
         "author": "tesselode",
         "url": "https://github.com/tesselode/baton",
         "description": " Input library for LÖVE that bridges the gap between keyboard and gamepad controls"
-    },
-    {
-        "name": "boipushy",
-        "author": "adnzzzzZ",
-        "url": "https://github.com/adnzzzzZ/boipushy",
-        "description": "A simple and easy to use input handler"
     },
     {
         "name": "input",
@@ -1644,12 +1632,6 @@
         "author": "exezin",
         "url": "https://github.com/exezin/loveblobs",
         "description": "A softbody library with support for both dynamic and static arbitrary softbodies."
-    },
-    {
-        "name": "Windfield",
-        "author": "adnzzzzZ",
-        "url": "https://github.com/adnzzzzZ/windfield",
-        "description": "Physics module wrapper for LÖVE"
     },
     {
         "name": "LoveDos",
