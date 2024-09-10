@@ -5797,152 +5797,152 @@
     {
         "api": "lua",
         "name": "math.abs",
-        "description": "math.abs"
+        "description": "Returns the absolute value of x."
     },
     {
         "api": "lua",
         "name": "math.acos",
-        "description": "math.acos"
+        "description": "Returns the arc cosine of x (in radians)."
     },
     {
         "api": "lua",
         "name": "math.asin",
-        "description": "math.asin"
+        "description": "Returns the arc sine of x (in radians)."
     },
     {
         "api": "lua",
         "name": "math.atan",
-        "description": "math.atan"
+        "description": "Returns the arc tangent of x (in radians)."
     },
     {
         "api": "lua",
         "name": "math.atan2",
-        "description": "math.atan2"
+        "description": "Returns the arc tangent of y/x (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of x being zero.)"
     },
     {
         "api": "lua",
         "name": "math.ceil",
-        "description": "math.ceil"
+        "description": "Returns the smallest integer larger than or equal to x."
     },
     {
         "api": "lua",
         "name": "math.cos",
-        "description": "math.cos"
+        "description": "Returns the cosine of x (assumed to be in radians)."
     },
     {
         "api": "lua",
         "name": "math.cosh",
-        "description": "math.cosh"
+        "description": "Returns the hyperbolic cosine of x."
     },
     {
         "api": "lua",
         "name": "math.deg",
-        "description": "math.deg"
+        "description": "Returns the angle x (given in radians) in degrees."
     },
     {
         "api": "lua",
         "name": "math.exp",
-        "description": "math.exp"
+        "description": "Returns the value ex."
     },
     {
         "api": "lua",
         "name": "math.floor",
-        "description": "math.floor"
+        "description": "Returns the largest integer smaller than or equal to x."
     },
     {
         "api": "lua",
         "name": "math.fmod",
-        "description": "math.fmod"
+        "description": "Returns the remainder of the division of x by y that rounds the quotient towards zero."
     },
     {
         "api": "lua",
         "name": "math.frexp",
-        "description": "math.frexp"
+        "description": "Returns m and e such that x = m2^e, e is an integer and the absolute value of m is in the range [0.5, 1) (or zero when x is zero)."
     },
     {
         "api": "lua",
         "name": "math.huge",
-        "description": "math.huge"
+        "description": "The value HUGE_VAL, a value larger than or equal to any other numerical value."
     },
     {
         "api": "lua",
         "name": "math.ldexp",
-        "description": "math.ldexp"
+        "description": "Returns m2^e (e should be an integer)."
     },
     {
         "api": "lua",
         "name": "math.log",
-        "description": "math.log"
+        "description": "Returns the natural logarithm of x."
     },
     {
         "api": "lua",
         "name": "math.log10",
-        "description": "math.log10"
+        "description": "Returns the base-10 logarithm of x."
     },
     {
         "api": "lua",
         "name": "math.max",
-        "description": "math.max"
+        "description": "Returns the maximum value among its arguments."
     },
     {
         "api": "lua",
         "name": "math.min",
-        "description": "math.min"
+        "description": "Returns the minimum value among its arguments."
     },
     {
         "api": "lua",
         "name": "math.modf",
-        "description": "math.modf"
+        "description": "Returns two numbers, the integral part of x and the fractional part of x."
     },
     {
         "api": "lua",
         "name": "math.pi",
-        "description": "math.pi"
+        "description": "The value of pi."
     },
     {
         "api": "lua",
         "name": "math.pow",
-        "description": "math.pow"
+        "description": "Returns x to the power of y. (You can also use the expression x^y to compute this value.)"
     },
     {
         "api": "lua",
         "name": "math.rad",
-        "description": "math.rad"
+        "description": "Returns the angle x (given in degrees) in radians."
     },
     {
         "api": "lua",
         "name": "math.random",
-        "description": "math.random"
+        "description": "This function is an interface to the simple pseudo-random generator function rand provided by ANSI C. (No guarantees can be given for its statistical properties.)"
     },
     {
         "api": "lua",
         "name": "math.randomseed",
-        "description": "math.randomseed"
+        "description": "Sets x as the \"seed\" for the pseudo-random generator: equal seeds produce equal sequences of numbers."
     },
     {
         "api": "lua",
         "name": "math.sin",
-        "description": "math.sin"
+        "description": "Returns the sine of x (assumed to be in radians)."
     },
     {
         "api": "lua",
         "name": "math.sinh",
-        "description": "math.sinh"
+        "description": "Returns the hyperbolic sine of x."
     },
     {
         "api": "lua",
         "name": "math.sqrt",
-        "description": "math.sqrt"
+        "description": "Returns the square root of x. (You can also use the expression x^0.5 to compute this value.)"
     },
     {
         "api": "lua",
         "name": "math.tan",
-        "description": "math.tan"
+        "description": "Returns the tangent of x (assumed to be in radians)."
     },
     {
         "api": "lua",
         "name": "math.tanh",
-        "description": "math.tanh"
+        "description": "Returns the hyperbolic tangent of x."
     },
     {
         "api": "lua",

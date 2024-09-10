@@ -25,8 +25,10 @@ export default class DocsEmbeds {
             embed.setURL(api.api == DocsConstants.API_NAMES.LOVE ? DocsUtils.GetLoveUrl(api.name) : DocsUtils.GetLuaUrl(api.name));
             if (api.api == DocsConstants.API_NAMES.LOVE) {
                 embed.setDescription(api.description);
-            } else {
+            } else if (api.name == api.description) {
                 embed.setDescription(`${api.description} is part of Lua's Standard Library.`);
+            } else {
+                embed.setDescription(api.description);
             }
         } else {
             embed.setTitle(`Search results for '${query}'`);
