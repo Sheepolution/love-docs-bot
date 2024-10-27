@@ -24,6 +24,12 @@ export default class AdminHandler {
             case commands.DONATE:
                 this.OnDonate(messageInfo);
                 break;
+            case commands.TUTORIAL:
+                this.OnTutorial(messageInfo);
+                break;
+            case commands.SHEEP:
+                this.OnSheep(messageInfo);
+                break;
             default: return false;
         }
 
@@ -47,6 +53,17 @@ export default class AdminHandler {
 
     private static OnDonate(messageInfo: IMessageInfo) {
         MessageService.ReplyEmbed(messageInfo, GeneralEmbeds.GetDonationEmbed());
+        CommandManager.SetCooldown(messageInfo, 60);
+    }
+
+    private static OnTutorial(messageInfo: IMessageInfo) {
+        MessageService.ReplyEmbed(messageInfo, GeneralEmbeds.GetTutorialEmbed());
+        CommandManager.SetCooldown(messageInfo, 60);
+    }
+
+    private static OnSheep(messageInfo: IMessageInfo) {
+        MessageService.ReplyMessage(messageInfo, `How to LÖVE is the recommended tutorial for beginners. Good luck!
+https://sheepolution.com/learn/book/contents`);
         CommandManager.SetCooldown(messageInfo, 60);
     }
 }

@@ -84,4 +84,25 @@ You can also help me by [voting for the bot](https://top.gg/bot/${SettingsConsta
 
         return embed;
     }
+
+    public static GetTutorialEmbed() {
+        const embed = new EmbedBuilder()
+            .setColor(SettingsConstants.COLORS.DEFAULT)
+            .setTitle('Tutorials')
+            .setDescription(`Here are some tutorials to get you started with LÖVE.
+### Text tutorials
+* **[How to LÖVE](https://sheepolution.com/learn/book/contents)** ${EmojiConstants.SPARKLES} - Recommended. Start with the basics of programming and learn your way up to making a platformer.
+* **[learn2love](https://rvagamejams.com/learn2love/)** - A tutorial that goes more indepth but covers less topics.
+* **[Simple Game Tutorials](https://berbasoft.com/simplegametutorials/love/)** - Learn by creating simple games from start to finish, like Snake and Tetris.
+### Video tutorials
+* **[Love2D Basics](https://www.youtube.com/watch?v=kpxkQldiNPU&list=PLqPLyUreLV8DrLcLvQQ64Uz_h_JGLgGg2&pp=iAQB)** - A series of mostly short videos that covers the basics of LÖVE.
+* **[Game Development For The Complete Beginner](https://www.youtube.com/watch?v=HYYsedq2Ng4&list=PLS9MbmO_ssyBAc9wBC85_WG9aT88KGxH8)** - Longer videos, and covers more topics.
+* **[CS50's Introduction to Game Development](https://www.youtube.com/watch?v=GfwpRU0cT10)** - A single video where you learn how to make PONG.
+
+*Note: The video tutorials might be outdated. Most notably LÖVE now uses the range 0-1 instead of 0-255 for colors.*
+`)
+            .setFooter({text: `Good luck! ${EmojiConstants.POGR}`});
+
+        return embed;
+    }
 }

@@ -16,5 +16,7 @@ export default class CommandConstants {
         COMMANDS: ['commands'],
         DEVELOPER: ['developer'],
         DONATE: ['donate', 'donation', 'vote', 'premium'],
+        TUTORIAL: ['tutorial', 'tut', 't'],
+        SHEEP: ['sheep', 'sheepo', 'sheepolution', 's'],
     };
 }
