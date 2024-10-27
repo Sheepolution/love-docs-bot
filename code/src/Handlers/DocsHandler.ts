@@ -71,7 +71,7 @@ export default class DocsHandler {
             return;
         }
 
-        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetDocsEmbed(messageInfo, query, docs));
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetDocsEmbed(messageInfo, query, docs), null, null, null, true);
         if (botMessage != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
         }
@@ -151,7 +151,7 @@ export default class DocsHandler {
             return;
         }
 
-        const botMessage = await MessageService.ReplyEmbed(messageInfo, embed);
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, embed, null, null, null, true);
         if (botMessage != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
         }

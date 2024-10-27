@@ -65,7 +65,7 @@ export default class MessageService {
         }
     }
 
-    public static async ReplyEmbed(messageInfo: IMessageInfo, embed: EmbedBuilder, text?: string, components?: Array<ActionRowBuilder>, attachments?: Array<any>) {
+    public static async ReplyEmbed(messageInfo: IMessageInfo, embed: EmbedBuilder, text?: string, components?: Array<ActionRowBuilder>, attachments?: Array<any>, sameReply: boolean = false) {
         if (messageInfo.guild) {
             if (!await DiscordService.CheckPermission(messageInfo, PermissionFlagsBits.EmbedLinks)) {
                 return;
@@ -84,6 +84,15 @@ export default class MessageService {
 
         if (attachments != null) {
             data.files = attachments;
+        }
+
+        if (sameReply) {
+            if (messageInfo.message.reference != null) {
+                const reference = await messageInfo.message.fetchReference();
+                if (reference != null) {
+                    return reference.reply(data);
+                }
+            }
         }
 
         if (messageInfo.interaction != null) {
