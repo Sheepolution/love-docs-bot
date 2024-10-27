@@ -7,6 +7,7 @@ export default class EmojiConstants {
 
     public static readonly HEART = '️❤️';
     public static readonly SPARKLES = '✨';
+    public static readonly WARNING = '⚠️';
 
     public static readonly BULLET = {
         LOVE: '🔸',

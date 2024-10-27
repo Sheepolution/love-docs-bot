@@ -12,7 +12,7 @@ export default class GeneralEmbeds {
 
     public static async GetHelpEmbed(messageInfo: IMessageInfo, guild: Guild) {
         const roleId = guild.GetRoleId();
-        var role;
+        let role;
         if (roleId != null) {
             role = await DiscordService.FindRoleById(roleId, messageInfo.guild);
         }
@@ -99,9 +99,7 @@ You can also help me by [voting for the bot](https://top.gg/bot/${SettingsConsta
 * **[Game Development For The Complete Beginner](https://www.youtube.com/watch?v=HYYsedq2Ng4&list=PLS9MbmO_ssyBAc9wBC85_WG9aT88KGxH8)** - Longer videos, and covers more topics.
 * **[CS50's Introduction to Game Development](https://www.youtube.com/watch?v=GfwpRU0cT10)** - A single video where you learn how to make PONG.
 
-*Note: The video tutorials might be outdated. Most notably LÖVE now uses the range 0-1 instead of 0-255 for colors.*
-`)
-            .setFooter({text: `Good luck! ${EmojiConstants.POGR}`});
+*${EmojiConstants.WARNING} The video tutorials might be outdated, meaning some LÖVE features have changed since upload. They are still valuable learning resources, but you might encounter discrepancies.*`);
 
         return embed;
     }
