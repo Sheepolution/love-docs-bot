@@ -1,6 +1,6 @@
 import CommandHandler from '../Handlers/CommandHandler';
 import IMessageInfo from '../Interfaces/IMessageInfo';
-import { Message, Guild as DiscordGuild } from 'discord.js';
+import { Message, Guild as DiscordGuild, ChannelType, ActivityType } from 'discord.js';
 import DiscordUtils from '../Utils/DiscordUtils';
 import GuildRepository from '../Repositories/GuildRepository';
 import RedisConstants from '../Constants/RedisConstants';
@@ -30,11 +30,11 @@ export default class BotManager {
     }
 
     public static SetActivity() {
-        Discord.GetClient().user?.setActivity(`${SettingsConstants.DEFAULT_PREFIX}help`, { type: 'WATCHING' });
+        Discord.GetClient().user?.setActivity(`${SettingsConstants.DEFAULT_PREFIX}help`, { type: ActivityType.Watching });
     }
 
     public static async OnMessage(message: Message, edit?: boolean) {
-        if (message.channel.type == 'dm') {
+        if (message.channel.type == ChannelType.DM) {
             return;
         }
 

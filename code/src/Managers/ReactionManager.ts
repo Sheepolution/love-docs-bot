@@ -35,7 +35,7 @@ export default class ReactionManager {
     }
 
     public static OnTimeout(message: Message) {
-        if (!message.deleted) {
+        if (message.editable) {
             message.reactions.removeAll().catch();
         }
         delete ReactionManager.messages[message.id];

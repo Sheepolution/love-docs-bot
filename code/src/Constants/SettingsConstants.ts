@@ -1,3 +1,5 @@
+import { ColorResolvable } from 'discord.js';
+
 export default class SettingsConstants {
     public static readonly BOT_ID = process.env.BOT_ID || '';
     public static readonly MASTER_ID = process.env.MASTER_ID || '';
@@ -11,7 +13,7 @@ export default class SettingsConstants {
     public static readonly DONATION_KOFI_URL = 'https://ko-fi.com/sheepolution';
     public static readonly DONATION_BMAC_URL = 'https://buymeacoffee.com/sheepolution';
 
-    public static readonly COLORS = {
+    public static readonly COLORS: { [key: string]: ColorResolvable } = {
         BAD: '#ff0000',
         GOOD: '#00ff00',
         DEFAULT: '#A8E3FD',

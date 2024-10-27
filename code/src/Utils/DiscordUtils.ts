@@ -75,7 +75,7 @@ export default class DiscordUtils {
         }
 
         switch (permission) {
-            case 'EMBED_LINKS': return 'send embedded messages';
+            case 'EmbedLinks': return 'send embedded messages';
         }
 
         return permission.toLowerCase().replaceAll('_', ' ');

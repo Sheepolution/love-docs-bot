@@ -1,4 +1,4 @@
-import { MessageEmbed } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import DocsConstants from '../Constants/DocsConstants';
 import EmojiConstants from '../Constants/EmojiConstants';
 import SettingsConstants from '../Constants/SettingsConstants';
@@ -12,13 +12,13 @@ export default class DocsEmbeds {
 
     public static GetDocsEmbed(messageInfo: IMessageInfo, query: string, apiList: Array<IDocsApi>) {
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT);
 
         if (apiList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         } else if (apiList.length == 1) {
             const api = apiList[0];
             embed.setTitle(api.name);
@@ -51,7 +51,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         }
 
         return embed;
@@ -59,16 +59,16 @@ export default class DocsEmbeds {
 
     public static GetLibEmbed(messageInfo: IMessageInfo, query: string, libList: Array<IDocsLib>) {
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT);
 
         if (libList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         } else if (libList.length == 1) {
             const lib = libList[0];
-            embed.setAuthor(`Made by ${lib.author}`);
+            embed.setAuthor({name: `Made by ${lib.author}`});
             embed.setURL(lib.url);
             embed.setTitle(lib.name);
             embed.setDescription(lib.description);
@@ -89,7 +89,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         }
 
         return embed;
@@ -97,20 +97,20 @@ export default class DocsEmbeds {
 
     public static GetLibFunctionEmbed(messageInfo: IMessageInfo, query: string, lib: IDocsLib, functionList: Array<IDocsLibFunction>) {
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT);
-        embed.setAuthor(`${lib.name} by ${lib.author}`, null, lib.url);
+        embed.setAuthor({name: `${lib.name} by ${lib.author}`,url: lib.url});
 
         if (functionList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         } else if (functionList.length == 1) {
             const func = functionList[0];
             embed.setTitle(`${DocsUtils.GetLibFunctionName(lib, func)}${func.callable == false ? '' : `${!func.arguments?.isFilled() ? '()' : `( ${func.arguments} )`}`}`);
             embed.setDescription(func.description);
             if (func.example) {
-                embed.addField('Example', `\`\`\`lua\n${func.example}\n\`\`\``);
+                embed.addFields({name: 'Example', value: `\`\`\`lua\n${func.example}\n\`\`\``});
             }
         } else {
             embed.setTitle(`Search results for '${query}'`);
@@ -129,7 +129,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter('You can edit your query to update this message.', messageInfo.user.displayAvatarURL());
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         }
 
         return embed;

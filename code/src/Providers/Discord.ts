@@ -1,4 +1,4 @@
-import { Client, Guild, Message, PartialMessage } from 'discord.js';
+import { Client, GatewayIntentBits, Guild, Message, PartialMessage, Partials } from 'discord.js';
 import DiscordService from '../Services/DiscordService';
 
 export default class Discord {
@@ -32,14 +32,21 @@ export default class Discord {
     }
 
     public static Init() {
-        this.client = new Client({ partials: ['MESSAGE', 'REACTION'] });
+        this.client = new Client({ partials: [ Partials.Message, Partials.Reaction],
+            intents: [
+                GatewayIntentBits.Guilds,
+                GatewayIntentBits.GuildMessages,
+                GatewayIntentBits.GuildMessageReactions,
+                GatewayIntentBits.MessageContent,
+            ]
+        });
 
         DiscordService.SetClient(this.client);
 
         this.client.once('ready', () => { Discord.EventReady(); });
         this.client.on('guildCreate', (guild) => { Discord.EventGuildCreate(guild); });
         this.client.on('guildDelete', (guild) => { Discord.EventGuildDelete(guild); });
-        this.client.on('message', (message) => { Discord.EventMessage(message); });
+        this.client.on('messageCreate', (message) => { Discord.EventMessage(message); });
         this.client.on('messageUpdate', (oldMessage, newMessage) => { Discord.EventMessageUpdate(oldMessage, newMessage); });
         this.client.login(process.env.TOKEN);
     }

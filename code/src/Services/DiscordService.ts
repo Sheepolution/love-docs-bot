@@ -1,4 +1,4 @@
-import { Channel, Client, Guild, GuildMember, Message, MessageEmbed, PermissionResolvable, TextChannel, User } from 'discord.js';
+import { Channel, Client, Guild, GuildChannelResolvable, GuildMember, MessagePayload, PermissionFlagsBits, PermissionResolvable, Snowflake, TextChannel, User } from 'discord.js';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import DiscordUtils from '../Utils/DiscordUtils';
 import MessageService from './MessageService';
@@ -15,16 +15,23 @@ export default class DiscordService {
         this.client = client;
     }
 
+    public static async FindBotMember(guild: Guild) {
+        return await DiscordService.FindMemberById(this.client.user.id, guild);
+    }
+
+    public static async FetchMembers(guild: Guild) {
+        await guild.members.fetch();
+        return guild.members.cache;
+    }
+
     public static async FindMember(searchKey: string, guild: Guild) {
         const foundMember = await this.FindMemberById(searchKey, guild);
         if (foundMember) {
             return foundMember;
         }
 
-        await guild.members.fetch();
-
         const lowerMember = searchKey.toLowerCase();
-        return guild.members.cache.find(member => {
+        guild.members.cache.find(member => {
             return member.displayName.toLowerCase() == lowerMember || member.user.username.toLowerCase() == lowerMember;
         });
     }
@@ -32,19 +39,19 @@ export default class DiscordService {
     public static async FindMemberById(searchKey: string, guild: Guild) {
         const id = DiscordUtils.GetMemberId(searchKey);
         if (id) {
-            const foundMember = await guild.members.fetch(id);
-            if (foundMember != null) {
-                return foundMember;
+            try {
+                const foundMember = await guild.members.fetch({ user: id as Snowflake, cache: true});
+                if (foundMember != null) {
+                    return foundMember;
+                }
+            } catch {
+                // Member not found
             }
         }
     }
 
-    public static FindAllChannels(guild: Guild) {
-        return guild.channels.cache.array();
-    }
-
     public static FindChannel(channelId: string, guild?: Guild) {
-        var channel = this.FindChannelById(channelId, guild);
+        const channel = this.FindChannelById(channelId, guild);
 
         if (channel == null && guild != null) {
             // Guild has already been fetched in FindChannelById
@@ -56,15 +63,18 @@ export default class DiscordService {
     public static async FindChannelById(searchKey: string, guild?: Guild) {
         const id = DiscordUtils.GetChannelId(searchKey);
         if (id) {
-            var foundChannel;
+            let foundChannel;
             if (guild) {
-                foundChannel = guild.channels.cache.get(id);
+                foundChannel = guild.channels.cache.get(id as Snowflake);
                 if (!foundChannel) {
-                    await guild.fetch();
-                    foundChannel = guild.channels.cache.get(id);
+                    try {
+                        foundChannel = await guild.channels.fetch(id as Snowflake);
+                    } catch {
+                        return null;
+                    }
                 }
             } else {
-                foundChannel = await this.client.channels.fetch(id);
+                foundChannel = this.client.channels.cache.get(id as Snowflake);
             }
 
             if (foundChannel != null) {
@@ -88,45 +98,64 @@ export default class DiscordService {
     public static async FindRoleById(searchKey: string, guild: Guild) {
         const id = DiscordUtils.GetRoleId(searchKey);
         if (id) {
-            return await guild.roles.fetch(id);
+            return await guild.roles.fetch(id as Snowflake);
         }
     }
 
     public static async CreateRole(data: any, guild: Guild) {
-        return guild.roles.create({ data: data });
+        return guild.roles.create(data);
     }
 
     public static async FindMessageById(messageId: string, channel: TextChannel) {
         try {
-            return await channel.messages.fetch(messageId);
+            return await channel.messages.fetch(messageId as Snowflake);
+        } catch {
+            return null;
+        }
+    }
+
+    public static async FindDMMessageById(messageId: string, userId: string) {
+        const user = await this.FindUserById(userId);
+        if (user == null) {
+            return null;
+        }
+
+        try {
+            const dmChannel = user.dmChannel ?? await user.createDM();
+            return await dmChannel.messages.fetch(messageId as Snowflake);
         } catch (error) {
+            console.log('Could not find message', error);
             return null;
         }
     }
 
     public static async FindUserById(userId: string) {
         try {
-            return await this.client.users.fetch(userId);
-        } catch (error) {
+            return await this.client.users.fetch(userId as Snowflake);
+        } catch {
             return null;
         }
     }
 
-    public static async FindGuildById(guildId: string) {
-        return await this.client.guilds.fetch(guildId, true);
+    public static FindGuildById(guildId: string) {
+        return this.client.guilds.cache.get(guildId as Snowflake);
     }
 
     public static IsMemberAdmin(member: GuildMember) {
-        return member.hasPermission('ADMINISTRATOR');
+        return member.permissions.has(PermissionFlagsBits.Administrator);
     }
 
     public static IsMemberMod(member: GuildMember) {
-        return member.hasPermission('MANAGE_CHANNELS') || member.hasPermission('MANAGE_MESSAGES') || member.hasPermission('MANAGE_ROLES');
+        return member.permissions.has(PermissionFlagsBits.ManageChannels | PermissionFlagsBits.ManageRoles);
     }
 
     public static async CheckPermission(messageInfo: IMessageInfo, permission: PermissionResolvable, action?: string, sendMessage: boolean = true) {
-        const botMember = await DiscordService.FindMemberById(this.client.user.id, messageInfo.guild);
-        const permissions = botMember.permissionsIn(messageInfo.channel);
+        if (messageInfo.guild == null) {
+            return;
+        }
+
+        const botMember = await DiscordService.FindBotMember(messageInfo.guild);
+        const permissions = botMember.permissionsIn(messageInfo.channel as GuildChannelResolvable);
         if (permissions.has(permission)) {
             return true;
         }
@@ -138,59 +167,22 @@ export default class DiscordService {
         return false;
     }
 
-    public static async SendEmbed(channel: Channel, embed: MessageEmbed, content?: string) {
+    public static async SendMessage(channel: Channel, data: MessagePayload) {
         try {
             const textChannel: TextChannel = <TextChannel>channel;
-            return await (content ? textChannel.send(content, embed) : textChannel.send(embed));
-        } catch (error) {
+            return await textChannel.send(data);
+        } catch {
             // Was not able to send message.
         }
     }
 
-    public static async SendMessage(channel: Channel, message: string, embed?: MessageEmbed) {
+    public static async ReplyMessage(textChannel: TextChannel, user: User, data: any) {
         try {
-            const textChannel: TextChannel = <TextChannel>channel;
-            if (embed) {
-                return await this.SendEmbed(textChannel, embed, message);
-            }
+            data.content = `${user} ${data.content || ''}`;
 
-            return await textChannel.send(message);
-        } catch (error) {
+            return await textChannel.send(data);
+        } catch {
             // Was not able to send message.
         }
-    }
-
-    public static async ReplyMessage(textChannel: TextChannel, user: User, message: string, embed?: MessageEmbed) {
-        try {
-            const reply = `<@${user}> ${message}`;
-
-            if (embed) {
-                return await this.SendEmbed(textChannel, embed, reply);
-            }
-
-            return await textChannel.send(reply);
-        } catch (error) {
-            // Was not able to send message.
-        }
-    }
-
-    public static async EditMessage(oldMessage: Message, message: string, user?: User, embed?: MessageEmbed) {
-        try {
-            if (user != null) {
-                message = `<@${user}> ${message}`;
-            }
-
-            if (embed) {
-                return await this.EditEmbed(oldMessage, embed, message);
-            }
-
-            return await oldMessage.edit(message);
-        } catch (error) {
-            // Was not able to send message.
-        }
-    }
-
-    public static async EditEmbed(oldMessage: Message, embed: MessageEmbed, content?: string) {
-        return await (content?.isFilled() ? oldMessage.edit(content, embed) : oldMessage.edit(embed));
     }
 }

@@ -1,4 +1,4 @@
-import { MessageEmbed } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import CommandConstants from '../Constants/CommandConstants';
 import EmojiConstants from '../Constants/EmojiConstants';
 import ImageConstants from '../Constants/ImageConstants';
@@ -17,7 +17,7 @@ export default class GeneralEmbeds {
             role = await DiscordService.FindRoleById(roleId, messageInfo.guild);
         }
 
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT)
             .setTitle('Help')
             .setDescription(`${SettingsConstants.BOT_NAME} is a Discord bot for querying documentation for the LÖVE API.
@@ -27,7 +27,7 @@ Members ${role != null ? `with the role ${role.name} ` : ''}can use ${CommandSer
     }
 
     public static GetDeveloperEmbed() {
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.GOOD)
             .setTitle('Developer')
             .setDescription(`${SettingsConstants.BOT_NAME} is developed by Sheepolution.
@@ -51,7 +51,7 @@ ${EmojiConstants.HEART} [Donate](${SettingsConstants.DONATION_PAYPAL_URL})`)
     }
 
     public static GetInviteEmbed() {
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.GOOD)
             .setTitle('Invite')
             .setDescription(`Invite the bot to your own server - [Link](${SettingsConstants.BOT_INVITE_URL})
@@ -63,7 +63,7 @@ Go to the support server - [Link](${SettingsConstants.SUPPORT_SERVER_INVITE_URL}
     }
 
     public static GetDonationEmbed() {
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.GOOD)
             .setTitle('Donate')
             .setDescription(`Thank you for using ${SettingsConstants.BOT_NAME}!
@@ -80,7 +80,7 @@ You can donate using the methods below:
 **Buy me a coffee** - [Link](${SettingsConstants.DONATION_BMAC_URL})
 
 You can also help me by [voting for the bot](https://top.gg/bot/${SettingsConstants.BOT_ID}) and writing a review.`)
-            .setFooter(`Thank you ${EmojiConstants.HEART}`);
+            .setFooter({text: `Thank you ${EmojiConstants.HEART}`});
 
         return embed;
     }

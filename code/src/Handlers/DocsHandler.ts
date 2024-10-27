@@ -64,7 +64,14 @@ export default class DocsHandler {
             }
         }
 
-        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetDocsEmbed(messageInfo, query, docs), '', oldMessage);
+        if (oldMessage != null) {
+            oldMessage.edit({
+                embeds: [DocsEmbeds.GetDocsEmbed(messageInfo, query, docs)]
+            });
+            return;
+        }
+
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetDocsEmbed(messageInfo, query, docs));
         if (botMessage != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
         }
@@ -135,7 +142,16 @@ export default class DocsHandler {
             }
         }
 
-        const botMessage = await MessageService.ReplyEmbed(messageInfo, separator?.isFilled() && libraries[0].api != null ? DocsEmbeds.GetLibFunctionEmbed(messageInfo, query, libraries[0], functions) : DocsEmbeds.GetLibEmbed(messageInfo, query, libraries), '', oldMessage);
+        const embed = separator?.isFilled() && libraries[0].api != null ? DocsEmbeds.GetLibFunctionEmbed(messageInfo, query, libraries[0], functions) : DocsEmbeds.GetLibEmbed(messageInfo, query, libraries);
+
+        if (oldMessage != null) {
+            oldMessage.edit({
+                embeds: [embed]
+            });
+            return;
+        }
+
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, embed);
         if (botMessage != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
         }
