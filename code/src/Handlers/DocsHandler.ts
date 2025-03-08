@@ -26,6 +26,9 @@ export default class DocsHandler {
             case commands.LIB:
                 this.OnLib(messageInfo, guild, messageInfo.commandInfo.content);
                 break;
+            case commands.COOKBOOK:
+                this.OnCookbook(messageInfo, guild, messageInfo.commandInfo.content);
+                break;
             default: return false;
         }
 
@@ -56,9 +59,10 @@ export default class DocsHandler {
 
         const docs = Docs.QueryApi(query);
 
+        let oldMessage: Message;
+
         if (messageInfo.edit) {
             const oldMessageId = await Redis.get(this.messageKey + messageInfo.message.id);
-            var oldMessage: Message;
             if (oldMessageId != null) {
                 oldMessage = (<TextChannel>messageInfo.channel).messages.cache.get(oldMessageId);
             }
@@ -99,9 +103,9 @@ export default class DocsHandler {
             return;
         }
 
-        var separator: string;
-        var libraries: Array<IDocsLib>;
-        var functions: Array<IDocsLibFunction>;
+        let separator: string;
+        let libraries: Array<IDocsLib>;
+        let functions: Array<IDocsLibFunction>;
 
         if (query.includes(':')) {
             separator = ':';
@@ -134,9 +138,10 @@ export default class DocsHandler {
             libraries = Docs.QueryLib(query);
         }
 
+        let oldMessage: Message;
+
         if (messageInfo.edit) {
             const oldMessageId = await Redis.get(this.messageKey + messageInfo.message.id);
-            var oldMessage: Message;
             if (oldMessageId != null) {
                 oldMessage = (<TextChannel>messageInfo.channel).messages.cache.get(oldMessageId);
             }
@@ -152,6 +157,52 @@ export default class DocsHandler {
         }
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, embed, null, null, null, true);
+        if (botMessage != null) {
+            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+        }
+    }
+
+    private static async OnCookbook(messageInfo: IMessageInfo, guild: Guild, query: string) {
+        if (!await ChannelService.CheckChannel(messageInfo)) {
+            return;
+        }
+
+        const roleId = guild.GetRoleId();
+        if (roleId != null) {
+            if (!messageInfo.member.roles.cache.some(role => role.id == roleId)) {
+                return;
+            }
+        }
+
+        if (!query?.isFilled()) {
+            const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query chapters from the LÖVE Cookbook.');
+
+            if (botMessage != null) {
+                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+            }
+
+            return;
+        }
+
+        const docs = Docs.QueryCookbook(query);
+
+        let oldMessage: Message;
+
+        if (messageInfo.edit) {
+            const oldMessageId = await Redis.get(this.messageKey + messageInfo.message.id);
+            if (oldMessageId != null) {
+                oldMessage = (<TextChannel>messageInfo.channel).messages.cache.get(oldMessageId);
+            }
+        }
+
+        if (oldMessage != null) {
+            oldMessage.edit({
+                embeds: [DocsEmbeds.GetCookbookEmbed(messageInfo, query, docs)]
+            });
+            return;
+        }
+
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetCookbookEmbed(messageInfo, query, docs), null, null, null, true);
         if (botMessage != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
         }

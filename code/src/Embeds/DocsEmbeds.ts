@@ -7,6 +7,7 @@ import IDocsLib from '../Interfaces/IDocsLib';
 import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import DocsUtils from '../Utils/DocsUtils';
+import IDocsCookbook from '../Interfaces/IDocsCookbook';
 
 export default class DocsEmbeds {
 
@@ -32,8 +33,8 @@ export default class DocsEmbeds {
             }
         } else {
             embed.setTitle(`Search results for '${query}'`);
-            var description = '';
-            for (var i = 0; i < apiList.length; i++) {
+            let description = '';
+            for (let i = 0; i < apiList.length; i++) {
                 if (i >= 10) {
                     if (apiList.length > 12) {
                         description += `\nAnd ${apiList.length - i} more...`;
@@ -74,8 +75,8 @@ export default class DocsEmbeds {
             embed.setDescription(lib.description);
         } else {
             embed.setTitle(`Search results for '${query}'`);
-            var description = '';
-            for (var i = 0; i < libList.length; i++) {
+            let description = '';
+            for (let i = 0; i < libList.length; i++) {
                 if (i >= 10) {
                     if (libList.length > 12) {
                         description += `\nAnd ${libList.length - i} more...`;
@@ -114,8 +115,8 @@ export default class DocsEmbeds {
             }
         } else {
             embed.setTitle(`Search results for '${query}'`);
-            var description = '';
-            for (var i = 0; i < functionList.length; i++) {
+            let description = '';
+            for (let i = 0; i < functionList.length; i++) {
                 if (i >= 10) {
                     if (functionList.length > 12) {
                         description += `\nAnd ${functionList.length - i} more...`;
@@ -131,6 +132,53 @@ export default class DocsEmbeds {
 
             embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
         }
+
+        return embed;
+    }
+
+    public static GetCookbookEmbed(messageInfo: IMessageInfo, query: string, group?: IDocsCookbook) {
+        const bookName = 'LÖVE Cookbook';
+        const baseURL = 'https://diminim.github.io/love-cookbook';
+
+        const embed = new EmbedBuilder()
+            .setColor('#ffd2a7')
+            .setThumbnail('https://diminim.github.io/love-cookbook/assets/logo.png');
+
+        if (!group) {
+            embed.setTitle(`Search results for '${query}'`);
+            embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            return embed;
+        }
+
+        const guide = group.guide;
+        const header = guide?.header;
+
+        if (guide) {
+            if (header) {
+                const url = `${baseURL}${guide.path}#${header.anchor}`;
+                embed.setAuthor({ name: guide.title, url: `${baseURL}${guide.path}` });
+                embed.setTitle(header.text);
+                embed.setDescription(header.abstract ?? guide.abstract ?? `Read about it in the [LÖVE Cookbook](${url})!`);
+                embed.setURL(url);
+                embed.setFooter({ text: group.name });
+
+                return embed;
+            }
+
+            const url = `${baseURL}${guide.path}`;
+            embed.setAuthor({ name: group.name, url: group.summary ?? url });
+            embed.setTitle(guide.title);
+            embed.setDescription(guide.abstract ?? `Read about it in the [LÖVE Cookbook](${url})!`);
+            embed.setURL(`${baseURL}${guide.path}`);
+            embed.setFooter({ text: bookName });
+
+            return embed;
+        }
+
+        embed.setAuthor({ name: bookName, url: baseURL });
+        embed.setTitle(group.name);
+        embed.setURL(group.summary ? `${baseURL}${group.summary}` : baseURL);
 
         return embed;
     }

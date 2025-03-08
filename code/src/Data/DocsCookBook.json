@@ -1,0 +1,841 @@
+[
+  {
+    "name": null,
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/getting-started/",
+        "title": "Getting started",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Community",
+            "anchor": "community",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Open source",
+            "anchor": "open-source",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "A little example",
+            "anchor": "a-little-example",
+            "abstract": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Installation",
+    "summary": "/guides/installation/",
+    "guides": [
+      {
+        "path": "/guides/installation/love/",
+        "title": "LÖVE",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/installation/vscode/",
+        "title": "VSCode",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/installation/neovim/",
+        "title": "Neovim",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Disclaimer",
+            "anchor": "disclaimer",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Setup",
+            "anchor": "setup",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Installation",
+            "anchor": "installation",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Post-installation",
+            "anchor": "post-installation",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Usage",
+            "anchor": "usage",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "GLSL highlighting",
+            "anchor": "glsl-highlighting",
+            "abstract": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lua Basics",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/lua-basics/lua/",
+        "title": "Lua",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/lua-basics/variables/",
+        "title": "Variables",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Strings",
+            "anchor": "strings",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "nil",
+            "anchor": "nil",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Types",
+            "anchor": "types",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Naming variables",
+            "anchor": "naming-variables",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Local variables",
+            "anchor": "local-variables",
+            "abstract": "Local variables are variables that are only available within the scope they are created."
+          },
+          {
+            "level": "h2",
+            "text": "Usage",
+            "anchor": "usage",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-basics/functions/",
+        "title": "Functions",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Parameters",
+            "anchor": "parameters",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Return",
+            "anchor": "return",
+            "abstract": "A return-statement ends the execution of a function, and allows you to return a value for the function-call."
+          },
+          {
+            "level": "h2",
+            "text": "Callbacks",
+            "anchor": "callbacks",
+            "abstract": "A callback is a function that is passed to another function. The latter function will, at some point, call the callback, often while passing useful information."
+          },
+          {
+            "level": "h2",
+            "text": "Usage",
+            "anchor": "usage",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Challenge",
+            "anchor": "challenge",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-basics/if-statements/",
+        "title": "If-statements",
+        "abstract": "if-statements are great!",
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Expressions",
+            "anchor": "expressions",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "and & or",
+            "anchor": "and--or",
+            "abstract": "With the keyword `and` we can combine expressions to check if they are all true. With the keyword `or` we can combine expressions to check if any of them are true."
+          },
+          {
+            "level": "h2",
+            "text": "Truthy and falsy",
+            "anchor": "truthy-and-falsy",
+            "abstract": "Truthy and falsy refer to state of values when used as a condition. The values `false` and `nil` are falsy. All other values are truthy."
+          },
+          {
+            "level": "h2",
+            "text": "Nested statements",
+            "anchor": "nested-statements",
+            "abstract": "A nested statement is when you put a statement (like an if-statement or a for-loop) inside another statement"
+          },
+          {
+            "level": "h2",
+            "text": "Usage",
+            "anchor": "usage",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-basics/tables/",
+        "title": "Tables and For-loops",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "For-loops",
+            "anchor": "for-loops",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "While-loops",
+            "anchor": "while-loops",
+            "abstract": "A while-loop is a loop that keeps looping as long as the provided condition is true."
+          },
+          {
+            "level": "h2",
+            "text": "Looping through tables",
+            "anchor": "looping-through-tables",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "ipairs",
+            "anchor": "ipairs",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "unpack",
+            "anchor": "unpack",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Editing tables",
+            "anchor": "editing-tables",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Objects",
+            "anchor": "objects",
+            "abstract": "Objects are tables that use keys rather than indexes. We call these the object's properties."
+          },
+          {
+            "level": "h3",
+            "text": "Pairs",
+            "anchor": "pairs",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Usage",
+            "anchor": "usage",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-basics/recap/",
+        "title": "Recap",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Fundamentals combined",
+            "anchor": "fundamentals-combined",
+            "abstract": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lua Intermediate",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/lua-intermediate/require/",
+        "title": "Require",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/lua-intermediate/scope/",
+        "title": "Scope",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "_G",
+            "anchor": "_g",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-intermediate/modulo/",
+        "title": "Modulo",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/lua-intermediate/nested-for-loops/",
+        "title": "Nested for-loops",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Goto-statements",
+            "anchor": "goto-statements",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-intermediate/standard-library/",
+        "title": "Standard library",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Basic functions",
+            "anchor": "basic-functions",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "tostring & tonumber",
+            "anchor": "tostring--tonumber",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "error & assert",
+            "anchor": "error--assert",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "loadstring",
+            "anchor": "loadstring",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "table",
+            "anchor": "table",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "concat",
+            "anchor": "concat",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "sort",
+            "anchor": "sort",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "math",
+            "anchor": "math",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "random",
+            "anchor": "random",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "string",
+            "anchor": "string",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "sub",
+            "anchor": "sub",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "find",
+            "anchor": "find",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "gsub",
+            "anchor": "gsub",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-intermediate/string-patterns/",
+        "title": "String patterns",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Capturing",
+            "anchor": "capturing",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "gsub",
+            "anchor": "gsub",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-intermediate/ternary-operators/",
+        "title": "Ternary operators",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/lua-intermediate/metatables/",
+        "title": "Metatables",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "newindex",
+            "anchor": "newindex",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "index",
+            "anchor": "index",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Strict mode",
+            "anchor": "strict-mode",
+            "abstract": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "LÖVE Basics",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/love/drawing-image/",
+        "title": "Drawing an image",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Bonus challenge",
+            "anchor": "bonus-challenge",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/love/drawing-shapes/",
+        "title": "Drawing shapes",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Rectangles",
+            "anchor": "rectangles",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Circles",
+            "anchor": "circles",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Lines",
+            "anchor": "lines",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Points",
+            "anchor": "points",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Polygons",
+            "anchor": "polygons",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Ellipse",
+            "anchor": "ellipse",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Arcs",
+            "anchor": "arcs",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Bonus",
+            "anchor": "bonus",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Line styles",
+            "anchor": "line-styles",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Flower",
+            "anchor": "flower",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/love/playing-sound/",
+        "title": "Playing sound",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/love/input/",
+        "title": "Input",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/love/filesystem/",
+        "title": "Filesystem",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/love/deltatime/",
+        "title": "Deltatime",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/love/reading-errors/",
+        "title": "Reading errors",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Example",
+            "anchor": "example",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Error message breakdown",
+            "anchor": "error-message-breakdown",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Less obvious errors",
+            "anchor": "less-obvious-errors",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Traceback",
+            "anchor": "traceback",
+            "abstract": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Basics",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/basic/aabb/",
+        "title": "AABB",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/basic/angle-and-distance/",
+        "title": "Angle & distance",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/basic/tiles/",
+        "title": "Tiles",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/basic/animation/",
+        "title": "Animation",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/basic/saving-and-loading/",
+        "title": "Saving & loading",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/basic/canvases/",
+        "title": "Canvases",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/basic/stencil-modes/",
+        "title": "Stencil modes",
+        "abstract": null,
+        "headers": []
+      }
+    ]
+  },
+  {
+    "name": "Intermediate",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/intermediate/oop/",
+        "title": "OOP",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/collision-resolving/",
+        "title": "Collision resolution",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/stencil-states/",
+        "title": "Stencil states",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/coroutines/",
+        "title": "Coroutines",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/shaders/",
+        "title": "Shaders",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Syntax",
+            "anchor": "syntax",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Types",
+            "anchor": "types",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "The Fragment shader",
+            "anchor": "the-fragment-shader",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Simple color",
+            "anchor": "simple-color",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Drawing images",
+            "anchor": "drawing-images",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Uniform values",
+            "anchor": "uniform-values",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Box blur",
+            "anchor": "box-blur",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Vertex shaders",
+            "anchor": "vertex-shaders",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Fullscreen triangle",
+            "anchor": "fullscreen-triangle",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Effects",
+            "anchor": "effects",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Nearest color",
+            "anchor": "nearest-color",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Pixelation",
+            "anchor": "pixelation",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Outlines",
+            "anchor": "outlines",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Shader optimisation",
+            "anchor": "shader-optimisation",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/intermediate/compute-shaders/",
+        "title": "Compute Shaders",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Buffer types",
+            "anchor": "buffer-types",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Thread groups",
+            "anchor": "thread-groups",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Built-in variables",
+            "anchor": "built-in-variables",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Particles",
+            "anchor": "particles",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Average of pixels",
+            "anchor": "average-of-pixels",
+            "abstract": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Advanced",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/advanced/physics/",
+        "title": "Physics",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/advanced/threads/",
+        "title": "Threads",
+        "abstract": null,
+        "headers": []
+      }
+    ]
+  }
+]

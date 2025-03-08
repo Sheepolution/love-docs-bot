@@ -8,6 +8,7 @@ export default class CommandConstants {
         // Docs
         WIKI: ['api', 'a', 'wiki', 'w', 'query', 'q', 'docs', 'd'],
         LIB: ['lib'],
+        COOKBOOK: ['cook', 'book', 'cb'],
 
         // Generic
         HELP: ['help', 'about'],

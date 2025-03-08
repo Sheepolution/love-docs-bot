@@ -1,8 +1,10 @@
 import DocsApi from '../Data/DocsApi.json';
 import DocsLibs from '../Data/DocsLibs.json';
+import DocsCookbook from '../Data/DocsCookBook.json';
 import IDocsApi from '../Interfaces/IDocsApi';
 import IDocsLib from '../Interfaces/IDocsLib';
 import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
+import IDocsCookbook from '../Interfaces/IDocsCookbook';
 
 export default class Docs {
 
@@ -36,5 +38,78 @@ export default class Docs {
         }
 
         return lib.api.filter(a => a.name.toLowerCase().includes(query.toLowerCase()));
+    }
+
+    public static QueryCookbook(query: string): IDocsCookbook {
+        const queryLower = query.toLowerCase();
+
+        const cbGroup: IDocsCookbook = {
+            name: null,
+            summary: null,
+        };
+
+        // Exact search the groups
+        const matchingGroup = DocsCookbook.find(a => a.name?.toLowerCase() == queryLower);
+        if (matchingGroup) {
+            cbGroup.name = matchingGroup.name;
+            cbGroup.summary = matchingGroup.summary ?? matchingGroup?.guides[0]?.path;
+            return cbGroup;
+        }
+
+        // Exact search the guides
+        for (const group of DocsCookbook) {
+            const guide = group.guides.find(g => g.title.toLowerCase() == queryLower);
+            if (guide) {
+                cbGroup.name = group.name;
+                cbGroup.summary = group.summary;
+                cbGroup.guide = { ...guide };
+                return cbGroup;
+            }
+        }
+
+        // Exact search the headers
+        for (const group of DocsCookbook) {
+            for (const guide of group.guides) {
+                const header = guide.headers?.find(h => h.text.toLowerCase() == queryLower);
+                if (header) {
+                    cbGroup.name = group.name;
+                    cbGroup.summary = group.summary;
+                    cbGroup.guide = {
+                        ...guide,
+                        header: { ...header }
+                    };
+                    return cbGroup;
+                }
+            }
+        }
+
+        // Fuzzy search the guides
+        for (const group of DocsCookbook) {
+            const guide = group.guides.find(g => g.title.toLowerCase().includes(queryLower));
+            if (guide) {
+                cbGroup.name = group.name;
+                cbGroup.summary = group.summary;
+                cbGroup.guide = { ...guide };
+                return cbGroup;
+            }
+        }
+
+        // Fuzzy search the headers
+        for (const group of DocsCookbook) {
+            for (const guide of group.guides) {
+                const header = guide.headers?.find(h => h.text.toLowerCase().includes(queryLower));
+                if (header) {
+                    cbGroup.name = group.name;
+                    cbGroup.summary = group.summary;
+                    cbGroup.guide = {
+                        ...guide,
+                        header: { ...header }
+                    };
+                    return cbGroup;
+                }
+            }
+        }
+
+        return null;
     }
 }
