@@ -8,11 +8,11 @@ import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import DocsUtils from '../Utils/DocsUtils';
 import IDocsCookbook from '../Interfaces/IDocsCookbook';
+import IDocsGame from '../Interfaces/IDocsGame';
 
 export default class DocsEmbeds {
 
-    public static GetDocsEmbed(messageInfo: IMessageInfo, query: string, apiList: Array<IDocsApi>) {
-
+    public static GetApiEmbed(messageInfo: IMessageInfo, query: string, apiList: Array<IDocsApi>) {
         const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT);
 
@@ -97,7 +97,6 @@ export default class DocsEmbeds {
     }
 
     public static GetLibFunctionEmbed(messageInfo: IMessageInfo, query: string, lib: IDocsLib, functionList: Array<IDocsLibFunction>) {
-
         const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT);
         embed.setAuthor({name: `${lib.name} by ${lib.author}`,url: lib.url});
@@ -179,6 +178,43 @@ export default class DocsEmbeds {
         embed.setAuthor({ name: bookName, url: baseURL });
         embed.setTitle(group.name);
         embed.setURL(group.summary ? `${baseURL}${group.summary}` : baseURL);
+
+        return embed;
+    }
+
+    public static GetGameEmbed(messageInfo: IMessageInfo, query: string, gameList: Array<IDocsGame>) {
+        const embed = new EmbedBuilder()
+            .setColor('#37617f');
+
+        if (gameList.length == 0) {
+            embed.setTitle(`Search results for '${query}'`);
+            embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+        } else if (gameList.length == 1) {
+            const game = gameList[0];
+            embed.setTitle(game.title);
+            embed.setURL(DocsUtils.GetGameUrl(game));
+            embed.setImage(`https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.id}/header_292x136.jpg?t=${game.img_id}`);
+            embed.setDescription('A game made with LÖVE!');
+        } else {
+            embed.setTitle(`Search results for '${query}'`);
+            let description = '';
+            for (let i = 0; i < gameList.length; i++) {
+                if (i >= 10) {
+                    if (gameList.length > 12) {
+                        description += `\nAnd ${gameList.length - i} more...`;
+                        break;
+                    }
+                }
+
+                const game = gameList[i];
+                description += `\n${EmojiConstants.BULLET.GAME} **[${game.title}](${DocsUtils.GetGameUrl(game)})**`;
+            }
+
+            embed.setDescription(description);
+
+            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+        }
 
         return embed;
     }

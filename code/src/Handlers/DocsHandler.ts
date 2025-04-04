@@ -29,6 +29,9 @@ export default class DocsHandler {
             case commands.COOKBOOK:
                 this.OnCookbook(messageInfo, guild, messageInfo.commandInfo.content);
                 break;
+            case commands.GAME:
+                this.OnGame(messageInfo, guild, messageInfo.commandInfo.content);
+                break;
             default: return false;
         }
 
@@ -51,7 +54,7 @@ export default class DocsHandler {
             const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query documentation for the LÖVE API. You can edit the message to update the bot\'s message.');
 
             if (botMessage != null) {
-                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
             }
 
             return;
@@ -70,14 +73,14 @@ export default class DocsHandler {
 
         if (oldMessage != null) {
             oldMessage.edit({
-                embeds: [DocsEmbeds.GetDocsEmbed(messageInfo, query, docs)]
+                embeds: [DocsEmbeds.GetApiEmbed(messageInfo, query, docs)]
             });
             return;
         }
 
-        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetDocsEmbed(messageInfo, query, docs), null, null, null, true);
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetApiEmbed(messageInfo, query, docs), null, null, null, true);
         if (botMessage != null) {
-            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }
 
@@ -97,7 +100,7 @@ export default class DocsHandler {
             const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query documentation for Lua libraries.');
 
             if (botMessage != null) {
-                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
             }
 
             return;
@@ -126,7 +129,7 @@ export default class DocsHandler {
                     const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${library}'.`, false);
 
                     if (botMessage != null) {
-                        Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+                        Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
                     }
 
                     return;
@@ -158,7 +161,7 @@ export default class DocsHandler {
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, embed, null, null, null, true);
         if (botMessage != null) {
-            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }
 
@@ -178,7 +181,7 @@ export default class DocsHandler {
             const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query chapters from the LÖVE Cookbook.');
 
             if (botMessage != null) {
-                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
             }
 
             return;
@@ -204,7 +207,53 @@ export default class DocsHandler {
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetCookbookEmbed(messageInfo, query, docs), null, null, null, true);
         if (botMessage != null) {
-            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(1));
+            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
+        }
+    }
+
+    private static async OnGame(messageInfo: IMessageInfo, guild: Guild, query: string) {
+        if (!await ChannelService.CheckChannel(messageInfo)) {
+            return;
+        }
+
+        const roleId = guild.GetRoleId();
+        if (roleId != null) {
+            if (!messageInfo.member.roles.cache.some(role => role.id == roleId)) {
+                return;
+            }
+        }
+
+        if (!query?.isFilled()) {
+            const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query games made with LÖVE. You can edit the message to update the bot\'s message.');
+
+            if (botMessage != null) {
+                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
+            }
+
+            return;
+        }
+
+        const games = Docs.QueryGames(query);
+
+        let oldMessage: Message;
+
+        if (messageInfo.edit) {
+            const oldMessageId = await Redis.get(this.messageKey + messageInfo.message.id);
+            if (oldMessageId != null) {
+                oldMessage = (<TextChannel>messageInfo.channel).messages.cache.get(oldMessageId);
+            }
+        }
+
+        if (oldMessage != null) {
+            oldMessage.edit({
+                embeds: [DocsEmbeds.GetGameEmbed(messageInfo, query, games)]
+            });
+            return;
+        }
+
+        const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetGameEmbed(messageInfo, query, games), null, null, null, true);
+        if (botMessage != null) {
+            Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }
 }

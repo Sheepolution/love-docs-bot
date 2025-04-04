@@ -12,6 +12,7 @@ export default class EmojiConstants {
     public static readonly BULLET = {
         LOVE: '🔸',
         LUA: '🔹',
+        GAME: '🔹',
     };
 
     public static readonly O_FACE = '<:O_:689653818735984666>';

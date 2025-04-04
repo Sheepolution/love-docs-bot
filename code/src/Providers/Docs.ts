@@ -1,10 +1,12 @@
 import DocsApi from '../Data/DocsApi.json';
 import DocsLibs from '../Data/DocsLibs.json';
 import DocsCookbook from '../Data/DocsCookBook.json';
+import DocsGames from '../Data/DocsGames.json';
 import IDocsApi from '../Interfaces/IDocsApi';
 import IDocsLib from '../Interfaces/IDocsLib';
 import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
 import IDocsCookbook from '../Interfaces/IDocsCookbook';
+import IDocsGame from '../Interfaces/IDocsGame';
 
 export default class Docs {
 
@@ -112,4 +114,14 @@ export default class Docs {
 
         return null;
     }
+
+    public static QueryGames(query: string): Array<IDocsGame> {
+        const exact = DocsGames.filter(a => a.title.toLowerCase() == query.toLowerCase());
+        if (exact.length == 1) {
+            return exact;
+        }
+
+        return DocsGames.filter(a => a.title.toLowerCase().includes(query.toLowerCase()));
+    }
+
 }

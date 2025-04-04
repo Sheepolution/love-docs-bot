@@ -9,6 +9,7 @@ export default class CommandConstants {
         WIKI: ['api', 'a', 'wiki', 'w', 'query', 'q', 'docs', 'd'],
         LIB: ['lib'],
         COOKBOOK: ['cook', 'book', 'cb'],
+        GAME: ['game', 'games', 'g'],
 
         // Generic
         HELP: ['help', 'about'],
