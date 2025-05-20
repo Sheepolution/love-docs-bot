@@ -194,7 +194,7 @@ export default class DocsEmbeds {
             const game = gameList[0];
             embed.setTitle(game.title);
             embed.setURL(DocsUtils.GetGameUrl(game));
-            embed.setImage(`https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.id}/header_292x136.jpg?t=${game.img_id}`);
+            embed.setImage(`https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.id}${game.img_id ? ('/' + game.img_id) : '' }/header_292x136.jpg`);
             embed.setDescription('A game made with LÖVE!');
         } else {
             embed.setTitle(`Search results for '${query}'`);
