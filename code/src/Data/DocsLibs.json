@@ -2372,5 +2372,11 @@
         "author": "Tachytaenius",
         "url": "https://github.com/wolfboyft/mathsies",
         "description": "LuaJIT maths library with support for floating point determinism"
+    },
+    {
+        "name": "slick",
+        "author": "erinmaus",
+        "url": "https://github.com/erinmaus/slick",
+        "description": "slick is a simple two-dimensional swept collision library with support for polygons inspired by the simplicity and robustness of bump.lua."
     }
 ]
