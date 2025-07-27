@@ -932,12 +932,12 @@
         "url": "https://github.com/Mechazawa/Love-Debug-Graph",
         "description": "Small OO FPS graphing utillity based on FPSGraph"
     },
-	{
-		"name": "Kazari",
-		"author": "Miku AuahDark",
-		"url": "https://github.com/MikuAuahDark/Kazari",
-		"description": "Multitouch gesture and input library."
-	},
+    {
+        "name": "Kazari",
+        "author": "Miku AuahDark",
+        "url": "https://github.com/MikuAuahDark/Kazari",
+        "description": "Multitouch gesture and input library."
+    },
     {
         "name": "Lovebird",
         "author": "rxi",
@@ -1221,6 +1221,12 @@
         "description": " Input library for LÖVE that bridges the gap between keyboard and gamepad controls"
     },
     {
+        "name": "mash",
+        "author": "Sheepolution",
+        "url": "https://github.com/sheepolution/mash",
+        "description": " Mash is an input library for LÖVE, allowing for inline checks on the different states (pressed, down, released), and for separate instances that have their own control configuration."
+    },
+    {
         "name": "input",
         "author": "xiejiangzhi",
         "url": "https://github.com/xiejiangzhi/input",
@@ -1291,6 +1297,12 @@
         "author": "excessive",
         "url": "https://github.com/excessive/cpml",
         "description": "Math/intersection library designed for games"
+    },
+    {
+        "name": "vornmath",
+        "author": "Vörnicus",
+        "url": "https://github.com/DUznanski/vornmath",
+        "description": "Vornmath is a comprehensive vector and complex math library for lua. It works on lua versions 5.1 through 5.4 as well as luajit."
     },
     {
         "name": "delaunay",
@@ -1364,12 +1376,12 @@
         "url": "https://github.com/josefnpat/LoverNet",
         "description": "A networking library that leverages bitser and enet [IPv4]"
     },
-	{
-		"name": "NAniTe",
-		"author": "Miku AuahDark",
-		"url": "https://github.com/MikuAuahDark/NPad93#nanite",
-		"description": "Timeline-based animation system that supports forward and backward update."
-	},
+    {
+        "name": "NAniTe",
+        "author": "Miku AuahDark",
+        "url": "https://github.com/MikuAuahDark/NPad93#nanite",
+        "description": "Timeline-based animation system that supports forward and backward update."
+    },
     {
         "name": "NoobHub",
         "author": "Overtorment",
@@ -1406,18 +1418,18 @@
                 "description": "Create new guideline constraint.",
                 "example": "local guideline = NLay.line(NLay, \"horizontal\", \"percent\", 0.25)"
             },
-			{
-				"name": "batchGet",
-				"argument": "...",
-				"description": "Performs batched retrieval of constraint values, improves performance when resolving different constraints with identical attached constraints.",
-				"example": "local c = NLay.batchGet(constraint1, constraint2, constraint3)\n\nfor i = 1, #c, 4 do\n\tlove.graphics.rectangle(\"fill\", c[i], c[i+1], c[i+2], c[i+3])\nend"
-			},
-			{
-				"name": "grid",
-				"argument": "constraint, nrows, ncols [, settings]",
-				"description": "Create new grid layout (`Grid` object) using the `constraint` constraint as the base.",
-				"example": "local grid = NLay.grid(constraint, 4, 4, {spacing = 4}) -- default dynamic grid cell size\nlocal grid = NLay.grid(constraint, 4, 4, {\n\t-- Activates fixed mode by specifying cell dimensions.\n\tcellWidth = 64,\n\tcellHeight = 64\n})"
-			},
+            {
+                "name": "batchGet",
+                "argument": "...",
+                "description": "Performs batched retrieval of constraint values, improves performance when resolving different constraints with identical attached constraints.",
+                "example": "local c = NLay.batchGet(constraint1, constraint2, constraint3)\n\nfor i = 1, #c, 4 do\n\tlove.graphics.rectangle(\"fill\", c[i], c[i+1], c[i+2], c[i+3])\nend"
+            },
+            {
+                "name": "grid",
+                "argument": "constraint, nrows, ncols [, settings]",
+                "description": "Create new grid layout (`Grid` object) using the `constraint` constraint as the base.",
+                "example": "local grid = NLay.grid(constraint, 4, 4, {spacing = 4}) -- default dynamic grid cell size\nlocal grid = NLay.grid(constraint, 4, 4, {\n\t-- Activates fixed mode by specifying cell dimensions.\n\tcellWidth = 64,\n\tcellHeight = 64\n})"
+            },
             {
                 "name": "Inside:constraint",
                 "arguments": "top, left, bottom, right",
@@ -1469,46 +1481,46 @@
                 "arguments": "",
                 "description": "Retrieve tag data previously set from constraint."
             },
-			{
-				"name": "LineConstraint:offset",
-				"arguments": "off",
-				"description": "(Re)-set the line offset previously set from `NLay.line`"
-			},
-			{
-				"name": "Grid:get",
-				"arguments": "row, column",
-				"description": "Retrieve `GridCellConstraint` at specified row and column. `GridCellConstraint` implements `BaseConstraint`.",
-				"example": "local topleft = grid:get(1, 1)"
-			},
-			{
-				"name": "Grid:spacing",
-				"arguments": "horizontal, vertical [, horizontalFL [, verticalFL]]",
-				"description": "Change the spacing of each cell.",
-				"example": "grid:spacing(4, 4)\ngrid:spacing(4, 4, true, true) -- adds padding to first and last row and column."
-			},
-			{
-				"name": "Grid:cellSize",
-				"arguments": "width, height",
-				"description": "Set the cell size of the grid, excluding spacing. This function only takes effect on fixed mode, otherwise it does nothing."
-			},
-			{
-				"name": "Grid:foreach",
-				"arguments": "func",
-				"description": "Call a function for each `GridCellConstraint` in the grid.",
-				"example": "grid:foreach(function(constraint, row, col)\n\t-- Do something to constraint at specified rows and columns\nend)"
-			},
-			{
-				"name": "Grid:isFixed",
-				"arguments": "",
-				"description": "Is the grid in dynamic mode or fixed mode?",
-				"example": "print(grid:isFixed() and \"fixed mode\" or \"dynamic mode\")"
-			},
-			{
-				"name": "Grid:getCellDimensions",
-				"arguments": "",
-				"description": "Retrieve the dimensions of a single cell.",
-				"example": "local cw, ch = grid:getCellDimensions()"
-			}
+            {
+                "name": "LineConstraint:offset",
+                "arguments": "off",
+                "description": "(Re)-set the line offset previously set from `NLay.line`"
+            },
+            {
+                "name": "Grid:get",
+                "arguments": "row, column",
+                "description": "Retrieve `GridCellConstraint` at specified row and column. `GridCellConstraint` implements `BaseConstraint`.",
+                "example": "local topleft = grid:get(1, 1)"
+            },
+            {
+                "name": "Grid:spacing",
+                "arguments": "horizontal, vertical [, horizontalFL [, verticalFL]]",
+                "description": "Change the spacing of each cell.",
+                "example": "grid:spacing(4, 4)\ngrid:spacing(4, 4, true, true) -- adds padding to first and last row and column."
+            },
+            {
+                "name": "Grid:cellSize",
+                "arguments": "width, height",
+                "description": "Set the cell size of the grid, excluding spacing. This function only takes effect on fixed mode, otherwise it does nothing."
+            },
+            {
+                "name": "Grid:foreach",
+                "arguments": "func",
+                "description": "Call a function for each `GridCellConstraint` in the grid.",
+                "example": "grid:foreach(function(constraint, row, col)\n\t-- Do something to constraint at specified rows and columns\nend)"
+            },
+            {
+                "name": "Grid:isFixed",
+                "arguments": "",
+                "description": "Is the grid in dynamic mode or fixed mode?",
+                "example": "print(grid:isFixed() and \"fixed mode\" or \"dynamic mode\")"
+            },
+            {
+                "name": "Grid:getCellDimensions",
+                "arguments": "",
+                "description": "Retrieve the dimensions of a single cell.",
+                "example": "local cw, ch = grid:getCellDimensions()"
+            }
         ]
     },
     {
@@ -1808,10 +1820,16 @@
         "description": "Create timers and tweens with ease."
     },
     {
-        "name": "tick",
+        "name": "tick (timer)",
         "author": "rxi",
         "url": "https://github.com/rxi/tick",
         "description": "Lua module for delaying function calls"
+    },
+    {
+        "name": "coil",
+        "author": "rxi",
+        "url": "https://github.com/rxi/coil",
+        "description": "A tiny cooperative threading module for Lua. Coil is based around coroutines, allowing many cooperative threads to run simultaneously."
     },
     {
         "name": "tween.lua",
@@ -2082,7 +2100,7 @@
         "description": "uses accelerometer data for shake device detection written in Lua"
     },
     {
-        "name": "tick",
+        "name": "tick (fps)",
         "author": "bjornbytes",
         "url": "https://github.com/bjornbytes/tick",
         "description": "Useful timing tweaks for LÖVE's run loop"
@@ -2378,5 +2396,17 @@
         "author": "erinmaus",
         "url": "https://github.com/erinmaus/slick",
         "description": "slick is a simple two-dimensional swept collision library with support for polygons inspired by the simplicity and robustness of bump.lua."
+    },
+    {
+        "name": "prism",
+        "author": "PrismRL",
+        "url": "https://github.com/PrismRL/prism",
+        "description": "prism is a roguelike game engine written in Lua for use with LÖVE, inspired by Bob Nystrom's talk on roguelike architecture. It utilizes the command pattern and composition to provide a modular, extensible foundation for creating turn-based games."
+    },
+    {
+        "name": "Shöve",
+        "author": "Oval Tutu",
+        "url": "https://github.com/Oval-Tutu/shove",
+        "description": "Shöve is a powerful, flexible resolution-handling and rendering library for the LÖVE framework. Using Shöve, you can develop your game at a fixed resolution while scaling to fit the window or screen - all with a simple, intuitive API."
     }
 ]
