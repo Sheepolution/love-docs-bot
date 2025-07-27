@@ -7,6 +7,7 @@ import IDocsLib from '../Interfaces/IDocsLib';
 import IDocsLibFunction from '../Interfaces/IDocsLibFunction';
 import IDocsCookbook from '../Interfaces/IDocsCookbook';
 import IDocsGame from '../Interfaces/IDocsGame';
+import DocsUtils from '../Utils/DocsUtils';
 
 export default class Docs {
 
@@ -20,13 +21,20 @@ export default class Docs {
     }
 
     public static QueryLib(query: string): Array<IDocsLib> {
-        const exact = DocsLibs.filter(a => a.name.toLowerCase() == query.toLowerCase());
+
+        const normQuery = DocsUtils.Normalize(query);
+
+        const exact = DocsLibs.filter(a => DocsUtils.Normalize(a.name) == normQuery);
         if (exact.length == 1) {
             return exact;
         }
 
-        const like = DocsLibs.filter(a => a.name.toLowerCase().includes(query.toLowerCase()));
-        return like.concat(DocsLibs.filter(a => a.description.toLowerCase().includes(query.toLowerCase()) && !like.includes(a)));
+        const like = DocsLibs.filter(a => DocsUtils.Normalize(a.name).includes(normQuery));
+        return like.concat(
+            DocsLibs.filter(
+                a => DocsUtils.Normalize(a.description).includes(normQuery) && !like.includes(a)
+            )
+        );
     }
 
     public static QueryLibFunction(lib: IDocsLib, query: string): Array<IDocsLibFunction> {
@@ -123,5 +131,4 @@ export default class Docs {
 
         return DocsGames.filter(a => a.title.toLowerCase().includes(query.toLowerCase()));
     }
-
 }

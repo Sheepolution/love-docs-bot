@@ -35,4 +35,8 @@ export default class DocsUtils {
     public static HasSeparator(str: string) {
         return str.includes(':') || str.includes('.');
     }
+
+    public static Normalize(str: string): string {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
 }
