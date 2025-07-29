@@ -220,7 +220,7 @@
       },
       {
         "path": "/guides/lua-basics/tables/",
-        "title": "Tables and For-loops",
+        "title": "Tables and for-loops",
         "abstract": null,
         "headers": [
           {
@@ -275,6 +275,55 @@
             "level": "h2",
             "text": "Usage",
             "anchor": "usage",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/lua-basics/gotchas/",
+        "title": "Gotchas",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Arrays Start At 1",
+            "anchor": "arrays-start-at-1",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Not Equals To",
+            "anchor": "not-equals-to",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "String Concatenation",
+            "anchor": "string-concatenation",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Operator Assignments",
+            "anchor": "operator-assignments",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Global Variables",
+            "anchor": "global-variables",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Truthy/Falsey",
+            "anchor": "truthyfalsey",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Multiple Returns",
+            "anchor": "multiple-returns",
             "abstract": null
           }
         ]
@@ -558,16 +607,65 @@
         ]
       },
       {
-        "path": "/guides/love/playing-sound/",
-        "title": "Playing sound",
+        "path": "/guides/love/playing-audio/",
+        "title": "Playing audio",
         "abstract": null,
         "headers": []
       },
       {
         "path": "/guides/love/input/",
         "title": "Input",
-        "abstract": null,
-        "headers": []
+        "abstract": "LÖVE has API for input through keyboard, mouse and joystick.",
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Keyboard",
+            "anchor": "keyboard",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "isDown",
+            "anchor": "isdown",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "pressed / released",
+            "anchor": "pressed--released",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "textinput",
+            "anchor": "textinput",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Mouse",
+            "anchor": "mouse",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Joystick",
+            "anchor": "joystick",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Axes",
+            "anchor": "axes",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Rumble",
+            "anchor": "rumble",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/love/filesystem/",
@@ -579,7 +677,14 @@
         "path": "/guides/love/deltatime/",
         "title": "Deltatime",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h2",
+            "text": "When to use deltatime?",
+            "anchor": "when-to-use-deltatime",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/love/reading-errors/",
@@ -670,7 +775,68 @@
         "path": "/guides/intermediate/oop/",
         "title": "OOP",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Approach",
+            "anchor": "approach",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Creating Classes",
+            "anchor": "creating-classes",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Basic Classes",
+            "anchor": "basic-classes",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Alternative Structures",
+            "anchor": "alternative-structures",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Extended Classes",
+            "anchor": "extended-classes",
+            "abstract": null
+          },
+          {
+            "level": "h1",
+            "text": "Futher Abstraction",
+            "anchor": "futher-abstraction",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Event Callbacks",
+            "anchor": "event-callbacks",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Overcomplicating",
+            "anchor": "overcomplicating",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Asteroids!",
+            "anchor": "asteroids",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Next Steps",
+            "anchor": "next-steps",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/intermediate/collision-resolving/",
@@ -703,8 +869,38 @@
           },
           {
             "level": "h3",
-            "text": "Types",
-            "anchor": "types",
+            "text": "Variables",
+            "anchor": "variables",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Conditionals",
+            "anchor": "conditionals",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Loops",
+            "anchor": "loops",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Functions",
+            "anchor": "functions",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Arrays",
+            "anchor": "arrays",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Structs",
+            "anchor": "structs",
             "abstract": null
           },
           {
@@ -715,8 +911,8 @@
           },
           {
             "level": "h3",
-            "text": "Simple color",
-            "anchor": "simple-color",
+            "text": "Grayscale color",
+            "anchor": "grayscale-color",
             "abstract": null
           },
           {
@@ -733,50 +929,56 @@
           },
           {
             "level": "h3",
-            "text": "Box blur",
-            "anchor": "box-blur",
-            "abstract": null
-          },
-          {
-            "level": "h2",
-            "text": "Vertex shaders",
-            "anchor": "vertex-shaders",
-            "abstract": null
-          },
-          {
-            "level": "h2",
-            "text": "Fullscreen triangle",
-            "anchor": "fullscreen-triangle",
-            "abstract": null
-          },
-          {
-            "level": "h2",
-            "text": "Effects",
-            "anchor": "effects",
+            "text": "Wave effect",
+            "anchor": "wave-effect",
             "abstract": null
           },
           {
             "level": "h3",
-            "text": "Nearest color",
-            "anchor": "nearest-color",
+            "text": "Types",
+            "anchor": "types",
             "abstract": null
           },
           {
-            "level": "h3",
-            "text": "Pixelation",
-            "anchor": "pixelation",
-            "abstract": null
-          },
-          {
-            "level": "h3",
-            "text": "Outlines",
-            "anchor": "outlines",
+            "level": "h2",
+            "text": "Object Management",
+            "anchor": "object-management",
             "abstract": null
           },
           {
             "level": "h2",
             "text": "Shader optimisation",
             "anchor": "shader-optimisation",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Technical terms",
+            "anchor": "technical-terms",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "UV-coordinates",
+            "anchor": "uv-coordinates",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Registers",
+            "anchor": "registers",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "VRAM",
+            "anchor": "vram",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Thread",
+            "anchor": "thread",
             "abstract": null
           }
         ]
@@ -815,6 +1017,85 @@
             "text": "Average of pixels",
             "anchor": "average-of-pixels",
             "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Barriers",
+            "anchor": "barriers",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/intermediate/box-blur/",
+        "title": "Box Blur",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/outlines/",
+        "title": "Outlines",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/palette/",
+        "title": "Palette",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/pixelation/",
+        "title": "Pixelation",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/intermediate/vertex-shaders/",
+        "title": "Vertex Shaders",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Fullscreen triangle",
+            "anchor": "fullscreen-triangle",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Technical terms",
+            "anchor": "technical-terms",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Vertex",
+            "anchor": "vertex",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Matrices",
+            "anchor": "matrices",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Projection-Matrix",
+            "anchor": "projection-matrix",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "NDC-space",
+            "anchor": "ndc-space",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Orthographic",
+            "anchor": "orthographic",
+            "abstract": null
           }
         ]
       }
@@ -835,6 +1116,74 @@
         "title": "Threads",
         "abstract": null,
         "headers": []
+      }
+    ]
+  },
+  {
+    "name": "Recipes",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/recipes/screen-resizing/",
+        "title": "Screen resizing",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Pixel art",
+            "anchor": "pixel-art",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Libraries",
+            "anchor": "libraries",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Full code",
+            "anchor": "full-code",
+            "abstract": null
+          }
+        ]
+      },
+      {
+        "path": "/guides/recipes/steam/",
+        "title": "Steam",
+        "abstract": "Steam",
+        "headers": [
+          {
+            "level": "h2",
+            "text": "luasteam",
+            "anchor": "luasteam",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Multiplayer",
+            "anchor": "multiplayer",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Socket",
+            "anchor": "socket",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Messaging",
+            "anchor": "messaging",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "Summary",
+            "anchor": "summary",
+            "abstract": null
+          }
+        ]
       }
     ]
   }
