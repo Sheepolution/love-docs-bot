@@ -48,7 +48,7 @@ export default class BotManager {
             messageInfo.edit = true;
         }
 
-        var content = message.content.trim();
+        const content = message.content.trim();
 
         const discordGuild = messageInfo.guild;
         if (discordGuild == null) {
@@ -59,8 +59,8 @@ export default class BotManager {
 
         const guild = await GuildRepository.GetOrCreateByDiscordId(discordGuild.id);
 
-        var prefixKey = BotManager.prefixKey + message.guild.id;
-        var prefix = await Redis.get(prefixKey);
+        const prefixKey = BotManager.prefixKey + message.guild.id;
+        let prefix = await Redis.get(prefixKey);
         if (prefix != null && !loweredContent.startsWith(prefix.toLowerCase())) {
             return;
         }
@@ -89,7 +89,7 @@ export default class BotManager {
     }
 
     public static async ClearPrefixCache(guildDiscordId: string) {
-        var prefixKey = this.prefixKey + guildDiscordId;
+        const prefixKey = this.prefixKey + guildDiscordId;
         await Redis.del(prefixKey);
     }
 }

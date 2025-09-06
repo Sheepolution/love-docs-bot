@@ -13,8 +13,8 @@ export default class CommandManager {
     public static async CheckSpam(messageInfo: IMessageInfo): Promise<ISpamInfo> {
         const spamKey = this.spamKey + messageInfo.user.id;
         const total = await Redis.incr(spamKey);
-        var spam = false;
-        var warn = false;
+        let spam = false;
+        let warn = false;
 
         Redis.expire(spamKey, SettingsConstants.SPAM_EXPIRE_TIME);
 
@@ -29,8 +29,8 @@ export default class CommandManager {
     public static async GetCooldown(messageInfo: IMessageInfo): Promise<ICooldownInfo> {
         const cooldownKey = `${this.cooldownKey + messageInfo.user.id}:${messageInfo.commandInfo.command}`;
 
-        var time = 0;
-        var cooldown = await Redis.get(cooldownKey);
+        let time = 0;
+        let cooldown = await Redis.get(cooldownKey);
 
         if (cooldown == null) {
             return { time: 0, tell: false };
