@@ -137,11 +137,11 @@ export default class DocsEmbeds {
 
     public static GetCookbookEmbed(messageInfo: IMessageInfo, query: string, group?: IDocsCookbook) {
         const bookName = 'LÖVE Cookbook';
-        const baseURL = 'https://diminim.github.io/love-cookbook';
+        const baseURL = 'https://diminiminim.github.io/love-cookbook';
 
         const embed = new EmbedBuilder()
             .setColor('#ffd2a7')
-            .setThumbnail('https://diminim.github.io/love-cookbook/assets/logo.png');
+            .setThumbnail('https://diminiminim.github.io/love-cookbook/assets/logo.png');
 
         if (!group) {
             embed.setTitle(`Search results for '${query}'`);
