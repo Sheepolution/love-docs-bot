@@ -1,10 +1,10 @@
 [
   {
-    "name": null,
-    "summary": null,
+    "name": "Installation",
+    "summary": "/guides/installation/",
     "guides": [
       {
-        "path": "/guides/getting-started/",
+        "path": "/guides/installation/getting-started/",
         "title": "Getting started",
         "abstract": null,
         "headers": [
@@ -27,18 +27,55 @@
             "abstract": null
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "Installation",
-    "summary": "/guides/installation/",
-    "guides": [
+      },
       {
         "path": "/guides/installation/love/",
         "title": "LÖVE",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Windows",
+            "anchor": "windows",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "MacOS",
+            "anchor": "macos",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Linux",
+            "anchor": "linux",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Android",
+            "anchor": "android",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "iOS",
+            "anchor": "ios",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Running Your Code (Windows, MacOS, Linux)",
+            "anchor": "running-your-code-windows-macos-linux",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "LÖVE 12",
+            "anchor": "lve-12",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/installation/vscode/",
@@ -99,7 +136,20 @@
         "path": "/guides/lua-basics/lua/",
         "title": "Lua",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Learning Lua",
+            "anchor": "learning-lua",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "LuaJIT",
+            "anchor": "luajit",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/lua-basics/variables/",
@@ -344,17 +394,17 @@
     ]
   },
   {
-    "name": "Lua Intermediate",
+    "name": "Lua Advanced",
     "summary": null,
     "guides": [
       {
-        "path": "/guides/lua-intermediate/require/",
+        "path": "/guides/lua-advanced/require/",
         "title": "Require",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/lua-intermediate/scope/",
+        "path": "/guides/lua-advanced/scope/",
         "title": "Scope",
         "abstract": null,
         "headers": [
@@ -367,13 +417,13 @@
         ]
       },
       {
-        "path": "/guides/lua-intermediate/modulo/",
+        "path": "/guides/lua-advanced/modulo/",
         "title": "Modulo",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/lua-intermediate/nested-for-loops/",
+        "path": "/guides/lua-advanced/nested-for-loops/",
         "title": "Nested for-loops",
         "abstract": null,
         "headers": [
@@ -386,7 +436,7 @@
         ]
       },
       {
-        "path": "/guides/lua-intermediate/standard-library/",
+        "path": "/guides/lua-advanced/standard-library/",
         "title": "Standard library",
         "abstract": null,
         "headers": [
@@ -471,7 +521,7 @@
         ]
       },
       {
-        "path": "/guides/lua-intermediate/string-patterns/",
+        "path": "/guides/lua-advanced/string-patterns/",
         "title": "String patterns",
         "abstract": null,
         "headers": [
@@ -490,13 +540,13 @@
         ]
       },
       {
-        "path": "/guides/lua-intermediate/ternary-operators/",
+        "path": "/guides/lua-advanced/ternary-operators/",
         "title": "Ternary operators",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/lua-intermediate/metatables/",
+        "path": "/guides/lua-advanced/metatables/",
         "title": "Metatables",
         "abstract": null,
         "headers": [
@@ -519,11 +569,30 @@
             "abstract": null
           }
         ]
+      },
+      {
+        "path": "/guides/lua-advanced/coroutines/",
+        "title": "Coroutines",
+        "abstract": null,
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Coroutine Basics",
+            "anchor": "coroutine-basics",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "The Real Power",
+            "anchor": "the-real-power",
+            "abstract": null
+          }
+        ]
       }
     ]
   },
   {
-    "name": "LÖVE Basics",
+    "name": "LÖVE Introduction",
     "summary": null,
     "guides": [
       {
@@ -607,6 +676,12 @@
         ]
       },
       {
+        "path": "/guides/love/drawing-text/",
+        "title": "Drawing text",
+        "abstract": null,
+        "headers": []
+      },
+      {
         "path": "/guides/love/playing-audio/",
         "title": "Playing audio",
         "abstract": null,
@@ -671,7 +746,38 @@
         "path": "/guides/love/filesystem/",
         "title": "Filesystem",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Saving Files",
+            "anchor": "saving-files",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Reading Files",
+            "anchor": "reading-files",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Running Files",
+            "anchor": "running-files",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Loading From Source",
+            "anchor": "loading-from-source",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Other File Formats",
+            "anchor": "other-file-formats",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/love/deltatime/",
@@ -720,14 +826,33 @@
     ]
   },
   {
-    "name": "Basics",
+    "name": "Basic Concepts",
     "summary": null,
     "guides": [
       {
         "path": "/guides/basic/aabb/",
         "title": "AABB",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h2",
+            "text": "Bounding Boxes",
+            "anchor": "bounding-boxes",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Point Collision",
+            "anchor": "point-collision",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "Box Collision",
+            "anchor": "box-collision",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/basic/angle-and-distance/",
@@ -768,11 +893,11 @@
     ]
   },
   {
-    "name": "Intermediate",
+    "name": "Advanced Concepts",
     "summary": null,
     "guides": [
       {
-        "path": "/guides/intermediate/oop/",
+        "path": "/guides/advanced/oop/",
         "title": "OOP",
         "abstract": null,
         "headers": [
@@ -839,25 +964,37 @@
         ]
       },
       {
-        "path": "/guides/intermediate/collision-resolving/",
+        "path": "/guides/advanced/collision-resolving/",
         "title": "Collision resolution",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/stencil-states/",
+        "path": "/guides/advanced/stencil-states/",
         "title": "Stencil states",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/coroutines/",
-        "title": "Coroutines",
+        "path": "/guides/advanced/physics/",
+        "title": "Physics",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/shaders/",
+        "path": "/guides/advanced/threads/",
+        "title": "Threads",
+        "abstract": null,
+        "headers": []
+      }
+    ]
+  },
+  {
+    "name": "Shaders",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/guides/shaders/introduction/",
         "title": "Shaders",
         "abstract": null,
         "headers": [
@@ -984,7 +1121,7 @@
         ]
       },
       {
-        "path": "/guides/intermediate/compute-shaders/",
+        "path": "/guides/shaders/compute-shaders/",
         "title": "Compute Shaders",
         "abstract": null,
         "headers": [
@@ -1027,31 +1164,31 @@
         ]
       },
       {
-        "path": "/guides/intermediate/box-blur/",
+        "path": "/guides/shaders/box-blur/",
         "title": "Box Blur",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/outlines/",
+        "path": "/guides/shaders/outlines/",
         "title": "Outlines",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/palette/",
+        "path": "/guides/shaders/palette/",
         "title": "Palette",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/pixelation/",
+        "path": "/guides/shaders/pixelation/",
         "title": "Pixelation",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/intermediate/vertex-shaders/",
+        "path": "/guides/shaders/vertex-shaders/",
         "title": "Vertex Shaders",
         "abstract": null,
         "headers": [
@@ -1102,18 +1239,24 @@
     ]
   },
   {
-    "name": "Advanced",
+    "name": "Exporting",
     "summary": null,
     "guides": [
       {
-        "path": "/guides/advanced/physics/",
-        "title": "Physics",
+        "path": "/guides/exporting/distribution/",
+        "title": "Distribution",
         "abstract": null,
         "headers": []
       },
       {
-        "path": "/guides/advanced/threads/",
-        "title": "Threads",
+        "path": "/guides/exporting/web-export/",
+        "title": "Web Export",
+        "abstract": null,
+        "headers": []
+      },
+      {
+        "path": "/guides/exporting/build-tools/",
+        "title": "Build Tools",
         "abstract": null,
         "headers": []
       }
@@ -1184,6 +1327,12 @@
             "abstract": null
           }
         ]
+      },
+      {
+        "path": "/guides/recipes/modding/",
+        "title": "Modding",
+        "abstract": null,
+        "headers": []
       }
     ]
   }
