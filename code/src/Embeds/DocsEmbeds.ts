@@ -19,7 +19,7 @@ export default class DocsEmbeds {
         if (apiList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         } else if (apiList.length == 1) {
             const api = apiList[0];
             embed.setTitle(api.name);
@@ -52,7 +52,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         }
 
         return embed;
@@ -66,10 +66,10 @@ export default class DocsEmbeds {
         if (libList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         } else if (libList.length == 1) {
             const lib = libList[0];
-            embed.setAuthor({name: `Made by ${lib.author}`});
+            embed.setAuthor({ name: `Made by ${lib.author}` });
             embed.setURL(lib.url);
             embed.setTitle(lib.name);
             embed.setDescription(lib.description);
@@ -90,7 +90,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         }
 
         return embed;
@@ -99,18 +99,18 @@ export default class DocsEmbeds {
     public static GetLibFunctionEmbed(messageInfo: IMessageInfo, query: string, lib: IDocsLib, functionList: Array<IDocsLibFunction>) {
         const embed = new EmbedBuilder()
             .setColor(SettingsConstants.COLORS.DEFAULT);
-        embed.setAuthor({name: `${lib.name} by ${lib.author}`,url: lib.url});
+        embed.setAuthor({ name: `${lib.name} by ${lib.author}`, url: lib.url });
 
         if (functionList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         } else if (functionList.length == 1) {
             const func = functionList[0];
             embed.setTitle(`${DocsUtils.GetLibFunctionName(lib, func)}${func.callable == false ? '' : `${!func.arguments?.isFilled() ? '()' : `( ${func.arguments} )`}`}`);
             embed.setDescription(func.description);
             if (func.example) {
-                embed.addFields({name: 'Example', value: `\`\`\`lua\n${func.example}\n\`\`\``});
+                embed.addFields({ name: 'Example', value: `\`\`\`lua\n${func.example}\n\`\`\`` });
             }
         } else {
             embed.setTitle(`Search results for '${query}'`);
@@ -129,7 +129,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         }
 
         return embed;
@@ -146,7 +146,7 @@ export default class DocsEmbeds {
         if (!group) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
             return embed;
         }
 
@@ -166,7 +166,7 @@ export default class DocsEmbeds {
             }
 
             const url = `${baseURL}${guide.path}`;
-            embed.setAuthor({ name: group.name, url: group.summary ?? url });
+            embed.setAuthor({ name: group.name, url: url });
             embed.setTitle(guide.title);
             embed.setDescription(guide.abstract ?? `Read about it in the [LÖVE Cookbook](${url})!`);
             embed.setURL(`${baseURL}${guide.path}`);
@@ -189,12 +189,12 @@ export default class DocsEmbeds {
         if (gameList.length == 0) {
             embed.setTitle(`Search results for '${query}'`);
             embed.setDescription(`\nNo results found. ${EmojiConstants.O_FACE}`);
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         } else if (gameList.length == 1) {
             const game = gameList[0];
             embed.setTitle(game.title);
             embed.setURL(DocsUtils.GetGameUrl(game));
-            embed.setImage(`https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.id}${game.img_id ? ('/' + game.img_id) : '' }/header_292x136.jpg`);
+            embed.setImage(`https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.id}${game.img_id ? ('/' + game.img_id) : ''}/header_292x136.jpg`);
             embed.setDescription('A game made with LÖVE!');
         } else {
             embed.setTitle(`Search results for '${query}'`);
@@ -213,7 +213,7 @@ export default class DocsEmbeds {
 
             embed.setDescription(description);
 
-            embed.setFooter({text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL()});
+            embed.setFooter({ text: 'You can edit your query to update this message.', iconURL: messageInfo.user.displayAvatarURL() });
         }
 
         return embed;

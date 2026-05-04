@@ -1,5 +1,17 @@
 [
   {
+    "name": "Introduction",
+    "summary": null,
+    "guides": [
+      {
+        "path": "/",
+        "title": "Introduction",
+        "abstract": null,
+        "headers": []
+      }
+    ]
+  },
+  {
     "name": "Installation",
     "summary": "/guides/installation/",
     "guides": [

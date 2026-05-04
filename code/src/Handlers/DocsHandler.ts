@@ -177,8 +177,8 @@ export default class DocsHandler {
             }
         }
 
-        if (!query?.isFilled()) {
-            query = "Getting started";
+        if (!query?.isFilled(true)) {
+            query = 'introduction';
         }
 
         const docs = Docs.QueryCookbook(query);
