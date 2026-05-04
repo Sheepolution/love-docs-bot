@@ -883,12 +883,6 @@
         "title": "Canvases",
         "abstract": null,
         "headers": []
-      },
-      {
-        "path": "/guides/basic/stencil-modes/",
-        "title": "Stencil modes",
-        "abstract": null,
-        "headers": []
       }
     ]
   },
@@ -970,10 +964,155 @@
         "headers": []
       },
       {
-        "path": "/guides/advanced/stencil-states/",
-        "title": "Stencil states",
+        "path": "/guides/advanced/stencils/",
+        "title": "Stencils",
         "abstract": null,
-        "headers": []
+        "headers": [
+          {
+            "level": "h1",
+            "text": "Stencils",
+            "anchor": "stencils",
+            "abstract": null
+          },
+          {
+            "level": "h1",
+            "text": "0. TL;DR: Quick Start",
+            "anchor": "0-tldr-quick-start",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "0.1 `setStencilMode` Example",
+            "anchor": "01-setstencilmode-example",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "0.2 `setStencilState` Example",
+            "anchor": "02-setstencilstate-example",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "0.3 Clearing the Stencil Buffer",
+            "anchor": "03-clearing-the-stencil-buffer",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "0.4 Binding a Canvas with Stencils Active",
+            "anchor": "04-binding-a-canvas-with-stencils-active",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "1. Stencil Buffer",
+            "anchor": "1-stencil-buffer",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "2. Stencil Compare Modes & Culling",
+            "anchor": "2-stencil-compare-modes--culling",
+            "abstract": null
+          },
+          {
+            "level": "h2",
+            "text": "3. `setStencilMode`",
+            "anchor": "3-setstencilmode",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "3.1 Usage",
+            "anchor": "31-usage",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "3.1.1 Choosing a Stencil Value (1)",
+            "anchor": "311-choosing-a-stencil-value-1",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "3.1.2 Enabling Stencil Draw (2)",
+            "anchor": "312-enabling-stencil-draw-2",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "3.1.3 Enabling Stencil Testing (3)",
+            "anchor": "313-enabling-stencil-testing-3",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "3.1.4 Disabling Stencil Testing (4)",
+            "anchor": "314-disabling-stencil-testing-4",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "3.2 A Working Example",
+            "anchor": "32-a-working-example",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "4. `setStencilState`",
+            "anchor": "4-setstencilstate",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "4.1 Signature",
+            "anchor": "41-signature",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "4.1 Stencil Action",
+            "anchor": "41-stencil-action",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "4.2 `StencilCompareMode`",
+            "anchor": "42-stencilcomparemode",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "4.3 `setColorMask`",
+            "anchor": "43-setcolormask",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "4.4 A Working Example",
+            "anchor": "44-a-working-example",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "4.4.1 Drawing to the Stencil Buffer and Window at the Same Time",
+            "anchor": "441-drawing-to-the-stencil-buffer-and-window-at-the-same-time",
+            "abstract": null
+          },
+          {
+            "level": "h4",
+            "text": "4.4.2 Testing Against the Stencil Buffer While Drawing to It",
+            "anchor": "442-testing-against-the-stencil-buffer-while-drawing-to-it",
+            "abstract": null
+          },
+          {
+            "level": "h3",
+            "text": "5. Example Game",
+            "anchor": "5-example-game",
+            "abstract": null
+          }
+        ]
       },
       {
         "path": "/guides/advanced/physics/",
