@@ -178,13 +178,7 @@ export default class DocsHandler {
         }
 
         if (!query?.isFilled()) {
-            const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query chapters from the LÖVE Cookbook.');
-
-            if (botMessage != null) {
-                Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
-            }
-
-            return;
+            query = "Getting started";
         }
 
         const docs = Docs.QueryCookbook(query);
