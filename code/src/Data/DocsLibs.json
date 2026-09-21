@@ -963,7 +963,13 @@
         "description": "The complete API documentation of LÖVE in a Lua table"
     },
     {
-        "name": "LÖVE Build",
+        "name": "love-build",
+        "author": "ellraiser",
+        "url": "https://github.com/ellraiser/love-build",
+        "description": "zero-dependency cross-platform builder for LÖVE to export games to Windows, MacOS, and Linux"
+    },
+    {
+        "name": "LÖVE Build (Github Action)",
         "author": "nhartland",
         "url": "https://github.com/nhartland/love-build",
         "description": "GitHub Action for automated cross-platform builds"
