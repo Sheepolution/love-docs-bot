@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, Guild, Message, PartialMessage, Partials } from 'discord.js';
+import { Client, GatewayIntentBits, Guild, Interaction, Message, PartialMessage, Partials } from 'discord.js';
 import DiscordService from '../Services/DiscordService';
 
 export default class Discord {
@@ -10,6 +10,7 @@ export default class Discord {
     public static eventGuildDelete: Function;
     public static eventMessageCallback: Function;
     public static eventMessageUpdateCallback: Function;
+    public static eventInteractionCallback: Function;
 
     public static SetEventReadyCallback(callback: Function) {
         this.eventReadyCallback = callback;
@@ -31,8 +32,13 @@ export default class Discord {
         this.eventMessageUpdateCallback = callback;
     }
 
+    public static SetEventInteractionCallback(callback: Function) {
+        this.eventInteractionCallback = callback;
+    }
+
     public static Init() {
-        this.client = new Client({ partials: [ Partials.Message, Partials.Reaction],
+        this.client = new Client({
+            partials: [Partials.Message, Partials.Reaction],
             intents: [
                 GatewayIntentBits.Guilds,
                 GatewayIntentBits.GuildMessages,
@@ -48,6 +54,7 @@ export default class Discord {
         this.client.on('guildDelete', (guild) => { Discord.EventGuildDelete(guild); });
         this.client.on('messageCreate', (message) => { Discord.EventMessage(message); });
         this.client.on('messageUpdate', (oldMessage, newMessage) => { Discord.EventMessageUpdate(oldMessage, newMessage); });
+        this.client.on('interactionCreate', (interaction) => { Discord.EventInteraction(interaction); });
         this.client.login(process.env.TOKEN);
     }
 
@@ -109,6 +116,14 @@ export default class Discord {
         }
 
         this.eventMessageUpdateCallback(newMessage, true);
+    }
+
+    private static EventInteraction(interaction: Interaction) {
+        if (this.eventInteractionCallback == null) {
+            return;
+        }
+
+        this.eventInteractionCallback(interaction);
     }
 
 }

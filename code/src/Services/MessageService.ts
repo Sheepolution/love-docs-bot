@@ -86,7 +86,7 @@ export default class MessageService {
             data.files = attachments;
         }
 
-        if (sameReply) {
+        if (sameReply && messageInfo.message != null) {
             if (messageInfo.message.reference != null) {
                 const reference = await messageInfo.message.fetchReference();
                 if (reference != null) {

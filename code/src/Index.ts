@@ -12,8 +12,7 @@ class Main {
         Discord.SetEventReadyCallback(BotManager.OnReady);
         Discord.SetEventGuildCreateCallback(BotManager.OnAddedToGuild);
         Discord.SetEventGuildDeleteCallback(BotManager.OnKickedFromGuild);
-        Discord.SetEventMessageCallback(BotManager.OnMessage);
-        Discord.SetEventMessageUpdateCallback(BotManager.OnMessage);
+        Discord.SetEventInteractionCallback(BotManager.OnInteraction);
         Discord.Init();
     }
 }

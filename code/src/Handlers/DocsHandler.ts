@@ -53,7 +53,7 @@ export default class DocsHandler {
         if (!query?.isFilled()) {
             const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query documentation for the LÖVE API. You can edit the message to update the bot\'s message.');
 
-            if (botMessage != null) {
+            if (botMessage != null && messageInfo.message != null) {
                 Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
             }
 
@@ -79,7 +79,7 @@ export default class DocsHandler {
         }
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetApiEmbed(messageInfo, query, docs), null, null, null, true);
-        if (botMessage != null) {
+        if (botMessage != null && messageInfo.message != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }
@@ -99,7 +99,7 @@ export default class DocsHandler {
         if (!query?.isFilled()) {
             const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query documentation for Lua libraries.');
 
-            if (botMessage != null) {
+            if (botMessage != null && messageInfo.message != null) {
                 Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
             }
 
@@ -128,7 +128,7 @@ export default class DocsHandler {
                 if (libraries.length == 0 || libraries.length > 1) {
                     const botMessage = await MessageService.ReplyMessage(messageInfo, `I can't find a library named '${library}'.`, false);
 
-                    if (botMessage != null) {
+                    if (botMessage != null && messageInfo.message != null) {
                         Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
                     }
 
@@ -160,7 +160,7 @@ export default class DocsHandler {
         }
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, embed, null, null, null, true);
-        if (botMessage != null) {
+        if (botMessage != null && messageInfo.message != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }
@@ -200,7 +200,7 @@ export default class DocsHandler {
         }
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetCookbookEmbed(messageInfo, query, docs), null, null, null, true);
-        if (botMessage != null) {
+        if (botMessage != null && messageInfo.message != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }
@@ -220,7 +220,7 @@ export default class DocsHandler {
         if (!query?.isFilled()) {
             const botMessage = await MessageService.ReplyMessage(messageInfo, 'Use this command to query games made with LÖVE. You can edit the message to update the bot\'s message.');
 
-            if (botMessage != null) {
+            if (botMessage != null && messageInfo.message != null) {
                 Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
             }
 
@@ -246,7 +246,7 @@ export default class DocsHandler {
         }
 
         const botMessage = await MessageService.ReplyEmbed(messageInfo, DocsEmbeds.GetGameEmbed(messageInfo, query, games), null, null, null, true);
-        if (botMessage != null) {
+        if (botMessage != null && messageInfo.message != null) {
             Redis.set(this.messageKey + messageInfo.message.id, botMessage.id, 'ex', Utils.GetMinutesInSeconds(5));
         }
     }

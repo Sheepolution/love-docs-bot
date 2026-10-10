@@ -17,6 +17,23 @@ export default class CommandHandler {
         const commandInfo = CommandUtils.ParseContentToCommand(content, guild.GetPrefix());
         messageInfo.commandInfo = commandInfo;
 
+        await this.ExecuteCommand(messageInfo, guild);
+    }
+
+    public static async OnSlashCommand(messageInfo: IMessageInfo, command: string, args: Array<string>, content: string, guild: Guild) {
+        messageInfo.commandInfo = {
+            command: command.toLowerCase(),
+            commands: [],
+            args: args ?? [],
+            content: content ?? '',
+        };
+
+        await this.ExecuteCommand(messageInfo, guild);
+    }
+
+    private static async ExecuteCommand(messageInfo: IMessageInfo, guild: Guild) {
+        const commandInfo = messageInfo.commandInfo;
+
         var command = this.GetCommand(commandInfo.command);
 
         if (command == null) {
@@ -48,7 +65,7 @@ export default class CommandHandler {
             return;
         }
 
-        const member = messageInfo.message.member;
+        const member = messageInfo.member ?? messageInfo.message?.member;
         if (member != null) {
             if (DiscordService.IsMemberMod(member)) {
                 if (AdminHandler.OnCommand(messageInfo, guild)) {

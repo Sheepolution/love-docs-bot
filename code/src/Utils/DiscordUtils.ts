@@ -1,4 +1,4 @@
-import { Message, PermissionResolvable, User } from 'discord.js';
+import { ChatInputCommandInteraction, Message, PermissionResolvable, User } from 'discord.js';
 import IMessageInfo from '../Interfaces/IMessageInfo';
 import RegexConstants from '../Constants/RegexConstants';
 
@@ -51,6 +51,17 @@ export default class DiscordUtils {
             channel: message.channel,
             message: message,
             guild: message.guild || null,
+        };
+
+        return info;
+    }
+
+    public static ParseInteractionToInfo(interaction: ChatInputCommandInteraction) {
+        const info: IMessageInfo = {
+            user: interaction.user,
+            channel: interaction.channel,
+            guild: interaction.guild,
+            interaction: interaction,
         };
 
         return info;

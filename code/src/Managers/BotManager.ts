@@ -1,6 +1,6 @@
 import CommandHandler from '../Handlers/CommandHandler';
 import IMessageInfo from '../Interfaces/IMessageInfo';
-import { Message, Guild as DiscordGuild, ChannelType, ActivityType } from 'discord.js';
+import { Message, Guild as DiscordGuild, ChannelType, ActivityType, ChatInputCommandInteraction, Interaction } from 'discord.js';
 import DiscordUtils from '../Utils/DiscordUtils';
 import GuildRepository from '../Repositories/GuildRepository';
 import RedisConstants from '../Constants/RedisConstants';
@@ -11,6 +11,7 @@ import SettingsConstants from '../Constants/SettingsConstants';
 import Discord from '../Providers/Discord';
 import LogService from '../Services/LogService';
 import { LogType } from '../Enums/LogType';
+import CommandManager from './CommandManager';
 
 export default class BotManager {
 
@@ -20,6 +21,7 @@ export default class BotManager {
         console.log(`${SettingsConstants.BOT_NAME}: Connected`);
         BotManager.CreateActivityInterval();
         CacheManager.CreateTimeoutInterval();
+        CommandManager.UpdateSlashCommands();
     }
 
     public static CreateActivityInterval() {
@@ -30,7 +32,29 @@ export default class BotManager {
     }
 
     public static SetActivity() {
-        Discord.GetClient().user?.setActivity(`${SettingsConstants.DEFAULT_PREFIX}help`, { type: ActivityType.Watching });
+        Discord.GetClient().user?.setActivity('/help', { type: ActivityType.Watching });
+    }
+
+    public static async OnInteraction(interaction: Interaction) {
+        if (!interaction.isChatInputCommand()) {
+            return;
+        }
+
+        if (interaction.guild == null || interaction.member == null || interaction.channel == null) {
+            return;
+        }
+
+        const chatInteraction = interaction as ChatInputCommandInteraction;
+        const messageInfo: IMessageInfo = DiscordUtils.ParseInteractionToInfo(chatInteraction);
+        messageInfo.member = await interaction.guild.members.fetch(interaction.user.id);
+
+        const guild = await GuildRepository.GetOrCreateByDiscordId(interaction.guild.id);
+
+        const args = chatInteraction.options.data
+            .map(option => option.value?.toString()?.trim())
+            .filter(value => value?.isFilled(true)) as Array<string>;
+
+        await CommandHandler.OnSlashCommand(messageInfo, interaction.commandName, args, args.join(' '), guild);
     }
 
     public static async OnMessage(message: Message, edit?: boolean) {
