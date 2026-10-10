@@ -1,14 +1,9 @@
 export default class CommandConstants {
     public static readonly COMMANDS = {
-        // Admin
-        PREFIX: ['prefix'],
-        ROLE: ['role'],
-        CHANNEL: ['channel'],
-
         // Docs
         WIKI: ['api', 'a', 'wiki', 'w', 'query', 'q', 'docs', 'd'],
         LIB: ['lib'],
-        COOKBOOK: ['cook', 'book', 'cb'],
+        COOKBOOK: ['cookbook', 'cook', 'book', 'cb'],
         GAME: ['game', 'games', 'g'],
 
         // Generic

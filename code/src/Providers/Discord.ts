@@ -38,12 +38,8 @@ export default class Discord {
 
     public static Init() {
         this.client = new Client({
-            partials: [Partials.Message, Partials.Reaction],
             intents: [
                 GatewayIntentBits.Guilds,
-                GatewayIntentBits.GuildMessages,
-                GatewayIntentBits.GuildMessageReactions,
-                GatewayIntentBits.MessageContent,
             ]
         });
 
